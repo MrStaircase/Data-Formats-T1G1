@@ -1,3 +1,4 @@
 Jack created the domain.svg with other team members, all viewed and confirmed.
-Khanh wrote the domain.txt file with other team members, all viewed and confirmed.
-Jack wrote the log.txt file, all others viewed and confirmed.
+Khanh wrote the domain.txt file with other team members. Khanh and Valentin edited it later, all viewed and confirmed.
+Jack wrote the log.txt file, Dmytro edited it later, and all others viewed and confirmed.
+
