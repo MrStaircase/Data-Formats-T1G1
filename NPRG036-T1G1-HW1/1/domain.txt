@@ -1,0 +1,51 @@
+Domain Model Description: represents a domain model for a business system that manages shops, their employees, products, visitors, and logos
+
+Class: Product - Product includes details such as its name, preparation time, and price. Products are associated with both the shop that sells them and the employees who can produce them.
+Attributes:
+  - Name: String — the product’s name.
+  - Preparation Time: Integer — estimated time (in minutes) required to prepare the product.
+  - Price: Integer — cost of the product in CZK.
+Associations: 
+  - Has product (0..* Product) <-> (1..1 Shop) : A product is in a shop
+  - Can produce (0..* Product) <-> (1..* Employee); A product is made by (an) employee(s)
+
+Class: Shop - Shop is the central entity of the model. Each shop has a name and capacity, and it can own a logo, hire employees, sell products, and provide services to visitors.
+Attributes:
+  - Name: String — the shop’s name.
+  - Capacity: Integer — maximum number of people the shop can handle.
+Associations:
+  - Has product (1..1 Shop) <-> (0..* Product) : A shop have many products
+  - Hires (1..1 Shop) <-> (1..* Employee): A shop hires employee
+  - Services (0..* Shop) <-> (0..* Visitor) : A shop serves visitors
+  - Owns (0..* Shop) <-> (0..1 Logo) : A shop (may) owns a logo
+
+Class: Employee - Employee has attributes like ID and salary, and each employee works for one shop. Employees are also modeled as specialized persons, inheriting common attributes such as full name and phone number.
+Attributes:
+  - ID: String — unique identifier for the employee.
+  - Salary: Integer — monthly salary of the employee in CZK.
+Associations:
+  - Can produce (1..* Employee) <-> (0..* Product): An employee can produce a product
+  - Hired by (1..* Employee) <-> (1..1 Shop): A emplyee is hired from a shop
+  - Is a (Employee) -> (Person): An employee is a person //change later!!
+
+Class: Visitor - Visitor represents a customer or guest of a shop, described by their nickname and number of visits. Like employees, visitors are also persons.
+Attributes:
+  - Nickname: String — the visitor’s chosen nickname.
+  - Number of Visits: Integer — number of times the visitor has come to the shop.
+Associations:
+  - Services (0..* Visitor) <-> (0..* Shop): A visitor visits many shops
+  - Is a (Visitor) -> (Person): A visitor is a person ///later!!
+
+Class: Person - Person is a general class containing shared personal information, including full name and optional phone number.
+Attributes:
+  - Full Name: String — person’s legal or full name.
+  - Phone number [0..*]: String — optional contact number(s).
+Associations:
+  - Generalization relationship with Employee and Visitor.
+
+Class: Logo - Logo represents a visual symbol of a shop, with attributes for image and creation date. Each shop may have one logo, but a logo belongs to at most one shop.
+Attributes:
+  - Image: Image — image of the shop's logo. //later
+  - Creation date: Date — date when the logo was created.
+Associations:
+  - Owned by (0..1 Logo) <-> (0..* Shop) : A logo may owned by a shop
