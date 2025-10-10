@@ -17,7 +17,7 @@ Attributes:
   - Price: Integer — cost (in CZK) of the product.
 Associations: 
   - Has product (0..* Product) <-> (1..1 Shop) : A product is offered at a shop.
-  - Can produce (0..* Product) <-> (1..* Employee); A product is can be made by at least one employee.
+  - Can produce (0..* Product) <-> (1..* Employee) : A product can be made by at least one employee.
 
 Class: Person - Person is a general class containing shared personal information, including full name and optional phone numbers.
 Generalization relationship with Employee and Visitor.
@@ -31,7 +31,7 @@ Attributes:
   - Salary: Integer — monthly salary (in CZK) of the employee.
 Associations:
   - Can produce (1..* Employee) <-> (0..* Product): An employee may produce many products.
-  - Hired by (1..* Employee) <-> (1..1 Shop): A emplyee is being hired at a shop.
+  - Hired by (1..* Employee) <-> (1..1 Shop): An employee is being hired at a shop.
 
 Class: Visitor - Visitor represents a customer or guest of a shop, described by their nickname and number of visits. Visitor is a subclass of Person.
 Attributes:
@@ -47,3 +47,4 @@ Attributes:
   - Creation date: Date — date when the logo was created.
 Associations:
   - Owned by (0..1 Logo) <-> (0..* Shop) : A logo may be owned by many shops.
+
