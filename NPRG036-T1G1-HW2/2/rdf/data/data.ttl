@@ -1,8 +1,9 @@
 @prefix ex: <https://exmaple.org/vocabulary/> .
 @prefix emp: <https://exmaple.org/resource/employee/> .
 @prefix cus: <https://exmaple.org/resource/customer/> .
-@prefix shop: <https://exmaple.org/resource/shop/> .
 @prefix logo: <https://exmaple.org/resource/logo/> .
+@prefix image: <https://exmaple.org/resource/image/> .
+@prefix shop: <https://exmaple.org/resource/shop/> .
 @prefix prod: <https://exmaple.org/resource/product/> .
 
 @prefix schema: <https://schema.org/> .
@@ -74,3 +75,128 @@ ex:Customer a rdfs:Class;
     rdfs:subClassOf foaf:Person.
 
 # Actual Data
+
+# Data - Logos
+
+logo:1 a schema:ImageObject;
+    schema:image image:1;   //maybe ask teacher
+    schema:uplaodData 2025-02-01.
+
+logo:2 a schema:ImageObject;
+    schema:image image:2;
+    schema:uplaodData 2025-04-03.
+
+logo:3 a schema:ImageObject;
+    schema:image image:3;
+    schema:uplaodData 2025-06-05.
+
+# Data - Shops
+
+shop:1 a schema:LocalBusiness;
+    schema:legalName "shop1"@en;
+    ex:capacity 10^^xsd:integer.
+
+shop:2 a schema:LocalBusiness;
+    schema:legalName "shop2"@en;
+    ex:capacity 20^^xsd:integer.
+
+shop:3 a schema:LocalBusiness;
+    schema:legalName "shop3"@en;
+    ex:capacity 30^^xsd:integer.
+
+shop:4 a schema:LocalBusiness;
+    schema:legalName "shop4"@en;
+    ex:capacity 42^^xsd:integer.
+
+# Data - Customers
+
+cus:1 a ex:Customer;
+    foaf:nick "Alice"@en;
+    ex:numberOfVisits "Al"@en;
+    ex:fullName 2^^xsd:integer.
+
+cus:2 a ex:Customer;
+    foaf:nick "Bob"@en;
+    ex:numberOfVisits "Bo"@en;
+    ex:fullName 3^^xsd:integer.
+
+cus:3 a ex:Customer;
+    foaf:nick "Charlie"@en;
+    ex:numberOfVisits "Cha"@en;
+    ex:fullName 4^^xsd:integer.
+
+# Data - Employees
+
+emp:1 a ex:Employee;
+    schema:identifier 1;
+    ex:salary 1000^^xsd:integer;
+    ex:fullName "Dave"@en.
+
+emp:2 a ex:Employee;
+    schema:identifier 2;
+    ex:salary 1100^^xsd:integer;
+    ex:fullName "Eve"@en.
+
+emp:3 a ex:Employee;
+    schema:identifier 3;
+    ex:salary 1200^^xsd:integer;
+    ex:fullName "Frank"@en;
+    schema:telephone tel:+420123456789.     //maybe ask teacher
+
+emp:4 a ex:Employee;
+    schema:identifier 4;
+    ex:salary 1300^^xsd:integer;
+    ex:fullName "Grace"@en;
+    schema:telephone tel:+420987654321,
+        tel:+420112233445.
+
+# Data - Products
+
+prod:1 a schema:Product;
+    schema:name "Coffee"@en;
+    ex:preperationTime 100^^xsd:integer;
+    ex:price 10^^xsd:integer.
+
+prod:2 a schema:Product;
+    schema:name "Sandwich"@en;
+    ex:preperationTime 120^^xsd:integer;
+    ex:price 20^^xsd:integer.
+
+prod:3 a schema:Product;
+    schema:name "Ice cream"@en;
+    ex:preperationTime 100^^xsd:integer;
+    ex:price 30^^xsd:integer.
+
+# Relations
+
+# Relation - shop -> customer
+
+shop:2 ex:serves cus:2.
+shop:3 ex:serves cus:2,
+        cus:3.
+
+# Relation - shop -> employee
+
+shop:1 schema:employee emp:1.
+shop:2 schema:employee emp:2.
+shop:3 schema:employee emp:3.
+shop:4 schema:employee emp:4.
+
+# Relation - shop -> product
+
+shop:2 schema:owns prod:1,
+        prod:2.
+shop:3 schema:owns prod:3.
+
+# Relation - shop -> logo
+
+shop:2 schema:logo logo:2.
+shop:3 schema:logo logo:3.
+shop:4 schema:logo logo:3.
+
+# Relation - product -> employee
+
+prod:1 ex:hasManufactor emp:2,
+    emp:3.
+prod:2 ex:hasManufactor emp:4.
+prod:3 ex:hasManufactor emp:2.
