@@ -1,6 +1,10 @@
 @prefix ex: <https://exmaple.org/vocabulary/> .
 @prefix emp: <https://exmaple.org/resource/employee/> .
 @prefix cus: <https://exmaple.org/resource/customer/> .
+@prefix shop: <https://exmaple.org/resource/shop/> .
+@prefix logo: <https://exmaple.org/resource/logo/> .
+@prefix prod: <https://exmaple.org/resource/product/> .
+
 @prefix schema: <https://schema.org/> .
 @prefix rdf: <https://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <https://www.w3.org/2000/01/rdf-schema#> .
@@ -13,37 +17,37 @@ ex:capacity a rdf:Property;
     rdfs:label "capacity"@en;
     rdfs:description "The amount customers that the business can handle."@en;
     rdfs:domain schema:LocalBusiness;
-    rdfs:range xsd:Integer.
+    rdfs:range xsd:integer.
 
 ex:salary a rdf:Property;
     rdfs:label "salary"@en;
     rdfs:description "The amount of CZK that the employee gets every month."@en;
     rdfs:domain ex:Employee;
-    rdfs:range xsd:Integer.
+    rdfs:range xsd:integer.
 
 ex:numberOfVisits a rdf:Property;
     rdfs:label "number of visits"@en;
     rdfs:description "The nubmer of times that a customer has visited any of the shops";
     rdfs:domain ex:Customer;
-    rdfs:range xsd:Integer.
+    rdfs:range xsd:integer.
 
 ex:fullName a rdf:Property;
     rdfs:label "full name"@en;
     rdfs:description "The full name of the person"@en;
     rdfs:domain foaf:Person;
-    rdfs:range xsd:String.
+    rdfs:range xsd:langString.
 
 ex:preperationTime a rdf:Property;
     rdfs:label "preperation time"@en;
     rdfs:description "The amount of time, in minutes, it takes to make this product"@en;
     rdfs:domain schema:Product;
-    rdfs:range xsd:Integer.
+    rdfs:range xsd:integer.
 
 ex:price a rdf:Property;
     rdfs:label "price"@en;
     rdfs:description "The price, in CZK, of the product"@en;
     rdfs:domain schema:Product;
-    rdfs:range xsd:Integer.
+    rdfs:range xsd:integer.
 
 ex:hasManufactor a rdf:Property;
     rdfs:label "has manufactor"@en;
