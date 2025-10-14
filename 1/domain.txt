@@ -39,7 +39,6 @@ Attributes:
   - Number of Visits: Integer — number of times the visitor has come to any of the shops under the corporation.
 Associations:
   - Get Serviced (0..* Visitor) <-> (0..* Shop): A visitor visits many shops.
-  - Knows (0..* Visitor) <-> (0..* Visitor): A visitor may knows many visitors.
 
 Class: Logo - Logo represents a visual symbol of a shop, with attributes for image and creation date.
 Attributes:
