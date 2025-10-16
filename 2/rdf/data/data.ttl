@@ -111,19 +111,19 @@ shop:4 a schema:LocalBusiness;
 # Data - Customers
 
 cus:1 a ex:Customer;
-    foaf:nick "Alice"@en;
-    ex:numberOfVisits "Al"@en;
-    ex:fullName "2"^^xsd:integer.
+    foaf:nick "Al"@en;
+    ex:numberOfVisits "2"^^xsd:integer;
+    ex:fullName "Alice"@en.
 
 cus:2 a ex:Customer;
-    foaf:nick "Bob"@en;
-    ex:numberOfVisits "Bo"@en;
-    ex:fullName "3"^^xsd:integer.
+    foaf:nick "Bo"@en;
+    ex:numberOfVisits "3"^^xsd:integer;
+    ex:fullName "Bob"@en.
 
 cus:3 a ex:Customer;
-    foaf:nick "Charlie"@en;
-    ex:numberOfVisits "Cha"@en;
-    ex:fullName "4"^^xsd:integer.
+    foaf:nick "Cha"@en;
+    ex:numberOfVisits "4"^^xsd:integer;
+    ex:fullName "Charlie"@en.
 
 # Data - Employees
 
