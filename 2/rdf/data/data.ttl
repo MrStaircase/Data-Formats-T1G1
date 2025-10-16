@@ -80,15 +80,15 @@ ex:Customer a rdfs:Class;
 
 logo:1 a schema:ImageObject;
     schema:image image:1;
-    schema:uploadData "2025-02-01".
+    schema:uploadData "2025-02-01"^^xsd::date.
 
 logo:2 a schema:ImageObject;
     schema:image image:2;
-    schema:uploadData "2025-04-03".
+    schema:uploadData "2025-04-03"^^xsd::date.
 
 logo:3 a schema:ImageObject;
     schema:image image:3;
-    schema:uploadData "2025-06-05".
+    schema:uploadData "2025-06-05"^^xsd::date.
 
 # Data - Shops
 
