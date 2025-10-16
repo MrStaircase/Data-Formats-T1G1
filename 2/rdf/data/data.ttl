@@ -79,93 +79,93 @@ ex:Customer a rdfs:Class;
 # Data - Logos
 
 logo:1 a schema:ImageObject;
-    schema:image image:1;   //maybe ask teacher
-    schema:uplaodData 2025-02-01.
+    schema:image image:1;
+    schema:uploadData "2025-02-01".
 
 logo:2 a schema:ImageObject;
     schema:image image:2;
-    schema:uplaodData 2025-04-03.
+    schema:uploadData "2025-04-03".
 
 logo:3 a schema:ImageObject;
     schema:image image:3;
-    schema:uplaodData 2025-06-05.
+    schema:uploadData "2025-06-05".
 
 # Data - Shops
 
 shop:1 a schema:LocalBusiness;
     schema:legalName "shop1"@en;
-    ex:capacity 10^^xsd:integer.
+    ex:capacity "10"^^xsd:integer.
 
 shop:2 a schema:LocalBusiness;
     schema:legalName "shop2"@en;
-    ex:capacity 20^^xsd:integer.
+    ex:capacity "20"^^xsd:integer.
 
 shop:3 a schema:LocalBusiness;
     schema:legalName "shop3"@en;
-    ex:capacity 30^^xsd:integer.
+    ex:capacity "30"^^xsd:integer.
 
 shop:4 a schema:LocalBusiness;
     schema:legalName "shop4"@en;
-    ex:capacity 42^^xsd:integer.
+    ex:capacity "42"^^xsd:integer.
 
 # Data - Customers
 
 cus:1 a ex:Customer;
     foaf:nick "Alice"@en;
     ex:numberOfVisits "Al"@en;
-    ex:fullName 2^^xsd:integer.
+    ex:fullName "2"^^xsd:integer.
 
 cus:2 a ex:Customer;
     foaf:nick "Bob"@en;
     ex:numberOfVisits "Bo"@en;
-    ex:fullName 3^^xsd:integer.
+    ex:fullName "3"^^xsd:integer.
 
 cus:3 a ex:Customer;
     foaf:nick "Charlie"@en;
     ex:numberOfVisits "Cha"@en;
-    ex:fullName 4^^xsd:integer.
+    ex:fullName "4"^^xsd:integer.
 
 # Data - Employees
 
 emp:1 a ex:Employee;
-    schema:identifier 1;
-    ex:salary 1000^^xsd:integer;
+    schema:identifier "1"^^xsd:string;
+    ex:salary "1000"^^xsd:integer;
     ex:fullName "Dave"@en.
 
 emp:2 a ex:Employee;
-    schema:identifier 2;
-    ex:salary 1100^^xsd:integer;
+    schema:identifier "2"^^xsd:string;
+    ex:salary "1100"^^xsd:integer;
     ex:fullName "Eve"@en.
 
 emp:3 a ex:Employee;
-    schema:identifier 3;
-    ex:salary 1200^^xsd:integer;
+    schema:identifier "3"^^xsd:string;
+    ex:salary "1200"^^xsd:integer;
     ex:fullName "Frank"@en;
-    schema:telephone tel:+420123456789.     //maybe ask teacher
+    schema:telephone <tel:+420123456789>.
 
 emp:4 a ex:Employee;
-    schema:identifier 4;
-    ex:salary 1300^^xsd:integer;
+    schema:identifier "4"^^xsd:string;
+    ex:salary "1300"^^xsd:integer;
     ex:fullName "Grace"@en;
-    schema:telephone tel:+420987654321,
-        tel:+420112233445.
+    schema:telephone <tel:+420987654321>,
+        <tel:+420112233445>.
 
 # Data - Products
 
 prod:1 a schema:Product;
     schema:name "Coffee"@en;
-    ex:preperationTime 100^^xsd:integer;
-    ex:price 10^^xsd:integer.
+    ex:preperationTime "100"^^xsd:integer;
+    ex:price "10"^^xsd:integer.
 
 prod:2 a schema:Product;
     schema:name "Sandwich"@en;
-    ex:preperationTime 120^^xsd:integer;
-    ex:price 20^^xsd:integer.
+    ex:preperationTime "120"^^xsd:integer;
+    ex:price "20"^^xsd:integer.
 
 prod:3 a schema:Product;
     schema:name "Ice cream"@en;
-    ex:preperationTime 100^^xsd:integer;
-    ex:price 30^^xsd:integer.
+    ex:preperationTime "100"^^xsd:integer;
+    ex:price "30"^^xsd:integer.
 
 # Relations
 
