@@ -1,0 +1,30 @@
+# Q1 — For every shop with capacity ≥ 20, list its name, capacity,
+# how many employees and products it has, and a boolean telling
+# whether a logo is specified.
+PREFIX ex:     <https://exmaple.org/vocabulary/>
+PREFIX schema: <https://schema.org/>
+PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?shop ?shopName ?capacity
+       (COUNT(DISTINCT ?emp)  AS ?employeeCount) #we want to count distinct number of employees per shop
+       (COUNT(DISTINCT ?prod) AS ?productCount) #we want to count distinct number of products per shop
+       ?hasLogo
+WHERE {
+  ?shop a schema:LocalBusiness ;
+        schema:legalName ?shopName ;
+        ex:capacity ?capacity .
+
+  OPTIONAL { ?shop schema:employee ?emp }
+  OPTIONAL { ?shop schema:owns     ?prod }
+  OPTIONAL { ?shop schema:logo     ?logo }
+
+  # turn "do we have a logo triple?" into a true/false flag
+  BIND(BOUND(?logo) AS ?hasLogo)
+
+  # only show sufficiently large shops
+  FILTER(xsd:integer(?capacity) >= 20)
+}
+GROUP BY ?shop ?shopName ?capacity ?hasLogo
+ORDER BY DESC(?employeeCount) ?shopName
+
+
