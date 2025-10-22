@@ -1,28 +1,36 @@
-
 # Q2 — Construct RDF triples that represent each shop
 # together with the number of customers it serves,
 # but only include shops that serve more than 1 customer.
+#we also add the property ex:numberOfCustomers (>1) for each shop
+
 PREFIX ex:     <https://exmaple.org/vocabulary/>
 PREFIX schema: <https://schema.org/>
 PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
-  # For each selected shop, create triples of the form:  
-CONSTRUCT {                                  
-?shop a schema:LocalBusiness ;
-        rdf:value ?customerCount .
+
+CONSTRUCT {
+  # define a new property to store customer count
+  ex:numberOfCustomers a rdf:Property ;
+    rdfs:label "number of customers"@en ;
+    rdfs:domain schema:LocalBusiness ;
+    rdfs:range  xsd:integer .
+
+  # attach the number of customers to each shop
+  ?shop ex:numberOfCustomers ?customerCount .
 }
 WHERE {
-     ?shop a schema:LocalBusiness .
-
-{
- #Subquery to count how many customers each shop serve
-      SELECT ?shop (COUNT(DISTINCT ?customer) AS ?customerCount)    
-          WHERE {
-               ?shop ex:serves ?customer .
-          }
+  {
+     # subquery to count how many customers each shop serve
+    SELECT ?shop (COUNT(DISTINCT ?customer) AS ?customerCount)
+        WHERE {
+              ?shop ex:serves ?customer .
+        }
     GROUP BY ?shop
-  }
 
-  FILTER(?customerCount > 1) # keeps only the shops where the number of customers > 1
+    # only include shops serving more than one customer
+    HAVING (COUNT(DISTINCT ?customer) > 1)
+  }
 }
+
 
