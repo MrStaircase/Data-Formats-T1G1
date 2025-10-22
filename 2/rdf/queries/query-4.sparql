@@ -1,1 +1,24 @@
+# Q4 — List all shops which have pairs of employees and customers going to the same shop
+# such that their names have the 1st letter in common,
+# plus the names
 
+PREFIX ex: <https://exmaple.org/vocabulary/>
+PREFIX schema: <https://schema.org/>
+
+SELECT ?shop ?customerName ?employeeName
+WHERE
+{
+  ?shop ex:serves ?customer;
+        schema:employee ?employee.
+
+  ?customer ex:fullName ?customerName.
+  ?employee ex:fullName ?employeeName.
+
+  # 1st letter of a customer is identical...
+  BIND(SUBSTR(STR(?customerName), 1, 1) AS ?firstLetter)
+
+  # ...to the 1st letter of an employee
+  FILTER(STRSTARTS(STR(?employeeName), ?firstLetter))
+}
+GROUP BY ?shop ?customerName ?employeeName
+ORDER BY ?shop
