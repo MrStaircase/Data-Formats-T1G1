@@ -1,0 +1,6 @@
+Jack created rdf/model/covored.svg
+Jack and Dmytro created rdf/data/data.ttl
+Khanh created rdf/query/query-[12].sparql
+Valentine created rdf/query/query-[12].sparql
+
+Jack created lpg/model/example.svg
