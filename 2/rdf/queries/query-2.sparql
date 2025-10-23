@@ -10,12 +10,6 @@ PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT {
-  # define a new property to store customer count
-  ex:numberOfCustomers a rdf:Property ;
-    rdfs:label "number of customers"@en ;
-    rdfs:domain schema:LocalBusiness ;
-    rdfs:range  xsd:integer .
-
   # attach the number of customers to each shop
   ?shop ex:numberOfCustomers ?customerCount .
 }
