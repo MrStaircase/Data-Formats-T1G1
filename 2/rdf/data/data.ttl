@@ -171,7 +171,8 @@ prod:3 a schema:Product;
 
 # Relation - shop -> customer
 
-shop:2 ex:serves cus:2.
+shop:2 ex:serves cus:2,
+                 cus:3.
 shop:3 ex:serves cus:3.
 
 # Relation - shop -> employee
