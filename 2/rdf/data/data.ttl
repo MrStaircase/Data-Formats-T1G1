@@ -16,7 +16,7 @@
 
 ex:capacity a rdf:Property;
     rdfs:label "capacity"@en;
-    rdfs:description "The amount customers that the business can handle."@en;
+    rdfs:description "The amount of customers that the business can handle."@en;
     rdfs:domain schema:LocalBusiness;
     rdfs:range xsd:integer.
 
@@ -28,7 +28,7 @@ ex:salary a rdf:Property;
 
 ex:numberOfVisits a rdf:Property;
     rdfs:label "number of visits"@en;
-    rdfs:description "The nubmer of times that a customer has visited any of the shops";
+    rdfs:description "The number of times that a customer has visited any of the shops";
     rdfs:domain ex:Customer;
     rdfs:range xsd:integer.
 
@@ -38,8 +38,8 @@ ex:fullName a rdf:Property;
     rdfs:domain foaf:Person;
     rdfs:range xsd:langString.
 
-ex:preperationTime a rdf:Property;
-    rdfs:label "preperation time"@en;
+ex:preparationTime a rdf:Property;
+    rdfs:label "preparation time"@en;
     rdfs:description "The amount of time, in minutes, it takes to make this product"@en;
     rdfs:domain schema:Product;
     rdfs:range xsd:integer.
@@ -154,17 +154,17 @@ emp:4 a ex:Employee;
 
 prod:1 a schema:Product;
     schema:name "Coffee"@en;
-    ex:preperationTime "100"^^xsd:integer;
+    ex:preparationTime "100"^^xsd:integer;
     ex:price "10"^^xsd:integer.
 
 prod:2 a schema:Product;
     schema:name "Sandwich"@en;
-    ex:preperationTime "120"^^xsd:integer;
+    ex:preparationTime "120"^^xsd:integer;
     ex:price "20"^^xsd:integer.
 
 prod:3 a schema:Product;
     schema:name "Ice cream"@en;
-    ex:preperationTime "100"^^xsd:integer;
+    ex:preparationTime "140"^^xsd:integer;
     ex:price "30"^^xsd:integer.
 
 # Relations
@@ -172,8 +172,7 @@ prod:3 a schema:Product;
 # Relation - shop -> customer
 
 shop:2 ex:serves cus:2.
-shop:3 ex:serves cus:2,
-        cus:3.
+shop:3 ex:serves cus:3.
 
 # Relation - shop -> employee
 
@@ -185,7 +184,7 @@ shop:4 schema:employee emp:4.
 # Relation - shop -> product
 
 shop:2 schema:owns prod:1,
-        prod:2.
+                   prod:2.
 shop:3 schema:owns prod:3.
 
 # Relation - shop -> logo
@@ -197,6 +196,6 @@ shop:4 schema:logo logo:3.
 # Relation - product -> employee
 
 prod:1 ex:hasManufactor emp:2,
-    emp:3.
+                        emp:3.
 prod:2 ex:hasManufactor emp:4.
 prod:3 ex:hasManufactor emp:2.
