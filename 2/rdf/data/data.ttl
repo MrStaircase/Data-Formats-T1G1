@@ -141,13 +141,13 @@ emp:3 a ex:Employee;
     schema:identifier "3"^^xsd:string;
     ex:salary "1200"^^xsd:integer;
     ex:fullName "Frank"@en;
-    schema:telephone <tel:+420123456789>.
+    foaf:phone <tel:+420123456789>.
 
 emp:4 a ex:Employee;
     schema:identifier "4"^^xsd:string;
     ex:salary "1300"^^xsd:integer;
     ex:fullName "Grace"@en;
-    schema:telephone <tel:+420987654321>,
+    foaf:phone <tel:+420987654321>,
         <tel:+420112233445>.
 
 # Data - Products
