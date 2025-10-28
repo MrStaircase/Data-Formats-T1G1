@@ -17,7 +17,7 @@ WHERE
 
   OPTIONAL
   {
-    ?person schema:telephone ?telephone .
+    ?person foaf:phone ?telephone .
   }
 
   # true if has at least one telephone number
