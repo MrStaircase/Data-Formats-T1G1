@@ -4,4 +4,6 @@ Khanh created rdf/query/query-[12].sparql
 Valentine created rdf/query/query-[34].sparql
 
 Jack created lpg/model/example.svg
+Jack created lpg/data/data.cypher
 
+Jack created lpd/query/query-4.cypher
