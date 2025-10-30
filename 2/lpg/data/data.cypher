@@ -35,9 +35,9 @@ MERGE (shop2)-[:HIRES { since: '2016-08-30'}]->(emp2)
 MERGE (shop3)-[:HIRES { since: '2019-02-20'}]->(emp3)
 MERGE (shop4)-[:HIRES { since: '2010-02-01'}]->(emp4)
 
-MERGE (shop2)-[:OWNS {amount : 5}]->(prod1)
-MERGE (shop2)-[:OWNS {amount : 12}]->(prod2)
-MERGE (shop3)-[:OWNS {amount : 27}]->(prod3)
+MERGE (shop2)-[:OWNS { amount : 5}]->(prod1)
+MERGE (shop2)-[:OWNS { amount : 12}]->(prod2)
+MERGE (shop3)-[:OWNS { amount : 27}]->(prod3)
 
 MERGE (shop2)-[:LOGO]->(logo2)
 MERGE (shop3)-[:LOGO]->(logo3)
