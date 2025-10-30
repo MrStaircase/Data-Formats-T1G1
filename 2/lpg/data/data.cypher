@@ -12,7 +12,7 @@ MERGE (cus3:Customer { nick: 'Cha', numberOfVisits: 4, fullName: 'Charlie' })
 // === EMPLOYEES ===
 MERGE (emp1:Employee { identifier: '1', salary: 1000, fullName: 'Dave' })
 MERGE (emp2:Employee { identifier: '2', salary: 1100, fullName: 'Eve' })
-MERGE (emp3:Employee { identifier: '3', salary: 1200, fullName: 'Frank', phone: ['tel:+420123456789'] })
+MERGE (emp3:Employee { identifier: '3', salary: 1200, fullName: 'Crank', phone: ['tel:+420123456789'] })
 MERGE (emp4:Employee { identifier: '4', salary: 1300, fullName: 'Grace', phone: ['tel:+420987654321','tel:+420112233445'] })
 
 // === PRODUCTS ===
