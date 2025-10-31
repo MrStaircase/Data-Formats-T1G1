@@ -1,9 +1,9 @@
 // Employees hired by a shop that produced >1 of each (Coffee, Sandwich, Ice cream);
 // return per-product counts & profits and total profit, ordered by counts.
-MATCH (shop:LocalBusiness)-[:HIRES]->(employee:Employee)
-MATCH (shop)-[ownsCoffee:OWNS]->(coffee:Product{name:'Coffee'})-[:PRODUCES]->(employee)
-MATCH (shop)-[ownsSandwich:OWNS]->(sandwich:Product{name:'Sandwich'})-[:PRODUCES]->(employee)
-MATCH (shop)-[ownsIceCream:OWNS]->(iceCream:Product{name:'Ice cream'})-[:PRODUCES]->(employee)
+OPTIONAL MATCH (shop:LocalBusiness)-[:HIRES]->(employee:Employee)
+OPTIONAL MATCH (shop)-[ownsCoffee:OWNS]->(coffee:Product{name:'Coffee'})-[:PRODUCES]->(employee)
+OPTIONAL MATCH (shop)-[ownsSandwich:OWNS]->(sandwich:Product{name:'Sandwich'})-[:PRODUCES]->(employee)
+OPTIONAL MATCH (shop)-[ownsIceCream:OWNS]->(iceCream:Product{name:'Ice cream'})-[:PRODUCES]->(employee)
 WHERE ownsCoffee.amount>1 OR ownsSandwich.amount>1 OR ownsIceCream.amount>1
 WITH employee,shop,
      ownsCoffee.amount AS coffeeQty,  coffee.price AS coffeePrice,
