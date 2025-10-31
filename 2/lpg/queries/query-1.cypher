@@ -1,7 +1,7 @@
 //return a compact profile for one shop: capacity, logo, and 
 //counts of customers/employees/products it’s involved with.
 
-MATCH (s:Local Business {legalName:$shop})
+MATCH (s:LocalBusiness {legalName:$shop})
 OPTIONAL MATCH (s)-[:LOGO]->(lg:ImageObject)
 OPTIONAL MATCH (s)-[:SERVES]->(c:Customer)
 OPTIONAL MATCH (s)-[:HIRES]->(lg:Employee)
@@ -12,3 +12,4 @@ RETURN s.legalName AS shop, s.capacity AS capacity,
        count(DISTINCT c) AS customers,
        count(DISTINCT e) AS employees,
        count(DISTINCT p) AS ownedProducts;
+
