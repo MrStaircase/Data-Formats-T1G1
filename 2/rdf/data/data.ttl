@@ -1,10 +1,10 @@
-@prefix ex: <https://exmaple.org/vocabulary/> .
-@prefix emp: <https://exmaple.org/resource/employee/> .
-@prefix cus: <https://exmaple.org/resource/customer/> .
-@prefix logo: <https://exmaple.org/resource/logo/> .
-@prefix image: <https://exmaple.org/resource/image/> .
-@prefix shop: <https://exmaple.org/resource/shop/> .
-@prefix prod: <https://exmaple.org/resource/product/> .
+@prefix ex: <https://example.org/vocabulary/> .
+@prefix emp: <https://example.org/resource/employee/> .
+@prefix cus: <https://example.org/resource/customer/> .
+@prefix logo: <https://example.org/resource/logo/> .
+@prefix image: <https://example.org/resource/image/> .
+@prefix shop: <https://example.org/resource/shop/> .
+@prefix prod: <https://example.org/resource/product/> .
 
 @prefix schema: <https://schema.org/> .
 @prefix rdf: <https://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -28,7 +28,7 @@ ex:salary a rdf:Property;
 
 ex:numberOfVisits a rdf:Property;
     rdfs:label "number of visits"@en;
-    rdfs:description "The number of times that a customer has visited any of the shops";
+    rdfs:description "The number of times that a customer has visited any of the shops"@en;
     rdfs:domain ex:Customer;
     rdfs:range xsd:integer.
 
