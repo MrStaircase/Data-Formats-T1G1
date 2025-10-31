@@ -28,7 +28,7 @@ ex:salary a rdf:Property;
 
 ex:numberOfVisits a rdf:Property;
     rdfs:label "number of visits"@en;
-    rdfs:description "The number of times that a customer has visited any of the shops";
+    rdfs:description "The number of times that a customer has visited any of the shops"@en;
     rdfs:domain ex:Customer;
     rdfs:range xsd:integer.
 
