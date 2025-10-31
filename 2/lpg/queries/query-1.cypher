@@ -4,7 +4,7 @@
 MATCH (s:LocalBusiness {legalName:$shop})
 OPTIONAL MATCH (s)-[:LOGO]->(lg:ImageObject)
 OPTIONAL MATCH (s)-[:SERVES]->(c:Customer)
-OPTIONAL MATCH (s)-[:HIRES]->(lg:Employee)
+OPTIONAL MATCH (s)-[:HIRES]->(e:Employee)
 OPTIONAL MATCH (s)-[:OWNS]->(p:Product)
 
 RETURN s.legalName AS shop, s.capacity AS capacity,
@@ -12,4 +12,5 @@ RETURN s.legalName AS shop, s.capacity AS capacity,
        count(DISTINCT c) AS customers,
        count(DISTINCT e) AS employees,
        count(DISTINCT p) AS ownedProducts;
+
 
