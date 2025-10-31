@@ -2,7 +2,7 @@
 # such that their names have the 1st letter in common,
 # plus the names
 
-PREFIX ex: <https://exmaple.org/vocabulary/>
+PREFIX ex: <https://example.org/vocabulary/>
 PREFIX schema: <https://schema.org/>
 
 SELECT ?shop ?customerName ?employeeName
