@@ -5,5 +5,7 @@ Valentine created rdf/query/query-[34].sparql
 
 Jack created lpg/model/example.svg
 Jack created lpg/data/data.cypher
-
+Khanh created lpg/query/query-1.cypher
+Dmytro created lpg/query/query-2.cypher
+Valentine created lpg/query/query-3.cypher
 Jack created lpd/query/query-4.cypher
