@@ -36,7 +36,7 @@ ex:fullName a rdf:Property;
     rdfs:label "full name"@en;
     rdfs:description "The full name of the person"@en;
     rdfs:domain foaf:Person;
-    rdfs:range xsd:langString.
+    rdfs:range rdf:langString.
 
 ex:preparationTime a rdf:Property;
     rdfs:label "preparation time"@en;
