@@ -9,7 +9,7 @@
             <xs:sequence>
                 <xs:element name="Image" type="xs:string"/>
                 <xs:element name="Creation_date" type="xs:date"/>
-                <xs:element ref="Shop"/>
+                <xs:element ref="Shop" maxOccurs="unbounded" minOccurs="0"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
