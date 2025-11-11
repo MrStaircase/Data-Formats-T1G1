@@ -7,7 +7,7 @@
     <xs:element name="Visitors">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="Visitor" maxOccurs="unbounded"/>
+                <xs:element ref="Visitor" maxOccurs="unbounded" minOccurs="0"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -27,7 +27,7 @@
     <xs:element name="Shops">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="Shop" maxOccurs="unbounded"/>
+                <xs:element ref="Shop" maxOccurs="unbounded" minOccurs="0"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
