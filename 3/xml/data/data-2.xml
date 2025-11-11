@@ -10,7 +10,6 @@
     </Visitor>
 </Visitors>
   -->
-
 <Visitors xmlns="http://example.com/schema-2"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://example.com/schema-2 ../schemas/schema-2.xsd">

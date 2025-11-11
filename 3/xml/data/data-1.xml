@@ -6,62 +6,24 @@
       <Shop>
         <Name>Shop1</Name>
         <Capacity>10</Capacity>
-      </Shop>
-      <Shop>
-        <Name>Shop2</Name>
-        <Capacity>20</Capacity>
-      </Shop>
-      <Shop>
-        <Name>Shop3</Name>
-        <Capacity>30</Capacity>
-      </Shop>
-      <Shop>
-        <Name>Shop4</Name>
-        <Capacity>42</Capacity>
-      </Shop>
-      <Logos>
-      <Logo>
-        <Image>http://example.com/image2</Image>
-        <uploadDate>2025-04-03</uploadDate>
-    </Logo>
-    <Logo>
-        <Image>http://example.com/image3</Image>
-        <uploadDate>2025-06-05</uploadDate>
-    </Logo>
-    </Logos>
-        <Employees>
+          <Employees>
             <Employee>
                 <ID>1</ID>
                 <Salary>1000</Salary>
                 <Fullname>Dave</Fullname>
-          <Employee>
-            <ID>2</ID>
-            <Salary>1100</Salary>
-            <Fullname>Eve</Fullname>
-          </Employee>
-          <Employee>
-            <ID>3</ID>
-            <Salary>1200</Salary>
-            <Fullname>Crank</Fullname>
-          </Employee>
-          <Employee>
-            <ID>4</ID>
-            <Salary>1300</Salary>
-            <Fullname>Grace</Fullname>
-          </Employee>
+            </Employee>
         </Employees>
-        <Visitors>
-          <Visitor>
-            <Nickname>Bo</Nickname>
-            <Number_of_visits>3</Number_of_visits>
-            <Fullname>Bob</Fullname>
-          </Visitor>
-          <Visitor>
-            <Nickname>Cha</Nickname>
-            <Number_of_visits>4</Number_of_visits>
-            <Fullname>Charlie</Fullname>
-          </Visitor>
-        </Visitors>
+      </Shop>
+      <Shop>
+        <Name>Shop2</Name>
+        <Capacity>20</Capacity>
+        <Employees>
+            <Employee>
+                <ID>2</ID>
+                <Salary>1100</Salary>
+                <Fullname>Eve</Fullname>
+            </Employee>
+        </Employees>
         <Products>
           <Product>
             <Name>Coffee</Name>
@@ -69,14 +31,83 @@
             <Price>10</Price>
           </Product>
           <Product>
-            <Name>Sandwich</Name>
-            <Preparation_Time>120</Preparation_Time>
-            <Price>20</Price>
-          </Product>
-          <Product>
-            <Name>Ice cream</Name>
+            <Name>Ice-cream</Name>
             <Preparation_Time>140</Preparation_Time>
             <Price>30</Price>
           </Product>
         </Products>
+        <Visitors> 
+          <Visitor>
+            <Nickname>Bo</Nickname>
+            <Number_of_visits>3</Number_of_visits>
+            <Fullname>Bob</Fullname>
+          </Visitor>
+          <Visitor> 
+            <Nickname>Cha</Nickname>
+            <Number_of_visits>4</Number_of_visits>
+            <Fullname>Charlie</Fullname>
+          </Visitor>
+        </Visitors>
+        <Logos> 
+          <Logo>
+            <Image>http://example.com/image2</Image>
+            <uploadDate>2025-04-03</uploadDate>
+          </Logo>
+        </Logos>
+      </Shop>
+      <Shop>
+        <Name>Shop3</Name>
+        <Capacity>30</Capacity>
+        <Employees>
+            <Employee>
+                <ID>3</ID>
+                <Salary>1200</Salary>
+                <Fullname>Crank</Fullname>
+            </Employee>
+        </Employees>
+        <Products>
+          <Product>
+            <Name>Coffee</Name>
+            <Preparation_Time>100</Preparation_Time>
+            <Price>10</Price>
+          </Product>
+        </Products>
+        <Visitors> 
+          <Visitor>
+            <Nickname>Cha</Nickname>
+            <Number_of_visits>4</Number_of_visits>
+            <Fullname>Charlie</Fullname>
+          </Visitor>
+        </Visitors>
+        <Logos> 
+          <Logo>
+            <Image>http://example.com/image3</Image>
+            <uploadDate>2025-06-05</uploadDate>
+          </Logo>
+        </Logos>
+      </Shop>
+      <Shop>
+        <Name>Shop4</Name>
+        <Capacity>42</Capacity>
+        <Employees>
+            <Employee>
+                <ID>4</ID>
+                <Salary>1300</Salary>
+                <Fullname>Grace</Fullname>
+            </Employee>
+        </Employees>
+        <Products> 
+          <Product>
+            <Name>Sandwich</Name>
+            <Preparation_Time>120</Preparation_Time>
+            <Price>20</Price>
+          </Product>
+        </Products>
+        <Logos> 
+          <Logo>
+            <Image>http://example.com/image3</Image>
+            <uploadDate>2025-06-05</uploadDate>
+          </Logo>
+        </Logos>
+      </Shop>
     </Shops>
