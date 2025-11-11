@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Logos = xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+<Logos = xmlns:xs="http://www.w3.org/2001/XMLSchema"
            targetNamespace="http://example.com/schema-2"
            xmlns="http://example.com/schema-2"
            elementFormDefault="qualified">
-<Logos>
     <Logo>
         <Image>http://example.com/image2</Image>
         <uploadDate>2025-04-03</uploadDate>
@@ -71,3 +70,4 @@
         </Products>
     </Shops>
 </Logos>
+
