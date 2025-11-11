@@ -25,7 +25,7 @@
         </xs:complexType>
     </xs:element>
 
-    //Reference type for linnking to Shops 
+    //Reference type for linking to Shops 
     <xs:complexType name="ShopRefType">
         <xs:attribute name="iri" type="xs:anyURI" use="required"/>
     </xs:complexType>
