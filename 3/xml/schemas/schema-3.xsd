@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://example.com/schema-2"
+           xmlns="http://example.com/schema-2"
+           elementFormDefault="qualified">
+
+    <xs:element name="Visitor">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Nickname" type="xs:string"/>
+                <xs:element name="Number_of_visits" type="xs:int"/>
+                <xs:element name="Fullname" type="xs:string"/>
+                <xs:element name="Phone_numbers" maxOccurs="unbounded" minOccurs="0"/>
+                <xs:element ref="Shop"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Shop">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Name" type="xs:string"/>
+                <xs:element name="Capacity" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    </xs:schema>

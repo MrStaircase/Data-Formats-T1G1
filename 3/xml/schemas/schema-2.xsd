@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://example.com/schema-2"
+           xmlns="http://example.com/schema-2"
+           elementFormDefault="qualified">
+
+    <xs:element name="Logo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Image" type="xs:string"/>
+                <xs:element name="Creation_date" type="xs:date"/>
+                <xs:element ref="Shop"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Shop">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Name" type="xs:string"/>
+                <xs:element name="Capacity" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    </xs:schema>
