@@ -1,5 +1,6 @@
 Jack and Dmytro did the hierarchy models
 Valentyn and Khanh did the XML schemas 
 
-pending:
-khanh and dima will do the XML data.
+
+khanh and dima did the XML data.
+khanh fixed XMl schemas and data with IRIs.
