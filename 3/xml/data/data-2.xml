@@ -6,33 +6,20 @@
             <Nickname>Bo</Nickname>
             <Number_of_visits>3</Number_of_visits>
             <Fullname>Bob</Fullname>
-            <Shops>
-                <Shop>
-                    <Name>Shop2</Name>
-                    <Capacity>20</Capacity>
-                </Shop>
-            </Shops>
-          </Visitor>
-            <Visitor>
+            <ShopRef iri="https://example.org/resource/shop/2"/>
+        </Visitor>
+        
+        <Visitor>
             <Nickname>Cha</Nickname>
             <Number_of_visits>4</Number_of_visits>
             <Fullname>Charlie</Fullname>
-            <Shops>
-                <Shop>
-                    <Name>Shop2</Name>
-                    <Capacity>20</Capacity>
-                </Shop>
-                <Shop>
-                    <Name>Shop3</Name>
-                    <Capacity>30</Capacity>
-                </Shop>
-            </Shops>
-           </Visitor> 
-           <Visitor>
-                 <Nickname>Al</Nickname>
-                <Number_of_visits>2</Number_of_visits>
-                <Fullname>Alice</Fullname>
-                <Shops>
-                </Shops>
-           </Visitor>
+            <ShopRef iri="https://example.org/resource/shop/2"/>
+            <ShopRef iri="https://example.org/resource/shop/3"/>
+        </Visitor> 
+
+        <Visitor>
+            <Nickname>Al</Nickname>
+            <Number_of_visits>2</Number_of_visits>
+            <Fullname>Alice</Fullname>
+        </Visitor>
 </Visitors>
