@@ -19,25 +19,14 @@
                 <xs:element name="Number_of_visits" type="xs:int"/>
                 <xs:element name="Fullname" type="xs:string"/>
                 <xs:element name="Phone_number" maxOccurs="unbounded" minOccurs="0"/>
-                <xs:element ref="Shops"/>
+                // Each visitor can reference multiple shops by IRI
+                <xs:element name="ShopRef" type="ShopRefType" maxOccurs="unbounded" minOccurs="0"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="Shops">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element ref="Shop" maxOccurs="unbounded" minOccurs="0"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="Shop">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="Name" type="xs:string"/>
-                <xs:element name="Capacity" type="xs:int"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+    //Reference type for linnking to Shops 
+    <xs:complexType name="ShopRefType">
+        <xs:attribute name="iri" type="xs:anyURI" use="required"/>
+    </xs:complexType>
     </xs:schema>
