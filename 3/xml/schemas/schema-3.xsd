@@ -4,14 +4,28 @@
            xmlns="http://example.com/schema-2"
            elementFormDefault="qualified">
 
-    <xs:element name="Visitor">
+    <xs:element name="Logos">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Nickname" type="xs:string"/>
-                <xs:element name="Number_of_visits" type="xs:int"/>
-                <xs:element name="Fullname" type="xs:string"/>
-                <xs:element name="Phone_number" maxOccurs="unbounded" minOccurs="0"/>
-                <xs:element ref="Shop" maxOccurs="unbounded" minOccurs="0"/>
+                <xs:element ref="Logo" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Logo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Image" type="xs:string"/>
+                <xs:element name="Creation_date" type="xs:date"/>
+                <xs:element ref="Shop"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Shops">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Shop" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
