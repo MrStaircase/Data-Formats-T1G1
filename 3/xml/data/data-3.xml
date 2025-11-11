@@ -17,4 +17,18 @@
       </Shop>
     </Shops>
     </Logo>
+    <Logo>
+        <Image>http://example.com/image2</Image>
+        <uploadDate>2025-04-03</uploadDate>
+        <Shops>
+            <Shop>
+                <Name>Shop2</Name>
+                <Capacity>20</Capacity>
+            </Shop>
+        </Shops>
+    </Logo>
+    <Logo>
+        <Image>http://example.com/image1</Image>
+        <uploadDate>2025-02-01</uploadDate>
+    </Logo>
 </Logos>
