@@ -19,7 +19,7 @@
                 <xs:element name="Number_of_visits" type="xs:int"/>
                 <xs:element name="Fullname" type="xs:string"/>
                 <xs:element name="Phone_number" maxOccurs="unbounded" minOccurs="0"/>
-                <xs:element ref="Shop" maxOccurs="unbounded" minOccurs="0"/>
+                <xs:element ref="Shops"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

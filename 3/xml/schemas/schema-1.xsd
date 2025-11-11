@@ -17,10 +17,10 @@
       <xs:sequence>
         <xs:element name="Name" type="xs:string"/>
         <xs:element name="Capacity" type="xs:int"/>
-        <xs:element ref="Logo" maxOccurs="1" minOccurs="0"></xs:element>
-        <xs:element ref="Product" maxOccurs="unbounded" minOccurs="0"></xs:element>
-        <xs:element ref="Employee" maxOccurs="unbounded" minOccurs="1"></xs:element>
-        <xs:element ref="Visitor" maxOccurs="unbounded" minOccurs="0"></xs:element>
+        <xs:element ref="Logos" ></xs:element>
+        <xs:element ref="Products"  ></xs:element>
+        <xs:element ref="Employees" ></xs:element>
+        <xs:element ref="Visitors" ></xs:element>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -94,7 +94,7 @@
                 <xs:element name="Salary" type="xs:int"/>
                 <xs:element name="Fullname" type="xs:string"/>
                 <xs:element name="Phone_number" maxOccurs="unbounded" minOccurs="0"/>
-                <xs:element ref="Product" maxOccurs="unbounded" minOccurs="0"/>
+                <xs:element ref="Products"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
