@@ -22,6 +22,7 @@
         <xs:element ref="Employees" ></xs:element>
         <xs:element ref="Visitors" ></xs:element>
       </xs:sequence>
+      <xs:attribute name="iri" type="xs:anyURI" use="required"/>
     </xs:complexType>
   </xs:element>
 
@@ -39,13 +40,14 @@
               <xs:element name="Image" type="xs:string"/>
               <xs:element name="Creation_date" type="xs:date"/>
           </xs:sequence>
+          <xs:attribute name="iri" type="xs:anyURI" use="required"/>
       </xs:complexType>
     </xs:element>
 
     <xs:element name="Products">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="Products" maxOccurs="unbounded"/>
+                <xs:element ref="Product" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -56,7 +58,10 @@
               <xs:element name="Name" type="xs:string"/>
               <xs:element name="Preparation_time" type="xs:int"/>
               <xs:element name="Price" type="xs:int"/>
+              <!-- reference to employees who can made this product-->
+              <xs:element name="EmployeeRef" type="EmployeeType" maxOccurs="unbounded" minOccurs="0"/>
           </xs:sequence>
+        <xs:attribute name="iri" type="xs:anyURI" use="required"/>
       </xs:complexType>
     </xs:element>
 
@@ -76,6 +81,7 @@
                 <xs:element name="Fullname" type="xs:string"/>
                 <xs:element name="Phone_number" maxOccurs="unbounded" minOccurs="0"/>
             </xs:sequence>
+          <xs:attribute name="iri" type="xs:anyURI" use="required"/>
         </xs:complexType>
     </xs:element>
 
@@ -94,8 +100,18 @@
                 <xs:element name="Salary" type="xs:int"/>
                 <xs:element name="Fullname" type="xs:string"/>
                 <xs:element name="Phone_number" maxOccurs="unbounded" minOccurs="0"/>
-                <xs:element ref="Products"/>
+                <!-- reference to product made by this employee-->
+                <xs:element name="ProductRef" type="ProductRefType" maxOccurs="unbounded" minOccurs="0"/>
             </xs:sequence>
+          <xs:attribute name="iri" type="xs:anyURI" use="required"/>
         </xs:complexType>
     </xs:element>
+
+    <xs:complexType name="EmployeeRefType">
+        <xs:attribute name="iri" type="xs:anyURI" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="ProductRefType">
+        <xs:attribute name="iri" type="xs:anyURI" use="required"/>
+    </xs:complexType>
 </xs:schema>
