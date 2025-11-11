@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Logos = xmlns:xs="http://www.w3.org/2001/XMLSchema"
+<Logos xmlns:xs="http://www.w3.org/2001/XMLSchema"
            targetNamespace="http://example.com/schema-2"
            xmlns="http://example.com/schema-2"
            elementFormDefault="qualified">
@@ -70,4 +70,5 @@
         </Products>
     </Shops>
 </Logos>
+
 
