@@ -2,4 +2,4 @@ Jack and Dmytro did the hierarchy models
 Valentyn and Khanh did the XML schemas 
 
 pending:
-khanh and dima will do the XML data
+khanh and dima will do the XML data.
