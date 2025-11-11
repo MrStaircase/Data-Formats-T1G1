@@ -6,27 +6,16 @@
     <Logo>
         <Image>http://example.com/image3</Image>
         <uploadDate>2025-06-05</uploadDate>
-    <Shops>
-      <Shop>
-        <Name>Shop3</Name>
-        <Capacity>30</Capacity>
-      </Shop>
-      <Shop>
-        <Name>Shop4</Name>
-        <Capacity>42</Capacity>
-      </Shop>
-    </Shops>
+        <ShopRef iri="https://example.org/resource/shop/3"/>
+        <ShopRef iri="https://example.org/resource/shop/4"/>
     </Logo>
+
     <Logo>
         <Image>http://example.com/image2</Image>
         <uploadDate>2025-04-03</uploadDate>
-        <Shops>
-            <Shop>
-                <Name>Shop2</Name>
-                <Capacity>20</Capacity>
-            </Shop>
-        </Shops>
+        <ShopRef iri="https://example.org/resource/shop/2"/>
     </Logo>
+    
     <Logo>
         <Image>http://example.com/image1</Image>
         <uploadDate>2025-02-01</uploadDate>
