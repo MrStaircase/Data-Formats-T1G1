@@ -14,14 +14,14 @@
 
   <xs:element name="Shop">
     <xs:complexType>
-      <xs:sequence>
+      <xs:all>
         <xs:element name="Name" type="xs:string"/>
         <xs:element name="Capacity" type="xs:int"/>
-        <xs:element ref="Logos" ></xs:element>
-        <xs:element ref="Products"  ></xs:element>
-        <xs:element ref="Employees" ></xs:element>
-        <xs:element ref="Visitors" ></xs:element>
-      </xs:sequence>
+        <xs:element ref="Logos" minOccurs="0"/>
+        <xs:element ref="Products" minOccurs="0"/>
+        <xs:element ref="Employees" minOccurs="0"/>
+        <xs:element ref="Visitors" minOccurs="0"/>
+      </xs:all>
       <xs:attribute name="iri" type="xs:anyURI" use="required"/>
     </xs:complexType>
   </xs:element>
