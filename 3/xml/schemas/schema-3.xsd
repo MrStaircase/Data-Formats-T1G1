@@ -15,7 +15,7 @@
     <xs:element name="Logo">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Image" type="xs:string"/>
+                <xs:element name="Image" type="xs:anyURI"/>
                 <xs:element name="Creation_date" type="xs:date"/>
                 <!-- Each visitor can reference multiple shops by IRI --> 
                 <xs:element name="ShopRef" type="ShopRefType" maxOccurs="unbounded" minOccurs="0"/>

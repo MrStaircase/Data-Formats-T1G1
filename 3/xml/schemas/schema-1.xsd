@@ -37,7 +37,7 @@
   <xs:element name="Logo">
       <xs:complexType>
           <xs:sequence>
-              <xs:element name="Image" type="xs:string"/>
+              <xs:element name="Image" type="xs:anyURI"/>
               <xs:element name="Creation_date" type="xs:date"/>
           </xs:sequence>
           <xs:attribute name="iri" type="xs:anyURI" use="required"/>
