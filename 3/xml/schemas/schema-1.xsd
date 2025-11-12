@@ -59,7 +59,7 @@
               <xs:element name="Preparation_time" type="xs:int"/>
               <xs:element name="Price" type="xs:int"/>
               <!-- reference to employees who can made this product-->
-              <xs:element name="EmployeeRef" type="EmployeeType" maxOccurs="unbounded" minOccurs="0"/>
+              <xs:element name="EmployeeRef" type="EmployeeRefType" maxOccurs="unbounded" minOccurs="0"/>
           </xs:sequence>
         <xs:attribute name="iri" type="xs:anyURI" use="required"/>
       </xs:complexType>
