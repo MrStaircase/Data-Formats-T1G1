@@ -1,113 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Shops xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="http://example.com/schema-2"
-           xmlns="http://example.com/schema-2"
-           elementFormDefault="qualified">
-      <Shop>
-        <Name>Shop1</Name>
-        <Capacity>10</Capacity>
-          <Employees>
-            <Employee>
-                <ID>1</ID>
-                <Salary>1000</Salary>
-                <Fullname>Dave</Fullname>
-            </Employee>
-        </Employees>
-      </Shop>
-      <Shop>
-        <Name>Shop2</Name>
-        <Capacity>20</Capacity>
-        <Employees>
-            <Employee>
-                <ID>2</ID>
-                <Salary>1100</Salary>
-                <Fullname>Eve</Fullname>
-            </Employee>
-        </Employees>
-        <Products>
-          <Product>
-            <Name>Coffee</Name>
-            <Preparation_Time>100</Preparation_Time>
-            <Price>10</Price>
-          </Product>
-          <Product>
-            <Name>Ice-cream</Name>
-            <Preparation_Time>140</Preparation_Time>
-            <Price>30</Price>
-          </Product>
-        </Products>
-        <Visitors> 
-          <Visitor>
-            <Nickname>Bo</Nickname>
-            <Number_of_visits>3</Number_of_visits>
-            <Fullname>Bob</Fullname>
-          </Visitor>
-          <Visitor> 
-            <Nickname>Cha</Nickname>
-            <Number_of_visits>4</Number_of_visits>
-            <Fullname>Charlie</Fullname>
-          </Visitor>
-        </Visitors>
-        <Logos> 
-          <Logo>
-            <Image>http://example.com/image2</Image>
-            <uploadDate>2025-04-03</uploadDate>
-          </Logo>
-        </Logos>
-      </Shop>
-      <Shop>
-        <Name>Shop3</Name>
-        <Capacity>30</Capacity>
-        <Employees>
-            <Employee>
-                <ID>3</ID>
-                <Salary>1200</Salary>
-                <Fullname>Crank</Fullname>
-            </Employee>
-        </Employees>
-        <Products>
-          <Product>
-            <Name>Coffee</Name>
-            <Preparation_Time>100</Preparation_Time>
-            <Price>10</Price>
-          </Product>
-        </Products>
-        <Visitors> 
-          <Visitor>
-            <Nickname>Cha</Nickname>
-            <Number_of_visits>4</Number_of_visits>
-            <Fullname>Charlie</Fullname>
-          </Visitor>
-        </Visitors>
-        <Logos> 
-          <Logo>
-            <Image>http://example.com/image3</Image>
-            <uploadDate>2025-06-05</uploadDate>
-          </Logo>
-        </Logos>
-      </Shop>
-      <Shop>
-        <Name>Shop4</Name>
-        <Capacity>42</Capacity>
-        <Employees>
-            <Employee>
-                <ID>4</ID>
-                <Salary>1300</Salary>
-                <Fullname>Grace</Fullname>
-            </Employee>
-        </Employees>
-        <Products> 
-          <Product>
-            <Name>Sandwich</Name>
-            <Preparation_Time>120</Preparation_Time>
-            <Price>20</Price>
-          </Product>
-        </Products>
-        <Logos> 
-          <Logo>
-            <Image>http://example.com/image3</Image>
-            <uploadDate>2025-06-05</uploadDate>
-          </Logo>
-        </Logos>
-      </Shop>
-    </Shops>
+<Shops xmlns="http://example.com/schema-2"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://example.com/schema-2 ../schemas/schema-1.xsd">
+
+  <Shop iri="https://example.org/resource/shop/1">
+    <Name>Shop1</Name>
+    <Capacity>10</Capacity>
+    <Employees>
+      <Employee iri="https://example.org/resource/employee/1">
+        <Id>1</Id>
+        <Salary>1000</Salary>
+        <Fullname>Dave</Fullname>
+      </Employee>
+    </Employees>
+  </Shop>
+
+  <Shop iri="https://example.org/resource/shop/2">
+    <Name>Shop2</Name>
+    <Capacity>20</Capacity>
+    <Logos>
+      <Logo iri="https://example.org/resource/logo/2">
+        <Image>http://example.com/image2</Image>
+        <Creation_date>2025-04-03</Creation_date>
+      </Logo>
+    </Logos>
+    <Products>
+      <Product iri="https://example.org/resource/product/coffee">
+        <Name>Coffee</Name>
+        <Preparation_time>100</Preparation_time>
+        <Price>10</Price>
+      </Product>
+      <Product iri="https://example.org/resource/product/sandwich">
+        <Name>Sandwich</Name>
+        <Preparation_time>120</Preparation_time>
+        <Price>20</Price>
+      </Product>
+    </Products>
+    <Employees>
+      <Employee iri="https://example.org/resource/employee/2">
+        <Id>2</Id>
+        <Salary>1100</Salary>
+        <Fullname>Eve</Fullname>
+        <ProductRef iri="https://example.org/resource/product/coffee"/>
+        <ProductRef iri="https://example.org/resource/product/ice-cream"/>
+      </Employee>
+    </Employees>
+    <Visitors>
+      <Visitor iri="https://example.org/resource/customer/bo">
+        <Nickname>Bo</Nickname>
+        <Number_of_visits>3</Number_of_visits>
+        <Fullname>Bob</Fullname>
+      </Visitor>
+      <Visitor iri="https://example.org/resource/customer/cha">
+        <Nickname>Cha</Nickname>
+        <Number_of_visits>4</Number_of_visits>
+        <Fullname>Charlie</Fullname>
+      </Visitor>
+    </Visitors>
+  </Shop>
+
+  <Shop iri="https://example.org/resource/shop/3">
+    <Name>Shop3</Name>
+    <Capacity>30</Capacity>
+    <Logos>
+      <Logo iri="https://example.org/resource/logo/3">
+        <Image>http://example.com/image3</Image>
+        <Creation_date>2025-06-05</Creation_date>
+      </Logo>
+    </Logos>
+    <Products>
+      <Product iri="https://example.org/resource/product/ice-cream">
+        <Name>Ice cream</Name>
+        <Preparation_time>140</Preparation_time>
+        <Price>30</Price>
+      </Product>
+    </Products>
+    <Employees>
+      <Employee iri="https://example.org/resource/employee/3">
+        <Id>3</Id>
+        <Salary>1200</Salary>
+        <Fullname>Crank</Fullname>
+        <Phone_number>tel:+420123456789</Phone_number>
+        <ProductRef iri="https://example.org/resource/product/coffee"/>
+      </Employee>
+    </Employees>
+    <Visitors>
+      <Visitor iri="https://example.org/resource/customer/cha">
+        <Nickname>Cha</Nickname>
+        <Number_of_visits>4</Number_of_visits>
+        <Fullname>Charlie</Fullname>
+      </Visitor>
+    </Visitors>
+  </Shop>
+
+  <Shop iri="https://example.org/resource/shop/4">
+    <Name>Shop4</Name>
+    <Capacity>42</Capacity>
+    <Logos>
+      <Logo iri="https://example.org/resource/logo/3">
+        <Image>http://example.com/image3</Image>
+        <Creation_date>2025-06-05</Creation_date>
+      </Logo>
+    </Logos>
+    <Employees>
+      <Employee iri="https://example.org/resource/employee/4">
+        <Id>4</Id>
+        <Salary>1300</Salary>
+        <Fullname>Grace</Fullname>
+        <Phone_number>tel:+420987654321</Phone_number>
+        <Phone_number>tel:+420112233445</Phone_number>
+        <ProductRef iri="https://example.org/resource/product/sandwich"/>
+      </Employee>
+    </Employees>
+  </Shop>
+</Shops>
