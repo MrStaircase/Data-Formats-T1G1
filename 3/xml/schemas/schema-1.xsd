@@ -19,7 +19,7 @@
         <xs:element name="Capacity" type="xs:int"/>
         <xs:element ref="Logo" minOccurs="0"/>
         <xs:element ref="Products" minOccurs="0"/>
-        <xs:element ref="Employees" minOccurs="0"/>
+        <xs:element ref="Employees"/>
         <xs:element ref="Visitors" minOccurs="0"/>
       </xs:all>
       <xs:attribute name="iri" type="xs:anyURI" use="required"/>
