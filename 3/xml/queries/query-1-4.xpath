@@ -1,10 +1,10 @@
-(: Q3 — For every Employee list their full name
+(: Q4 — For every Employee list their full name
    and how many products they produce
 :)
 
 for $e in //Employee
 return
 concat(
-  $e/Fullname/text(),
+  $e/Fullname/text(), ", ",
   count($e/ProductRef)
 )
