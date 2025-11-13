@@ -18,12 +18,12 @@
   <Shop iri="https://example.org/resource/shop/2">
     <Name>Shop2</Name>
     <Capacity>20</Capacity>
-    <Logos>
-      <Logo iri="https://example.org/resource/logo/2">
-        <Image>http://example.com/image2</Image>
-        <Creation_date>2025-04-03</Creation_date>
-      </Logo>
-    </Logos>
+
+    <Logo iri="https://example.org/resource/logo/2">
+      <Image>http://example.com/image2</Image>
+      <Creation_date>2025-04-03</Creation_date>
+    </Logo>
+
     <Products>
       <Product iri="https://example.org/resource/product/coffee">
         <Name>Coffee</Name>
@@ -36,6 +36,7 @@
         <Price>20</Price>
       </Product>
     </Products>
+
     <Employees>
       <Employee iri="https://example.org/resource/employee/2">
         <Id>2</Id>
@@ -45,6 +46,7 @@
         <ProductRef iri="https://example.org/resource/product/ice-cream"/>
       </Employee>
     </Employees>
+
     <Visitors>
       <Visitor iri="https://example.org/resource/customer/bo">
         <Nickname>Bo</Nickname>
@@ -62,12 +64,12 @@
   <Shop iri="https://example.org/resource/shop/3">
     <Name>Shop3</Name>
     <Capacity>30</Capacity>
-    <Logos>
-      <Logo iri="https://example.org/resource/logo/3">
-        <Image>http://example.com/image3</Image>
-        <Creation_date>2025-06-05</Creation_date>
-      </Logo>
-    </Logos>
+
+    <Logo iri="https://example.org/resource/logo/3">
+      <Image>http://example.com/image3</Image>
+      <Creation_date>2025-06-05</Creation_date>
+    </Logo>
+
     <Products>
       <Product iri="https://example.org/resource/product/ice-cream">
         <Name>Ice cream</Name>
@@ -75,6 +77,7 @@
         <Price>30</Price>
       </Product>
     </Products>
+
     <Employees>
       <Employee iri="https://example.org/resource/employee/3">
         <Id>3</Id>
@@ -84,6 +87,7 @@
         <ProductRef iri="https://example.org/resource/product/coffee"/>
       </Employee>
     </Employees>
+
     <Visitors>
       <Visitor iri="https://example.org/resource/customer/cha">
         <Nickname>Cha</Nickname>
@@ -96,12 +100,12 @@
   <Shop iri="https://example.org/resource/shop/4">
     <Name>Shop4</Name>
     <Capacity>42</Capacity>
-    <Logos>
-      <Logo iri="https://example.org/resource/logo/3">
-        <Image>http://example.com/image3</Image>
-        <Creation_date>2025-06-05</Creation_date>
-      </Logo>
-    </Logos>
+
+    <Logo iri="https://example.org/resource/logo/3">
+      <Image>http://example.com/image3</Image>
+      <Creation_date>2025-06-05</Creation_date>
+    </Logo>
+
     <Employees>
       <Employee iri="https://example.org/resource/employee/4">
         <Id>4</Id>
@@ -113,4 +117,5 @@
       </Employee>
     </Employees>
   </Shop>
+
 </Shops>
