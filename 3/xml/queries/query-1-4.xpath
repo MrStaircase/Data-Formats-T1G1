@@ -1,0 +1,10 @@
+(: Q3 — For every Employee list their full name
+   and how many products they produce
+:)
+
+for $e in //Employee
+return
+concat(
+  $e/Fullname/text(),
+  count($e/ProductRef)
+)

@@ -1,6 +1,7 @@
-Jack and Dmytro did the hierarchy models
-Valentyn and Khanh did the XML schemas 
+Jack and Dmytro did the hierarchy models.
+Valentyn and Khanh did the XML schemas.
 
+Khanh and Dmytro did the XML data.
+Khanh fixed XMl schemas and data with IRIs.
 
-khanh and dima did the XML data.
-khanh fixed XMl schemas and data with IRIs.
+Jack and Valentyn did the XPath queries.
