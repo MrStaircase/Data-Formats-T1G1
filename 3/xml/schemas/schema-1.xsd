@@ -17,7 +17,7 @@
       <xs:all>
         <xs:element name="Name" type="xs:string"/>
         <xs:element name="Capacity" type="xs:int"/>
-        <xs:element ref="Logos" minOccurs="0"/>
+        <xs:element ref="Logo" minOccurs="0"/>
         <xs:element ref="Products" minOccurs="0"/>
         <xs:element ref="Employees" minOccurs="0"/>
         <xs:element ref="Visitors" minOccurs="0"/>
@@ -25,15 +25,8 @@
       <xs:attribute name="iri" type="xs:anyURI" use="required"/>
     </xs:complexType>
   </xs:element>
-
-    <xs:element name="Logos">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element ref="Logo" maxOccurs="unbounded"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
   
+<!--Logo is now single, i remove the Logos list -->
   <xs:element name="Logo">
       <xs:complexType>
           <xs:sequence>
@@ -58,8 +51,6 @@
               <xs:element name="Name" type="xs:string"/>
               <xs:element name="Preparation_time" type="xs:int"/>
               <xs:element name="Price" type="xs:int"/>
-              <!-- reference to employees who can made this product-->
-              <xs:element name="EmployeeRef" type="EmployeeRefType" maxOccurs="unbounded" minOccurs="0"/>
           </xs:sequence>
         <xs:attribute name="iri" type="xs:anyURI" use="required"/>
       </xs:complexType>
@@ -100,16 +91,12 @@
                 <xs:element name="Salary" type="xs:int"/>
                 <xs:element name="Fullname" type="xs:string"/>
                 <xs:element name="Phone_number" maxOccurs="unbounded" minOccurs="0"/>
-                <!-- reference to product made by this employee-->
+                <!-- reference to product made by this employee i.e Keep Employee -> Product reference-->
                 <xs:element name="ProductRef" type="ProductRefType" maxOccurs="unbounded" minOccurs="0"/>
             </xs:sequence>
           <xs:attribute name="iri" type="xs:anyURI" use="required"/>
         </xs:complexType>
     </xs:element>
-
-    <xs:complexType name="EmployeeRefType">
-        <xs:attribute name="iri" type="xs:anyURI" use="required"/>
-    </xs:complexType>
 
     <xs:complexType name="ProductRefType">
         <xs:attribute name="iri" type="xs:anyURI" use="required"/>
