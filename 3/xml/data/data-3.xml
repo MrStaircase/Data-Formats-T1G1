@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Logos xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="http://example.com/schema-2"
-           xmlns="http://example.com/schema-2"
-           elementFormDefault="qualified">
-    <Logo>
-        <Image>http://example.com/image3</Image>
-        <uploadDate>2025-06-05</uploadDate>
-        <ShopRef iri="https://example.org/resource/shop/3"/>
-        <ShopRef iri="https://example.org/resource/shop/4"/>
-    </Logo>
+<Logos xmlns="http://example.com/schema-2"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://example.com/schema-2 ../schemas/schema-3.xsd">
+  <Logo>
+    <Image>http://example.com/image3</Image>
+    <Creation_date>2025-06-05</Creation_date>
+    <ShopRef iri="https://example.org/resource/shop/3"/>
+    <ShopRef iri="https://example.org/resource/shop/4"/>
+  </Logo>
 
-    <Logo>
-        <Image>http://example.com/image2</Image>
-        <uploadDate>2025-04-03</uploadDate>
-        <ShopRef iri="https://example.org/resource/shop/2"/>
-    </Logo>
-    
-    <Logo>
-        <Image>http://example.com/image1</Image>
-        <uploadDate>2025-02-01</uploadDate>
-    </Logo>
+  <Logo>
+    <Image>http://example.com/image2</Image>
+    <Creation_date>2025-04-03</Creation_date>
+    <ShopRef iri="https://example.org/resource/shop/2"/>
+  </Logo>
+  
+  <Logo>
+    <Image>http://example.com/image1</Image>
+    <Creation_date>2025-02-01</Creation_date>
+  </Logo>
 </Logos>

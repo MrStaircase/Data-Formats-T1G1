@@ -1,0 +1,7 @@
+(: Q2 - Return all shops with their product count:)
+
+for $s in //Shop
+return
+concat ($s/Name, 
+  count($s//Product)
+)

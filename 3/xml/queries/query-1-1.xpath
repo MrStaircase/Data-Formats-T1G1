@@ -1,0 +1,5 @@
+(: Q1 - Return all Product names that are made by employees who work at shops that have a capacity greater than 20:)
+
+for $iri in //Shop[Capacity > 20]//Employee/ProductRef/@iri
+return
+//Product[@iri = $iri]/Name
