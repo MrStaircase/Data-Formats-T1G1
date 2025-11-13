@@ -1,0 +1,14 @@
+(: Q3 — For every person (Employees and Customers) list their full name,
+   a bool which is true if the person has at least one phone number,
+   and a quantity of the phone numbers the person has.
+:)
+
+for $person in /descendant::node()/Fullname/..  (: both Employees and Visitors have full name :)
+return
+concat(
+  concat(
+    concat($person/Fullname, " "),
+    concat(if (count($person/Phone_number) > 0) then "True" else "False", " ")
+  ),
+  count($person/Phone_number)
+)
