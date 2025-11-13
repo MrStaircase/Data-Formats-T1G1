@@ -2,7 +2,7 @@
 <Visitors xmlns="http://example.com/schema-2"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://example.com/schema-2 ../schemas/schema-2.xsd">
-        <Visitor>
+        <Visitor iri="https://example.org/resource/customer/1">
             <Nickname>Al</Nickname>
             <Number_of_visits>2</Number_of_visits>
             <Fullname>Alice</Fullname>
