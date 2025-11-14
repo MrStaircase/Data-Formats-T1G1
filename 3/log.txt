@@ -5,3 +5,5 @@ Khanh and Dmytro did the XML data.
 Khanh fixed XMl schemas and data with IRIs.
 
 Jack and Valentyn did the XPath queries.
+
+Jack and Khanh did the HTML translation. 
