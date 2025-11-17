@@ -1,0 +1,216 @@
+{
+    "@context": {
+        "ex": "https://example.org/vocabulary/",
+        "emp": "https://example.org/resource/employee/",
+        "cus": "https://example.org/resource/customer/",
+        "logo": "https://example.org/resource/logo/",
+        "image": "https://example.org/resource/image/",
+        "shop": "https://example.org/resource/shop/",
+        "prod": "https://example.org/resource/product/",
+
+        "schema": "https://schema.org/",
+        "rdf": "https://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "https://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "foaf": "http://xmlns.com/foaf/0.1/",
+
+        "Name": "schema:legalName",
+        "Logo": "schema:logo",
+        "Capacity": {
+            "@id": "ex:capacity",
+            "@type": "xsd:integer"
+        },
+        "Employees": {
+            "@id": "schema:employee"
+        },
+        "Visitors": {
+            "@id": "ex:serves"
+        },
+        "Products": {
+            "@id": "schema:owns"
+        },
+
+        "id": {
+            "@id": "schema:identifier",
+            "@type": "xsd:string"
+        },
+        "salary": {
+            "@id": "ex:salary",
+            "@type": "xsd:integer"
+        },
+        "fullname": {
+            "@id": "ex:fullName",
+            "@type": "rdf:langString",
+            "@language": "en"
+        },
+        "nickname": {
+            "@id": "foaf:nick",
+            "@type": "rdf:langString",
+            "@language": "en"
+        },
+        "numberOfVisits": {
+            "@id": "ex:numberOfVisits",
+            "@type": "xsd:integer"
+        },
+        "image_uri": {
+            "@id": "schema:image",
+            "@type": "schema:URL"
+        },
+        "creationDate":{
+            "@id": "schema:uploadDate",
+            "@type": "xsd:date"
+        },
+        "prepTime":{
+            "@id": "ex:preparationTime",
+            "@type": "xsd:integer"
+        },
+        "price":{
+            "@id": "ex:price",
+            "@type": "xsd:integer"
+        },
+        "name": {
+            "@id": "schema:name",
+            "@type": "rdf:langString",
+            "@language": "en"
+        }
+    },
+    "@graph":[ 
+        {
+            "@type": "schema:LocalBusiness",
+            "@id": "shop:1",
+            "Name": "shop1",
+            "Capacity": 10,
+            "Employees": [
+                {               
+                    "@id": "emp:1",
+                    "@type": "ex:Employee",
+                    "id": "1",
+                    "salary": 1000,
+                    "fullname": "Dave"
+                }
+            ]
+        }
+        ,
+        
+        {
+            "@type": "schema:LocalBusiness",
+            "@id": "shop:2",
+            "Name": "shop2",
+            "Capacity": 20,
+            "Employees": [
+                {               
+                    "@id": "emp:2",
+                    "@type": "ex:Employee",
+                    "id": "2",
+                    "salary": 1100,
+                    "fullname": "Eve"
+                }
+            ],
+            "Visitors":[
+                {
+                    "@id": "cus:2",
+                    "@type": "ex:Customer",
+                    "nickname": "Bo",
+                    "numberOfVisits": 3,
+                    "fullname": "Bob"
+                },
+                {
+                    "@id": "cus:3",
+                    "@type": "ex:Customer",
+                    "nickname": "Cha",
+                    "numberOfVisits": 4,
+                    "fullname": "Charlie"
+                }
+            ],
+            "Logo":{
+                "@id": "logo:2",
+                "@type": "schema:ImageObject",
+                "image_uri": "image:2",
+                "creationDate": "2025-04-03"
+            },
+
+            "Products": [
+                {
+                    "@id": "prod:1",
+                    "@type": "schema:Product",
+                    "name": "Coffee",
+                    "prepTime": 100,
+                    "price": 10
+                },
+                {
+                    "@id": "prod:2",
+                    "@type": "schema:Product",
+                    "name": "Sandwich",
+                    "prepTime": 120,
+                    "price": 20
+                }
+            ]
+        }
+        ,
+
+        {
+            "@type": "schema:LocalBusiness",
+            "@id": "shop:3",
+            "Name": "shop3",
+            "Capacity": 30,
+            "Employees": [
+                {
+                    "@id": "emp:3",
+                    "@type": "ex:Employee",
+                    "id": 3,
+                    "salary": 1200,
+                    "fullname": "Crank"
+                }
+            ],
+            "Visitors": [
+                {
+                    "@id": "cus:3",
+                    "@type": "ex:Customer",
+                    "nickname": "Cha",
+                    "numberOfVisits": 4,
+                    "fullname": "Charlie"
+
+                }
+            ],
+            "Logo": {
+                "@id": "logo:3",
+                "@type": "schema:ImageObject",
+                "image_uri": "image:3",
+                "creationDate": "2025-06-05"
+            },
+            "Products": [
+                {
+                    "@id": "prod:3",
+                    "@type": "schema:Product",
+                    "name": "Ice cream",
+                    "preparationTime": 140,
+                    "price": 30
+                }
+            ]
+        }
+        ,
+
+        {
+            "@id": "shop:4",
+            "@type": "schema:LocalBusiness",
+            "Name": "shop4",
+            "Capacity": 42,
+            "Employees": [
+                {
+                    "@id": "emp:4",
+                    "@type": "ex:Employee",
+                    "id": 4,
+                    "salary": 1300,
+                    "fullname": "Grace"
+                }
+            ],
+            "Logo": {
+                "@id": "logo:3",
+                "@type": "schema:ImageObject",
+                "image_uri": "image:3",
+                "creationDate": "2025-06-05"
+            }
+        }
+
+    ]
+}
