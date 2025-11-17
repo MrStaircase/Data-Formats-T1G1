@@ -8,3 +8,6 @@ Jack and Valentyn did the XPath queries.
 
 Jack and Khanh did the HTML translation. 
 Dmytro and Valentyn did the RDF translation.
+
+Jack and Khanh did the Json schemas and JSON-LD. 
+
