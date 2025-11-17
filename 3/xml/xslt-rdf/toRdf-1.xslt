@@ -2,7 +2,8 @@
 <xsl:stylesheet version="2.0" 
    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-   xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   xmlns:fn="http://www.w3.org/2005/xpath-functions"
+   xmlns:s="http://example.com/schema-2">
     <xsl:output method="text" encoding="UTF-8" />
     <xsl:variable name="prefix">https://ex.org/resource/</xsl:variable>
     
@@ -19,7 +20,7 @@
     @prefix rdf: &lt;https://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
     @prefix rdfs: &lt;https://www.w3.org/2000/01/rdf-schema#&gt; .
     @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-    @prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; 
+    @prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
     
     # Property Definitions
     ex:capacity a rdf:Property;
@@ -82,68 +83,103 @@
         rdfs:description "A customer"@en;
         rdfs:subClassOf foaf:Person.
 
+    # Actual Data
+
     # Data - Logos
-    <xsl:apply-templates select="//Logo"/>
+    <xsl:apply-templates select="//s:Logo"/>
     # Data - Shops
-    <xsl:apply-templates mode="M1"/>
+    <xsl:apply-templates select="//s:Shop"/>
     # Data - Customers
-    <xsl:apply-templates select="//Visitor"/>
+    <xsl:apply-templates select="//s:Visitor" mode="customer"/>
     # Data - Employees
-    <xsl:apply-templates select="//Employee"/>
+    <xsl:apply-templates select="//s:Employee" mode="employee"/>
 
     # Data - Products
-    <xsl:apply-templates select="//Product"/>
-
-
-    # TEST
-    <xsl:apply-template match="Shop" mode="M2"/>
+    <xsl:apply-templates select="//s:Product" mode="product"/>
     </xsl:template>
 
-    <xsl:template match="Shop" mode="M1">
-    <xsl:variable name="ShopIRI" select="concat('shop/', fn:position())"/>
-    <xsl:value-of select="$ShopIRI"/> a schema:LocalBusiness ;
-    schema:legalName <xsl:value-of select="Name"/> ;
-    ex:capacity <xsl:value-of select="Capacity"/> .
-    </xsl:template>
+<xsl:template match="s:Shop">
+    <xsl:value-of select="@iri"/> a schema:LocalBusiness;
+    schema:legalName "<xsl:value-of select="s:Name"/>"@en;
+    ex:capacity "<xsl:value-of select="s:Capacity"/>"^^xsd:integer;
+    <xsl:apply-templates select="s:Products/s:Product" mode="shop-product"/>
+    <xsl:apply-templates select="s:Logo" mode="shop-logo"/>
+    <xsl:apply-templates select="s:Visitors/s:Visitor" mode="shop-visitor"/>
+    <xsl:apply-templates select="s:Employees/s:Employee" mode="shop-employee"/>
+    <xsl:apply-templates select="." mode="shop-end"/>.
+
+</xsl:template>
+
+<xsl:template match="s:Product" mode="shop-product">
+    schema:owns <xsl:value-of select="@iri"/>;
+</xsl:template>
+
+<xsl:template match="s:Logo" mode="shop-logo">
+    schema:logo <xsl:value-of select="@iri"/>;
+</xsl:template>
+
+<xsl:template match="s:Visitor" mode="shop-visitor">
+    ex:serves <xsl:value-of select="@iri"/>;
+</xsl:template>
+
+<xsl:template match="s:Employee" mode="shop-employee">
+    schema:employee <xsl:value-of select="@iri"/>;
+</xsl:template>
+
+<xsl:template match="s:Shop" mode="shop-end"/>
+
+<xsl:template match="s:Logo">
+    <xsl:value-of select="@iri"/> a schema:ImageObject;
+    schema:image &lt;<xsl:value-of select="s:Image"/>&gt;;
+    schema:uploadDate "<xsl:value-of select="s:Creation_date"/>"^^xsd:date.
+
+</xsl:template>
+
+<xsl:template match="s:Product" mode="product">
+    <xsl:variable name="productIRI" select="@iri"/>
     
-    <xsl:template match="//Logo">
-    <xsl:variable name="LogoIRI" select="concat('logo/', fn:position())"/>
-    <xsl:value-of select="$LogoIRI"/> a schema:ImageObject ;
-    schema:image <xsl:value-of select="Image"/>;
-    schema:uploadDate <xsl:value-of select="Creation_date"/> .
-    </xsl:template>
-        
-    <xsl:template match="Shop" mode="M2">
-    <xsl:variable name="ShopIRI" select="concat('shop/', fn:position())"/>
-    <xsl:value-of select="$ShopIRI"/> a schema:LocalBusiness ;
-    schema:legalName <xsl:value-of select="Name"/> ;
-    ex:capacity <xsl:value-of select="Capacity"/> .
-    </xsl:template>
+    <xsl:value-of select="@iri"/> a schema:Product;
+    schema:name "<xsl:value-of select="s:Name"/>"@en;
+    ex:preparationTime "<xsl:value-of select="s:Preparation_time"/>"^^xsd:integer;
+    ex:price "<xsl:value-of select="s:Price"/>"^^xsd:integer;
+    <xsl:apply-templates select="../../../s:Employees/s:Employee[s:ProductRef[@iri = $productIRI]]" mode="product-manufacturer"/>
+    <xsl:apply-templates select="." mode="product-end"/>.
 
-    <xsl:template match="Visitor">
-    <xsl:variable name="CustomerIRI" select="concat('cus/', fn:position())"/>
-    <xsl:value-of select="$CustomerIRI"/> a ex:Customer ;
-    foaf:nick <xsl:value-of select="Nickname"/> ;
-    ex:numberOfVisits <xsl:value-of select="Number_of_visits"/> ;
-    ex:fullName <xsl:value-of select="Fullname"/> .
-    </xsl:template>
+</xsl:template>
 
-    <xsl:template match="Employee">
-    <xsl:variable name="EmployeeIRI" select="concat('emp/', fn:position())"/>
-    <xsl:value-of select="$EmployeeIRI"/> a ex:Employee ;
-    schema:identifier <xsl:value-of select="Id"/>
-    ex:salary <xsl:value-of select="Salary"/> ;
-    ex:fullName <xsl:value-of select="Fullname"/> .
-    </xsl:template>
+<xsl:template match="s:Employee" mode="product-manufacturer">
+    ex:hasManufactor <xsl:value-of select="@iri"/>;
+</xsl:template>
 
-    <xsl:template match="Product">
-    <xsl:variable name="ProductIRI" select="concat('prod/', fn:position())"/>
-    <xsl:value-of select="$ProductIRI"/> a schema:Product ;
-    schema:name <xsl:value-of select="Name"/>
-    ex:preparationTime <xsl:value-of select="Preparation_time"/> ;
-    ex:price <xsl:value-of select="Price"/> .
-    </xsl:template>
+<xsl:template match="s:Product" mode="product-end"/>
+
+<xsl:template match="s:Visitor" mode="customer">
+    <xsl:value-of select="@iri"/> a ex:Customer;
+    foaf:nick "<xsl:value-of select="s:Nickname"/>"@en;
+    ex:numberOfVisits "<xsl:value-of select="s:Number_of_visits"/>"^^xsd:integer;
+    ex:fullName "<xsl:value-of select="s:Fullname"/>"@en.
+
+</xsl:template>
+
+<xsl:template match="s:Employee" mode="employee">
+    <xsl:value-of select="@iri"/> a ex:Employee;
+    schema:identifier "<xsl:value-of select="s:Id"/>"^^xsd:string;
+    ex:salary "<xsl:value-of select="s:Salary"/>"^^xsd:integer;
+    ex:fullName "<xsl:value-of select="s:Fullname"/>"@en;
+    <xsl:apply-templates select="s:Phone_number" mode="phone"/>
+    <xsl:apply-templates select="." mode="employee-end"/>.
+
+</xsl:template>
+
+<xsl:template match="s:Phone_number" mode="phone">
+    foaf:phone &lt;<xsl:value-of select="."/>&gt;<xsl:apply-templates select="." mode="phone-separator"/>;
+</xsl:template>
+
+<xsl:template match="s:Phone_number[../s:Phone_number[2]]" mode="phone-separator">,</xsl:template>
+
+<xsl:template match="s:Phone_number" mode="phone-separator"/>
+
+<xsl:template match="s:Employee" mode="employee-end"/>
+
     <xsl:template match="text()" mode="#all"/>
 </xsl:stylesheet>
-
-
