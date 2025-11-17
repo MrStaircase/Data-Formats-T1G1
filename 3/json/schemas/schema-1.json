@@ -1,0 +1,199 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "http://example.com/shop.schema.json",
+    "title": "Shops",
+    "type": "array",
+    "items": {
+        "title": "Shop",
+        "description": "the Shop is the central entity of the model.",
+        "type": "object",
+        "properties": {
+            "iri":{
+                "description": "unique identifier",
+                "type": "string",
+                "format": "iri"
+            },
+            
+            "Name": {
+                "description": "the shop’s name.",
+                "type": "string"
+            }, 
+
+            "Capactiy": {
+                "description": "maximum number of people the shop can handle.",
+                "type": "integer"
+            },
+
+            "Logo": {
+                "$ref": "#/definitions/Logo"
+            },
+
+            "Employees": {
+                "description": "Employees of the shop",
+                "type": "array",
+                "items":{
+                    "$ref": "#/definitions/Employee"
+                },
+                "minItems": 1
+            },
+            
+            "Visitors": {
+                "description": "Employees of the shop",
+                "type": "array",
+                "items":{
+                    "$ref": "#/definitions/Visitor"
+                }
+            },
+
+            "Products": {
+                "description": "Employees of the shop",
+                "type": "array",
+                "items":{
+                    "$ref": "#/definitions/Product"
+                }
+            }
+        },
+        "required": [ "iri", "Name", "Capacity", "Employees" ]
+    },
+    "definitions": {
+        "Employee": {
+            "description": "Employess of the shop",
+            "type": "object",
+            "properties": {
+                "iri":{
+                    "description": "unique identifier",
+                    "type": "string",
+                    "format": "iri"
+                },
+
+                "id" : {
+                    "description": "ID of the employee",
+                    "type": "string"
+                },
+                
+                "fullname": {
+                    "description": "Name of the employee",
+                    "type": "string"
+                },
+
+                "salary": {
+                    "description": "Salary of the employee",
+                    "type": "number"
+                },
+
+                "phoneNumbers": {
+                    "description": "Phone numbers of the employee",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+
+                "ProductRef": {
+                    "description": "References to products handled by the employee",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "format": "iri-reference"
+                    }
+                }
+
+            },
+            "required": [ "iri", "id", "salary", "fullname" ]
+        },
+
+        "Visitor": {
+            "description": "Visitor of the shop",
+            "type": "object",
+            "properties": {    
+                "iri":{
+                    "description": "unique identifier",
+                    "type": "string",
+                    "format": "iri"
+                }, 
+
+                "fullname": {
+                    "description": "Name of the visitor",
+                    "type": "string"
+                },
+
+                "nickname": {
+                    "description": "Nickname of the visitor",
+                    "type": "string"
+                },
+
+                "numberOfVisits": {
+                    "description": "Number of visits of the visitor",
+                    "type": "integer"
+                },
+
+                "phoneNumbers": {
+                    "description": "Phone numbers of the employee",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            
+            "required": [ "iri", "fullname", "nickname", "numberOfVisits" ]
+        },
+
+        "Logo": {
+            "description": "The logo of the shop",
+            "type": "object",
+            "properties":{
+                "iri":{
+                    "description": "unique identifier",
+                    "type": "string",
+                    "format": "iri"
+                },
+
+                "image": {
+                    "description": "image of the shop's logo.",
+                    "type": "string",
+                    "format": "uri"
+                },
+
+                "creationDate": {
+                    "description": "date of creation of the logo.",
+                    "type": "string",
+                    "format": "date"
+                }
+
+            },
+            "required": [ "iri", "image", "creationDate" ]
+        },
+
+        
+
+        "Product": {
+            "description": "A product of the shop",
+            "type": "object",
+            "properties": {
+                "iri":{
+                    "description": "unique identifier",
+                    "type": "string",
+                    "format": "iri"
+                },
+
+                "name": {
+                    "description": "name of a product",
+                    "type": "string"
+                },
+
+                "prepTime": {
+                    "description": "estimated time (in minutes) required to prepare the product.",
+                    "type": "integer"
+                },
+
+                "price": {
+                    "description": "cost (in CZK) of the product.",
+                    "type": "integer"
+                }
+            },
+            "required": [ "iri", "name", "prepTime", "price" ]
+            
+        }
+    }
+}
