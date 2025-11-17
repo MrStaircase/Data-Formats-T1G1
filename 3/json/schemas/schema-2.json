@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://example.com/shop.schema.json",
+    "title": "Visitors Collection",
+    "description": "Collection of visitors",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/Visitor"
+    },
+
+    "definitions": {
+        "Visitor": {
+            "description": "Visitor of the shop",
+            "type": "object",
+            "properties": {
+                "iri":{
+                    "description": "unique identifier",
+                    "type": "string",
+                    "format": "iri"
+                },
+
+                "fullname": {
+                    "description": "Full name of the visitor",
+                    "type": "string"
+                },
+
+                "nickname": {
+                    "description": "Nickname of the visitor",
+                    "type": "string"
+                },
+
+                "numberOfVisits": {
+                    "description": "Number of visits of the visitor",
+                    "type": "integer"
+                },
+
+                "phoneNumbers": {
+                    "description": "Phone numbers of the employee",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [ "iri", "numberOfVisits", "fullname", "nickname"]
+        } 
+    }
+}
