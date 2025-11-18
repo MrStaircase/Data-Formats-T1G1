@@ -25,12 +25,12 @@
     </Logo>
 
     <Products>
-      <Product iri="https://example.org/resource/product/coffee">
+      <Product iri="https://example.org/resource/product/1">
         <Name>Coffee</Name>
         <Preparation_time>100</Preparation_time>
         <Price>10</Price>
       </Product>
-      <Product iri="https://example.org/resource/product/sandwich">
+      <Product iri="https://example.org/resource/product/2">
         <Name>Sandwich</Name>
         <Preparation_time>120</Preparation_time>
         <Price>20</Price>
@@ -42,18 +42,18 @@
         <Id>2</Id>
         <Salary>1100</Salary>
         <Fullname>Eve</Fullname>
-        <ProductRef iri="https://example.org/resource/product/coffee"/>
-        <ProductRef iri="https://example.org/resource/product/ice-cream"/>
+        <ProductRef iri="https://example.org/resource/product/1"/>
+        <ProductRef iri="https://example.org/resource/product/3"/>
       </Employee>
     </Employees>
 
     <Visitors>
-      <Visitor iri="https://example.org/resource/customer/bo">
+      <Visitor iri="https://example.org/resource/customer/2">
         <Nickname>Bo</Nickname>
         <Number_of_visits>3</Number_of_visits>
         <Fullname>Bob</Fullname>
       </Visitor>
-      <Visitor iri="https://example.org/resource/customer/cha">
+      <Visitor iri="https://example.org/resource/customer/3">
         <Nickname>Cha</Nickname>
         <Number_of_visits>4</Number_of_visits>
         <Fullname>Charlie</Fullname>
@@ -71,7 +71,7 @@
     </Logo>
 
     <Products>
-      <Product iri="https://example.org/resource/product/ice-cream">
+      <Product iri="https://example.org/resource/product/3">
         <Name>Ice cream</Name>
         <Preparation_time>140</Preparation_time>
         <Price>30</Price>
@@ -84,12 +84,12 @@
         <Salary>1200</Salary>
         <Fullname>Crank</Fullname>
         <Phone_number>tel:+420123456789</Phone_number>
-        <ProductRef iri="https://example.org/resource/product/coffee"/>
+        <ProductRef iri="https://example.org/resource/product/1"/>
       </Employee>
     </Employees>
 
     <Visitors>
-      <Visitor iri="https://example.org/resource/customer/cha">
+      <Visitor iri="https://example.org/resource/customer/3">
         <Nickname>Cha</Nickname>
         <Number_of_visits>4</Number_of_visits>
         <Fullname>Charlie</Fullname>
@@ -113,9 +113,10 @@
         <Fullname>Grace</Fullname>
         <Phone_number>tel:+420987654321</Phone_number>
         <Phone_number>tel:+420112233445</Phone_number>
-        <ProductRef iri="https://example.org/resource/product/sandwich"/>
+        <ProductRef iri="https://example.org/resource/product/2"/>
       </Employee>
     </Employees>
   </Shop>
 
 </Shops>
+
