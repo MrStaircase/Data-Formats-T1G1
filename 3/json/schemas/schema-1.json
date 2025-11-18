@@ -9,18 +9,18 @@
         "type": "object",
         "properties": {
             "iri":{
-                "description": "unique identifier",
+                "description": "Unique identifier",
                 "type": "string",
                 "format": "iri"
             },
             
             "Name": {
-                "description": "the shop’s name.",
+                "description": "The shop’s name.",
                 "type": "string"
             }, 
 
-            "Capactiy": {
-                "description": "maximum number of people the shop can handle.",
+            "Capacity": {
+                "description": "Maximum number of people the shop can handle.",
                 "type": "integer"
             },
 
@@ -38,7 +38,7 @@
             },
             
             "Visitors": {
-                "description": "Employees of the shop",
+                "description": "Visitors of the shop",
                 "type": "array",
                 "items":{
                     "$ref": "#/definitions/Visitor"
@@ -46,7 +46,7 @@
             },
 
             "Products": {
-                "description": "Employees of the shop",
+                "description": "Products of the shop",
                 "type": "array",
                 "items":{
                     "$ref": "#/definitions/Product"
@@ -57,7 +57,7 @@
     },
     "definitions": {
         "Employee": {
-            "description": "Employess of the shop",
+            "description": "An Employee working in the shop",
             "type": "object",
             "properties": {
                 "iri":{
@@ -72,7 +72,7 @@
                 },
                 
                 "fullname": {
-                    "description": "Name of the employee",
+                    "description": "Full name of the employee",
                     "type": "string"
                 },
 
