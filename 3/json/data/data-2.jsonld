@@ -1,0 +1,32 @@
+[
+  {
+    "@context": {
+      "ex": "https://example.org/vocabulary/",
+      "cus": "https://example.org/resource/customer/",
+      "foaf": "http://xmlns.com/foaf/0.1/",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+      "fullname": {
+        "@id": "ex:fullName",
+        "@language": "en"
+      },
+      "nickname": {
+        "@id": "foaf:nick",
+        "@language": "en"
+      },
+      "numberOfVisits": {
+        "@id": "ex:numberOfVisits",
+        "@type": "xsd:integer"
+      },
+      "phoneNumbers": {
+        "@id": "foaf:phone",
+        "@type": "@id"
+      }
+    },
+    "@id": "cus:1",
+    "@type": "ex:Customer",
+    "fullname": "Alice",
+    "nickname": "Al",
+    "numberOfVisits": 2
+  }
+]
