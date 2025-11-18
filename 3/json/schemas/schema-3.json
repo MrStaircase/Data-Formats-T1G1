@@ -13,12 +13,6 @@
             "description": "The logo of the shop",
             "type": "object",
             "properties":{
-                "iri":{
-                    "description": "unique identifier",
-                    "type": "string",
-                    "format": "iri"
-                },
-
                 "image": {
                     "description": "image of the shop's logo.",
                     "type": "string",
@@ -32,7 +26,7 @@
                 }
 
             },
-            "required": [ "iri", "image", "creationDate" ]
+            "required": [ "image", "creationDate" ]
         }
     }
 }

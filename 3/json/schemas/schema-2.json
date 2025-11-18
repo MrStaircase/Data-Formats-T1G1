@@ -13,12 +13,6 @@
             "description": "Visitor of the shop",
             "type": "object",
             "properties": {
-                "iri":{
-                    "description": "unique identifier",
-                    "type": "string",
-                    "format": "iri"
-                },
-
                 "fullname": {
                     "description": "Full name of the visitor",
                     "type": "string"
@@ -42,7 +36,7 @@
                     }
                 }
             },
-            "required": [ "iri", "numberOfVisits", "fullname", "nickname"]
+            "required": [ "numberOfVisits", "fullname", "nickname"]
         } 
     }
 }
