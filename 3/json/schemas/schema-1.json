@@ -8,12 +8,6 @@
         "description": "the Shop is the central entity of the model.",
         "type": "object",
         "properties": {
-            "iri":{
-                "description": "unique identifier",
-                "type": "string",
-                "format": "iri"
-            },
-            
             "Name": {
                 "description": "the shop’s name.",
                 "type": "string"
@@ -53,19 +47,13 @@
                 }
             }
         },
-        "required": [ "iri", "Name", "Capacity", "Employees" ]
+        "required": [ "Name", "Capacity", "Employees" ]
     },
     "definitions": {
         "Employee": {
             "description": "Employess of the shop",
             "type": "object",
             "properties": {
-                "iri":{
-                    "description": "unique identifier",
-                    "type": "string",
-                    "format": "iri"
-                },
-
                 "id" : {
                     "description": "ID of the employee",
                     "type": "string"
@@ -99,19 +87,13 @@
                 }
 
             },
-            "required": [ "iri", "id", "salary", "fullname" ]
+            "required": [ "id", "salary", "fullname" ]
         },
 
         "Visitor": {
             "description": "Visitor of the shop",
             "type": "object",
-            "properties": {    
-                "iri":{
-                    "description": "unique identifier",
-                    "type": "string",
-                    "format": "iri"
-                }, 
-
+            "properties": {
                 "fullname": {
                     "description": "Name of the visitor",
                     "type": "string"
@@ -136,19 +118,13 @@
                 }
             },
             
-            "required": [ "iri", "fullname", "nickname", "numberOfVisits" ]
+            "required": [ "fullname", "nickname", "numberOfVisits" ]
         },
 
         "Logo": {
             "description": "The logo of the shop",
             "type": "object",
             "properties":{
-                "iri":{
-                    "description": "unique identifier",
-                    "type": "string",
-                    "format": "iri"
-                },
-
                 "image": {
                     "description": "image of the shop's logo.",
                     "type": "string",
@@ -162,7 +138,7 @@
                 }
 
             },
-            "required": [ "iri", "image", "creationDate" ]
+            "required": [ "image", "creationDate" ]
         },
 
         
@@ -171,12 +147,6 @@
             "description": "A product of the shop",
             "type": "object",
             "properties": {
-                "iri":{
-                    "description": "unique identifier",
-                    "type": "string",
-                    "format": "iri"
-                },
-
                 "name": {
                     "description": "name of a product",
                     "type": "string"
@@ -192,8 +162,9 @@
                     "type": "integer"
                 }
             },
-            "required": [ "iri", "name", "prepTime", "price" ]
+            "required": [ "name", "prepTime", "price" ]
             
         }
     }
 }
+
