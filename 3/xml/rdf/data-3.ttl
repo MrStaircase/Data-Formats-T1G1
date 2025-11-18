@@ -1,0 +1,11 @@
+
+@prefix logo: <https://example.org/resource/logo/> .
+@prefix image: <https://example.org/resource/image/> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Data - Logos
+
+logo:1 a schema:ImageObject;
+    schema:image image:1;
+    schema:uploadDate "2025-02-01"^^xsd:date.
