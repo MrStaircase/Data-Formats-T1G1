@@ -1,0 +1,238 @@
+
+@prefix ex: <https://example.org/vocabulary/> .
+@prefix emp: <https://example.org/resource/employee/> .
+@prefix cus: <https://example.org/resource/customer/> .
+@prefix logo: <https://example.org/resource/logo/> .
+@prefix image: <https://example.org/resource/image/> .
+@prefix shop: <https://example.org/resource/shop/> .
+@prefix prod: <https://example.org/resource/product/> .
+
+@prefix schema: <https://schema.org/> .
+@prefix rdf: <https://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <https://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+# Property Definitions
+
+ex:capacity a rdf:Property;
+    rdfs:label "capacity"@en;
+    rdfs:description "The amount of customers that the business can handle."@en;
+    rdfs:domain schema:LocalBusiness;
+    rdfs:range xsd:integer.
+
+ex:salary a rdf:Property;
+    rdfs:label "salary"@en;
+    rdfs:description "The amount of CZK that the employee gets every month."@en;
+    rdfs:domain ex:Employee;
+    rdfs:range xsd:integer.
+
+ex:numberOfVisits a rdf:Property;
+    rdfs:label "number of visits"@en;
+    rdfs:description "The number of times that a customer has visited any of the shops"@en;
+    rdfs:domain ex:Customer;
+    rdfs:range xsd:integer.
+
+ex:fullName a rdf:Property;
+    rdfs:label "full name"@en;
+    rdfs:description "The full name of the person"@en;
+    rdfs:domain foaf:Person;
+    rdfs:range rdf:langString.
+
+ex:preparationTime a rdf:Property;
+    rdfs:label "preparation time"@en;
+    rdfs:description "The amount of time, in minutes, it takes to make this product"@en;
+    rdfs:domain schema:Product;
+    rdfs:range xsd:integer.
+
+ex:price a rdf:Property;
+    rdfs:label "price"@en;
+    rdfs:description "The price, in CZK, of the product"@en;
+    rdfs:domain schema:Product;
+    rdfs:range xsd:integer.
+
+ex:hasManufactor a rdf:Property;
+    rdfs:label "has manufactor"@en;
+    rdfs:description "This product can be made by an employee"@en;
+    rdfs:domain schema:Product;
+    rdfs:range ex:Employee.
+
+ex:serves a rdf:Property;
+    rdfs:label "serves"@en;
+    rdfs:description "This business serves a customer"@en;
+    rdfs:domain schema:LocalBusiness;
+    rdfs:range ex:Customer.
+
+# Class Definitions
+
+ex:Employee a rdfs:Class;
+    rdfs:label "Employee"@en;
+    rdfs:description "An employee"@en;
+    rdfs:subClassOf foaf:Person.
+
+ex:Customer a rdfs:Class;
+    rdfs:label "Customer"@en;
+    rdfs:description "A customer"@en;
+    rdfs:subClassOf foaf:Person.
+
+# Actual Data
+
+# Data - Logos
+
+logo:2 a schema:ImageObject;
+    schema:image image:2;
+    schema:uploadDate "2025-04-03"^^xsd:date.
+
+
+logo:3 a schema:ImageObject;
+    schema:image image:3;
+    schema:uploadDate "2025-06-05"^^xsd:date.
+
+
+logo:3 a schema:ImageObject;
+    schema:image image:3;
+    schema:uploadDate "2025-06-05"^^xsd:date.
+
+
+# Data - Shops
+
+shop:1 a schema:LocalBusiness;
+    schema:legalName "shop1"@en;
+    ex:capacity "10"^^xsd:integer.
+
+
+shop:2 a schema:LocalBusiness;
+    schema:legalName "shop2"@en;
+    ex:capacity "20"^^xsd:integer.
+
+
+shop:3 a schema:LocalBusiness;
+    schema:legalName "shop3"@en;
+    ex:capacity "30"^^xsd:integer.
+
+
+shop:4 a schema:LocalBusiness;
+    schema:legalName "shop4"@en;
+    ex:capacity "42"^^xsd:integer.
+
+
+# Data - Customers
+
+cus:2 a ex:Customer;
+    foaf:nick "Bo"@en;
+    ex:numberOfVisits "3"^^xsd:integer;
+    ex:fullName "Bob"@en.
+
+
+cus:3 a ex:Customer;
+    foaf:nick "Cha"@en;
+    ex:numberOfVisits "4"^^xsd:integer;
+    ex:fullName "Charlie"@en.
+
+
+# Data - Employees
+
+emp:1 a ex:Employee;
+    schema:identifier "1"^^xsd:string;
+    ex:salary "1000"^^xsd:integer;
+    ex:fullName "Dave"@en.
+
+
+emp:2 a ex:Employee;
+    schema:identifier "2"^^xsd:string;
+    ex:salary "1100"^^xsd:integer;
+    ex:fullName "Eve"@en.
+
+
+emp:3 a ex:Employee;
+    schema:identifier "3"^^xsd:string;
+    ex:salary "1200"^^xsd:integer;
+    ex:fullName "Crank"@en;
+    foaf:phone <tel:+420123456789>.
+
+
+emp:4 a ex:Employee;
+    schema:identifier "4"^^xsd:string;
+    ex:salary "1300"^^xsd:integer;
+    ex:fullName "Grace"@en;
+    foaf:phone <tel:+420987654321>,
+        <tel:+420112233445>.
+
+
+# Data - Products
+
+prod:1 a schema:Product;
+    schema:name "Coffee"@en;
+    ex:preparationTime "100"^^xsd:integer;
+    ex:price "10"^^xsd:integer.
+
+
+prod:2 a schema:Product;
+    schema:name "Sandwich"@en;
+    ex:preparationTime "120"^^xsd:integer;
+    ex:price "20"^^xsd:integer.
+
+
+prod:3 a schema:Product;
+    schema:name "Ice cream"@en;
+    ex:preparationTime "140"^^xsd:integer;
+    ex:price "30"^^xsd:integer.
+
+
+
+# Relations
+
+    # Relation - shop -> customer
+
+shop:2 ex:serves cus:2,
+                 cus:3.
+
+
+shop:3 ex:serves cus:3.
+
+
+    # Relation - shop -> employee
+
+shop:1 schema:employee emp:1.
+
+
+shop:2 schema:employee emp:2.
+
+
+shop:3 schema:employee emp:3.
+
+
+shop:4 schema:employee emp:4.
+
+
+    # Relation - shop -> product
+
+shop:2 schema:owns prod:1,
+                   prod:2.
+
+
+shop:3 schema:owns prod:3.
+
+
+    # Relation - shop -> logo
+
+shop:2 schema:logo logo:2.
+
+
+shop:3 schema:logo logo:3.
+
+
+shop:4 schema:logo logo:3.
+
+
+    # Relation - product -> employee
+
+prod:1 ex:hasManufactor emp:2,
+                        emp:3.
+
+
+prod:3 ex:hasManufactor emp:2.
+
+
+prod:2 ex:hasManufactor emp:4.
+
