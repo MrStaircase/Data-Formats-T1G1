@@ -125,7 +125,7 @@
             "description": "The logo of the shop",
             "type": "object",
             "properties":{
-                "image": {
+                "image_uri": {
                     "description": "image of the shop's logo.",
                     "type": "string",
                     "format": "uri"
