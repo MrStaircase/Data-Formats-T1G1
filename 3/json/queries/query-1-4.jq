@@ -1,1 +1,1 @@
-jq '.[].Employees | . | .[] | { name: .fullname, produces_products: .Products | length }'
+.Shops[].Employees[] | { name: .fullname, produces_products: .ProductRef | length }
