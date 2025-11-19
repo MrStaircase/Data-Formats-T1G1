@@ -7,8 +7,8 @@ for $person in /descendant::node()/Fullname/..  (: both Employees and Visitors h
 return
 concat(
   concat(
-    concat($person/Fullname/text(), " "),
-    concat(if (count($person/Phone_number) > 0) then "True" else "False", " ")
+    concat($person/Fullname/text(), ", "),
+    concat(if (count($person/Phone_number) > 0) then "True" else "False", ", ")
   ),
   count($person/Phone_number)
 )
