@@ -1,16 +1,22 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "http://example.com/shop.schema.json",
-    "title": "Visitors Collection",
-    "description": "Collection of visitors",
-    "type": "array",
-    "items": {
-        "$ref": "#/definitions/Visitor"
+    "title": "root",
+    "type": "object",
+    "properties": {
+        "Visitors": {
+            "title": "Visitors Collection",
+            "description": "Collection of visitors",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Visitor"
+            }
+        }
     },
-
+    "required": [ "Visitors" ],
     "definitions": {
         "Visitor": {
-            "description": "Visitor of the shop",
+            "description": "A visitor",
             "type": "object",
             "properties": {
                 "fullname": {
