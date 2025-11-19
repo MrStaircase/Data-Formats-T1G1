@@ -77,6 +77,9 @@
         },
         "ProductRef":{
             "@reverse": "ex:hasManufactor"
+        },
+        "phoneNumbers":{
+            "@id": "foaf:phone"
         }
     },
     "Shops":[ 
@@ -167,7 +170,8 @@
                     "id": "3",
                     "salary": 1200,
                     "fullname": "Crank",
-                    "ProductRef": [{"@id": "prod:1"}]
+                    "ProductRef": [{"@id": "prod:1"}],
+                    "phoneNumbers": [{"@id": "<tel:+420123456789>"}]
                 }
             ],
             "Visitors": [
@@ -210,7 +214,8 @@
                     "id": "4",
                     "salary": 1300,
                     "fullname": "Grace",
-                    "ProductRef": [{"@id": "prod:2"}]
+                    "ProductRef": [{"@id": "prod:2"}],
+                    "phoneNumbers": [{"@id": "<tel:+420987654321>"}, {"@id": "<tel:+420112233445>"}]
                 }
             ],
             "Logo": {
