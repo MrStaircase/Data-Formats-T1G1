@@ -1,19 +1,26 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "http://example.com/shop.schema.json",
-    "title": "Logos Collection",
-    "description": "Collection of logos",
-    "type": "array",
-    "items": {
-        "$ref": "#/definitions/Logo"
+    "title": "root",
+    "$type": "object",
+    "properties": {
+        "Logos" : {       
+            "title": "Logos Collection",
+            "description": "Collection of logos",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Logo"
+            }
+        }  
     },
-
+    "required": ["Logos"],
+    
     "definitions": {
         "Logo": {
             "description": "The logo of the shop",
             "type": "object",
             "properties":{
-                "image": {
+                "image_uri": {
                     "description": "image of the shop's logo.",
                     "type": "string",
                     "format": "uri"
@@ -26,7 +33,9 @@
                 }
 
             },
-            "required": [ "image", "creationDate" ]
+            "required": [ "image_uri", "creationDate" ]
         }
     }
 }
+
+
