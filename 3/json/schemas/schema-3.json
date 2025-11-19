@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "http://example.com/shop.schema.json",
     "title": "root",
-    "$type": "object",
+    "type": "object",
     "properties": {
         "Logos" : {       
             "title": "Logos Collection",
@@ -14,7 +14,7 @@
         }  
     },
     "required": ["Logos"],
-    
+
     "definitions": {
         "Logo": {
             "description": "The logo of the shop",
