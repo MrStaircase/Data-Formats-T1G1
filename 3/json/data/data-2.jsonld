@@ -6,29 +6,27 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
 
     "fullname": {
-      "@id": "ex:fullName",
-      "@language": "en"
+        "@id": "ex:fullName",
+        "@type": "rdf:langString",
+        "@language": "en"
     },
     "nickname": {
       "@id": "foaf:nick",
+      "@type": "rdf:langString",
       "@language": "en"
     },
     "numberOfVisits": {
       "@id": "ex:numberOfVisits",
       "@type": "xsd:integer"
-    },
-    "phoneNumbers": {
-      "@id": "foaf:phone",
-      "@type": "@id"
     }
   },
   "@graph": [
     {
-      "@type": "ex:Customer",
       "@id": "cus:1",
-      "fullname": "Alice",
+      "@type": "ex:Customer",
       "nickname": "Al",
-      "numberOfVisits": 2
+      "numberOfVisits": 2,
+      "fullname": "Alice"
     }
   ]
 }
