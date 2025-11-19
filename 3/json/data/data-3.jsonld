@@ -6,9 +6,9 @@
     "schema": "https://schema.org/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
 
-    "image": {
+    "image_uri": {
       "@id": "schema:image",
-      "@type": "@id"
+      "@type": "schema:URL"
     },
     "creationDate": {
       "@id": "schema:uploadDate",
@@ -17,9 +17,9 @@
   },
   "@graph": [
     {
-      "@type": "schema:ImageObject",
       "@id": "logo:1",
-      "image": "https://example.org/resource/image/1",
+      "@type": "schema:ImageObject",
+      "image_uri": "image:1",
       "creationDate": "2025-02-01"
     }
   ]
