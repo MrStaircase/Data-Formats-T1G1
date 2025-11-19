@@ -87,12 +87,9 @@ ex:Customer a rdfs:Class;
 # Actual Data
 
 # Data - Logos
-<xsl:for-each select="//s:Logo">
-  <xsl:variable name="logoIRI" select="@iri"/>
-  <xsl:variable name="firstWithIRI" select="//s:Logo[@iri = $logoIRI][1]"/>
-  <xsl:variable name="thisNode" select="."/>
-  <xsl:apply-templates select=".[count($thisNode | $firstWithIRI) = count($firstWithIRI)]"/>
-</xsl:for-each>
+<xsl:for-each-group select="//s:Logo" group-by="@iri">
+  <xsl:apply-templates select="current-group()[1]"/>
+</xsl:for-each-group>
 # Data - Shops
 <xsl:apply-templates select="//s:Shop"/>
 # Data - Customers
@@ -237,3 +234,4 @@ prod:<xsl:value-of select="substring-after(@iri, 'https://example.org/resource/p
     <xsl:template match="text()" mode="#all"/>
 
 </xsl:stylesheet>
+
