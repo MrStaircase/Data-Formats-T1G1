@@ -90,13 +90,12 @@
                     "description": "References to products handled by the employee",
                     "type": "array",
                     "items": {
-                        "type": "string",
-                        "format": "iri-reference"
+                        "type": "object"
                     }
                 }
 
             },
-            "required": [ "id", "salary", "fullname" ]
+            "required": [ "id", "salary", "fullname", "ProductRef" ]
         },
 
         "Visitor": {

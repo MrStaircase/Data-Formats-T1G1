@@ -74,6 +74,9 @@
             "@id": "schema:name",
             "@type": "rdf:langString",
             "@language": "en"
+        },
+        "ProductRef":{
+            "@reverse": "ex:hasManufactor"
         }
     },
     "Shops":[ 
@@ -88,7 +91,8 @@
                     "@type": "ex:Employee",
                     "id": "1",
                     "salary": 1000,
-                    "fullname": "Dave"
+                    "fullname": "Dave",
+                    "ProductRef": []
                 }
             ]
         }
@@ -105,7 +109,8 @@
                     "@type": "ex:Employee",
                     "id": "2",
                     "salary": 1100,
-                    "fullname": "Eve"
+                    "fullname": "Eve",
+                    "ProductRef": [{"@id": "prod:1"}, {"@id": "prod:3"}]
                 }
             ],
             "Visitors":[
@@ -161,7 +166,8 @@
                     "@type": "ex:Employee",
                     "id": "3",
                     "salary": 1200,
-                    "fullname": "Crank"
+                    "fullname": "Crank",
+                    "ProductRef": [{"@id": "prod:1"}]
                 }
             ],
             "Visitors": [
@@ -203,7 +209,8 @@
                     "@type": "ex:Employee",
                     "id": "4",
                     "salary": 1300,
-                    "fullname": "Grace"
+                    "fullname": "Grace",
+                    "ProductRef": [{"@id": "prod:2"}]
                 }
             ],
             "Logo": {
