@@ -183,7 +183,7 @@
                     "@id": "prod:3",
                     "@type": "schema:Product",
                     "name": "Ice cream",
-                    "preparationTime": 140,
+                    "prepTime": 140,
                     "price": 30
                 }
             ]
