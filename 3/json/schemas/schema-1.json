@@ -57,6 +57,7 @@
         }
 
     },
+    "required": [ "Shops" ],
     "definitions": {
         "Employee": {
             "description": "An Employee working in the shop",
@@ -146,7 +147,7 @@
                 }
 
             },
-            "required": [ "image", "creationDate" ]
+            "required": [ "image_uri", "creationDate" ]
         },
 
         
