@@ -1,53 +1,61 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "http://example.com/shop.schema.json",
-    "title": "Shops",
-    "type": "array",
-    "items": {
-        "title": "Shop",
-        "description": "the Shop is the central entity of the model.",
-        "type": "object",
-        "properties": {
-            "Name": {
-                "description": "The shop’s name.",
-                "type": "string"
-            }, 
+    "title": "root",
+    "type": "object",
+    "properties": {
+        "Shops": {
+            "title": "Shops",
+            "type": "array",
+            "items": {
+                "title": "Shop",
+                "description": "the Shop is the central entity of the model.",
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "description": "The shop’s name.",
+                        "type": "string"
+                    }, 
 
-            "Capacity": {
-                "description": "Maximum number of people the shop can handle.",
-                "type": "integer"
-            },
+                    "Capacity": {
+                        "description": "Maximum number of people the shop can handle.",
+                        "type": "integer"
+                    },
 
-            "Logo": {
-                "$ref": "#/definitions/Logo"
-            },
+                    "Logo": {
+                        "$ref": "#/definitions/Logo"
+                    },
 
-            "Employees": {
-                "description": "Employees of the shop",
-                "type": "array",
-                "items":{
-                    "$ref": "#/definitions/Employee"
+                    "Employees": {
+                        "description": "Employees of the shop",
+                        "type": "array",
+                        "items":{
+                            "$ref": "#/definitions/Employee"
+                        },
+                        "minItems": 1
+                    },
+                    
+                    "Visitors": {
+                        "description": "Visitors of the shop",
+                        "type": "array",
+                        "items":{
+                            "$ref": "#/definitions/Visitor"
+                        }
+                    },
+
+                    "Products": {
+                        "description": "Products of the shop",
+                        "type": "array",
+                        "items":{
+                            "$ref": "#/definitions/Product"
+                        }
+                    }
                 },
-                "minItems": 1
-            },
-            
-            "Visitors": {
-                "description": "Visitors of the shop",
-                "type": "array",
-                "items":{
-                    "$ref": "#/definitions/Visitor"
-                }
-            },
-
-            "Products": {
-                "description": "Products of the shop",
-                "type": "array",
-                "items":{
-                    "$ref": "#/definitions/Product"
-                }
+                "required": [ "Name", "Capacity", "Employees" ]
             }
-        },
-        "required": [ "Name", "Capacity", "Employees" ]
+            
+        }
+
     },
     "definitions": {
         "Employee": {
