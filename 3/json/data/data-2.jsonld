@@ -5,6 +5,8 @@
     "foaf": "http://xmlns.com/foaf/0.1/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
 
+    "Visitors": "@grpah",
+
     "fullname": {
         "@id": "ex:fullName",
         "@type": "rdf:langString",
@@ -20,7 +22,7 @@
       "@type": "xsd:integer"
     }
   },
-  "@graph": [
+  "Visitors": [
     {
       "@id": "cus:1",
       "@type": "ex:Customer",

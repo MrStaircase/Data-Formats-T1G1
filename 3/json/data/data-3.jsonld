@@ -6,6 +6,8 @@
     "schema": "https://schema.org/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
 
+    "Logos": "@graph",
+
     "image_uri": {
       "@id": "schema:image",
       "@type": "schema:URL"
@@ -15,7 +17,7 @@
       "@type": "xsd:date"
     }
   },
-  "@graph": [
+  "Logos": [
     {
       "@id": "logo:1",
       "@type": "schema:ImageObject",
