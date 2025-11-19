@@ -66,7 +66,7 @@
 
                 "salary": {
                     "description": "Salary of the employee",
-                    "type": "number"
+                    "type": "integer"
                 },
 
                 "phoneNumbers": {
@@ -110,7 +110,7 @@
                 },
 
                 "phoneNumbers": {
-                    "description": "Phone numbers of the employee",
+                    "description": "Phone numbers of the visitor",
                     "type": "array",
                     "items": {
                         "type": "string"
