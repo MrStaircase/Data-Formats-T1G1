@@ -159,7 +159,7 @@
                 {
                     "@id": "emp:3",
                     "@type": "ex:Employee",
-                    "id": 3,
+                    "id": "3",
                     "salary": 1200,
                     "fullname": "Crank"
                 }
@@ -201,7 +201,7 @@
                 {
                     "@id": "emp:4",
                     "@type": "ex:Employee",
-                    "id": 4,
+                    "id": "4",
                     "salary": 1300,
                     "fullname": "Grace"
                 }
