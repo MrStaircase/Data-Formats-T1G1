@@ -1,2 +1,2 @@
 [.Shops[] | (.Employees , .Visitors) | if . == null then null else .[] end] - [null] | unique | .[]
-| { name: .fullname, has_phone_number: if .phone_numbers.length > 0 then "true" else "false" end, phone_number_count: .phone_numbers.length }
+| { name: .fullname, has_phoneNumber: if .phoneNumbers.length > 0 then "true" else "false" end, phoneNumber_count: .phoneNumbers.length }
