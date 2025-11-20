@@ -22,68 +22,6 @@
 @prefix xsd: <xsl:text disable-output-escaping="yes">&lt;</xsl:text>http://www.w3.org/2001/XMLSchema#<xsl:text disable-output-escaping="yes">&gt;</xsl:text> .
 @prefix foaf: <xsl:text disable-output-escaping="yes">&lt;</xsl:text>http://xmlns.com/foaf/0.1/<xsl:text disable-output-escaping="yes">&gt;</xsl:text> .
 
-# Property Definitions
-
-ex:capacity a rdf:Property;
-    rdfs:label "capacity"@en;
-    rdfs:description "The amount of customers that the business can handle."@en;
-    rdfs:domain schema:LocalBusiness;
-    rdfs:range xsd:integer.
-
-ex:salary a rdf:Property;
-    rdfs:label "salary"@en;
-    rdfs:description "The amount of CZK that the employee gets every month."@en;
-    rdfs:domain ex:Employee;
-    rdfs:range xsd:integer.
-
-ex:numberOfVisits a rdf:Property;
-    rdfs:label "number of visits"@en;
-    rdfs:description "The number of times that a customer has visited any of the shops"@en;
-    rdfs:domain ex:Customer;
-    rdfs:range xsd:integer.
-
-ex:fullName a rdf:Property;
-    rdfs:label "full name"@en;
-    rdfs:description "The full name of the person"@en;
-    rdfs:domain foaf:Person;
-    rdfs:range rdf:langString.
-
-ex:preparationTime a rdf:Property;
-    rdfs:label "preparation time"@en;
-    rdfs:description "The amount of time, in minutes, it takes to make this product"@en;
-    rdfs:domain schema:Product;
-    rdfs:range xsd:integer.
-
-ex:price a rdf:Property;
-    rdfs:label "price"@en;
-    rdfs:description "The price, in CZK, of the product"@en;
-    rdfs:domain schema:Product;
-    rdfs:range xsd:integer.
-
-ex:hasManufactor a rdf:Property;
-    rdfs:label "has manufactor"@en;
-    rdfs:description "This product can be made by an employee"@en;
-    rdfs:domain schema:Product;
-    rdfs:range ex:Employee.
-
-ex:serves a rdf:Property;
-    rdfs:label "serves"@en;
-    rdfs:description "This business serves a customer"@en;
-    rdfs:domain schema:LocalBusiness;
-    rdfs:range ex:Customer.
-
-# Class Definitions
-
-ex:Employee a rdfs:Class;
-    rdfs:label "Employee"@en;
-    rdfs:description "An employee"@en;
-    rdfs:subClassOf foaf:Person.
-
-ex:Customer a rdfs:Class;
-    rdfs:label "Customer"@en;
-    rdfs:description "A customer"@en;
-    rdfs:subClassOf foaf:Person.
-
 # Actual Data
 
 # Data - Logos
@@ -234,4 +172,5 @@ prod:<xsl:value-of select="substring-after(@iri, 'https://example.org/resource/p
     <xsl:template match="text()" mode="#all"/>
 
 </xsl:stylesheet>
+
 
