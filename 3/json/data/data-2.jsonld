@@ -9,12 +9,10 @@
 
     "fullname": {
         "@id": "ex:fullName",
-        "@type": "rdf:langString",
         "@language": "en"
     },
     "nickname": {
       "@id": "foaf:nick",
-      "@type": "rdf:langString",
       "@language": "en"
     },
     "numberOfVisits": {
