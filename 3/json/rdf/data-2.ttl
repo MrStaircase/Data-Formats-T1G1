@@ -4,6 +4,6 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 cus:1   a                  ex:Customer;
-        foaf:nick          "Al"^^<rdf:langString>;
-        ex:fullName        "Alice"^^<rdf:langString>;
+        foaf:nick          "Al"@en;
+        ex:fullName        "Alice"@en;
         ex:numberOfVisits  2 .

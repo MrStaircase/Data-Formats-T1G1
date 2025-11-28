@@ -12,44 +12,44 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
 cus:2   a                  ex:Customer;
-        foaf:nick          "Bo"^^rdf:langString;
-        ex:fullName        "Bob"^^rdf:langString;
+        foaf:nick          "Bo"@en;
+        ex:fullName        "Bob"@en;
         ex:numberOfVisits  3 .
 
 cus:3   a                  ex:Customer;
-        foaf:nick          "Cha"^^rdf:langString;
-        ex:fullName        "Charlie"^^rdf:langString;
+        foaf:nick          "Cha"@en;
+        ex:fullName        "Charlie"@en;
         ex:numberOfVisits  4 .
 
 emp:1   a                  ex:Employee;
-        ex:fullName        "Dave"^^rdf:langString;
+        ex:fullName        "Dave"@en;
         ex:salary          1000;
         schema:identifier  "1" .
 
 emp:2   a                  ex:Employee;
-        ex:fullName        "Eve"^^rdf:langString;
+        ex:fullName        "Eve"@en;
         ex:salary          1100;
         schema:identifier  "2" .
 
 emp:3   a                  ex:Employee;
         foaf:phone         <tel:+420123456789>;
-        ex:fullName        "Crank"^^rdf:langString;
+        ex:fullName        "Crank"@en;
         ex:salary          1200;
         schema:identifier  "3" .
 
 emp:4   a                  ex:Employee;
         foaf:phone         <tel:+420987654321>;
         foaf:phone         <tel:+420112233445>;
-        ex:fullName        "Grace"^^rdf:langString;
+        ex:fullName        "Grace"@en;
         ex:salary          1300;
         schema:identifier  "4" .
 
 logo:2  a                  schema:ImageObject;
-        schema:image       "image:2"^^schema:URL;
+        schema:image       image:2;
         schema:uploadDate  "2025-04-03"^^xsd:date .
 
 logo:3  a                  schema:ImageObject;
-        schema:image       "image:3"^^schema:URL;
+        schema:image       image:3;
         schema:uploadDate  "2025-06-05"^^xsd:date .
 
 prod:1  a                   schema:Product;
@@ -57,31 +57,31 @@ prod:1  a                   schema:Product;
         ex:hasManufactor    emp:3;
         ex:preparationTime  100;
         ex:price            10;
-        schema:name         "Coffee"^^rdf:langString .
+        schema:name         "Coffee"@en .
 
 prod:2  a                   schema:Product;
         ex:hasManufactor    emp:4;
         ex:preparationTime  120;
         ex:price            20;
-        schema:name         "Sandwich"^^rdf:langString .
+        schema:name         "Sandwich"@en .
 
 prod:3  a                   schema:Product;
         ex:hasManufactor    emp:2;
         ex:preparationTime  140;
         ex:price            30;
-        schema:name         "Ice cream"^^rdf:langString .
+        schema:name         "Ice cream"@en .
 
 shop:1  a                 schema:LocalBusiness;
         ex:capacity       10;
         schema:employee   emp:1;
-        schema:legalName  "shop1" .
+        schema:legalName  "shop1"@en .
 
 shop:2  a                 schema:LocalBusiness;
         ex:capacity       20;
         ex:serves         cus:2;
         ex:serves         cus:3;
         schema:employee   emp:2;
-        schema:legalName  "shop2";
+        schema:legalName  "shop2"@en;
         schema:logo       logo:2;
         schema:owns       prod:1;
         schema:owns       prod:2 .
@@ -90,12 +90,12 @@ shop:3  a                 schema:LocalBusiness;
         ex:capacity       30;
         ex:serves         cus:3;
         schema:employee   emp:3;
-        schema:legalName  "shop3";
+        schema:legalName  "shop3"@en;
         schema:logo       logo:3;
         schema:owns       prod:3 .
 
 shop:4  a                 schema:LocalBusiness;
         ex:capacity       42;
         schema:employee   emp:4;
-        schema:legalName  "shop4";
+        schema:legalName  "shop4"@en;
         schema:logo       logo:3 .

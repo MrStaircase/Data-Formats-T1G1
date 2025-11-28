@@ -79,7 +79,8 @@
             "@reverse": "ex:hasManufactor"
         },
         "phoneNumbers":{
-            "@id": "foaf:phone"
+            "@id": "foaf:phone",
+            "@type": "@id"
         }
     },
     "Shops":[ 
