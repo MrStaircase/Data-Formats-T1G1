@@ -16,7 +16,10 @@
 
         "Shops": "@graph",
 
-        "Name": "schema:legalName",
+        "Name": {
+          "@id": "schema:legalName",
+          "@language": "en"
+        },
         "Logo": "schema:logo",
         "Capacity": {
             "@id": "ex:capacity",
