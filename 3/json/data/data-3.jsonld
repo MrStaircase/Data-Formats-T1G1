@@ -10,7 +10,7 @@
 
     "image_uri": {
       "@id": "schema:image",
-      "@type": "schema:URL"
+      "@type": "@id"
     },
     "creationDate": {
       "@id": "schema:uploadDate",
