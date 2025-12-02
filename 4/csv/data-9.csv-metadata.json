@@ -2,7 +2,7 @@
   "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
   "@type": "Table",
   "@id": "https://example.org/PhoneNumber",
-  "url": "https://example.org/PhoneNumber.csv",
+  "url": "https://example.org/data-9.csv",
   "tableSchema": {
     "columns": [
       {

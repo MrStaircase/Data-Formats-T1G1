@@ -1,8 +1,8 @@
 {
   "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
   "@type": "Table",
-  "@id": "data-6",
-  "url": "data-6.csv",
+  "@id": "https://example.org/Product",
+  "url": "https://example.org/data-6.csv",
   "tableSchema": {
     "columns": [{
       "name": "Product",

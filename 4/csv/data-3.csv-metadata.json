@@ -2,7 +2,7 @@
   "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
     "@type": "Table",
     "@id": "https://example.org/Logo",
-    "url": "https://example.org/Logo.csv",
+    "url": "https://example.org/data-3.csv",
     "tableSchema": {
         "columns": [{
           "name": "Creation date",
