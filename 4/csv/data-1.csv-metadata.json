@@ -1,55 +1,53 @@
 {
   "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
-    "@type": "Table",
-    "@id": "https://example.org/Employee",
-    "url": "https://example.org/Employee.csv",
-    "tableSchema": {
-        "columns": [{
-          "name": "ID",
-          "titles": "id",
-          "datatype": "string",
-          "aboutUrl":"{+ID}",
-          "propertyUrl": "rdf:type",
-          "valueUrl": "ex:Employee"
-        }, {
-          "name": "Salary",
-          "titles": "Salary",
-          "datatype": "integer",
-          "aboutUrl":"{+ID}",
-          "propertyUrl": "ex:salary",
-          "valueUrl": "{+Salary}"
-        }, {
-          "name": "PersonId",
-          "titles": "PersonId",
-          "datatype": "string",
-          "aboutUrl":"{+ID}",
-          "propertyUrl": "ex:salary",
-          "valueUrl": "{+fullname}",
-          "virtual": true
-        }, {
-          "name": "ShopName",
-          "titles": "ShopName",
-          "datatype": "string",
-          "aboutUrl":"{+name}",
-          "propertyUrl": "schema:employee",
-          "valueUrl": "{+ID}"
-        }],
-        "primaryKey": "ID",
-        "foreignKeys": [{
-          "columnReference": "PersonId",
-          "reference": {
-            "resource": "https://example.org/Person.csv",
-            "columnReference": "ID"
-          }
-      },
-      {
-          "columnReference": "ShopName",
-          "reference": {
-            "resource": "https://example.org/Shop.csv",
-            "columnReference": "Name"
-          }}
-          ]
-
+  "@type": "Table",
+  "@id": "data-1",
+  "url": "data-1.csv",
+  "tableSchema": {
+    "columns": [{
+      "name": "ID",
+      "titles": "id",
+      "datatype": "string",
+      "aboutUrl":"{+ID}",
+      "propertyUrl": "rdf:type",
+      "valueUrl": "ex:Employee"
+      }, {
+      "name": "Salary",
+      "titles": "Salary",
+      "datatype": "integer",
+      "aboutUrl":"{+ID}",
+      "propertyUrl": "ex:salary",
+      "valueUrl": "{+Salary}"
+      }, {
+      "name": "PersonId",
+      "titles": "PersonId",
+      "datatype": "string",
+      "aboutUrl":"{+ID}",
+      "propertyUrl": "ex:salary",
+      "valueUrl": "{+fullname}",
+      "virtual": true
+      }, {
+      "name": "ShopName",
+      "titles": "ShopName",
+      "datatype": "string",
+      "aboutUrl":"{+name}",
+      "propertyUrl": "schema:employee",
+      "valueUrl": "{+ID}"
+      }],
+    "primaryKey": "ID",
+    "foreignKeys": [{
+      "columnReference": "PersonId",
+      "reference": {
+        "resource": "https://example.org/Person.csv",
+        "columnReference": "ID"
       }
+    }, {
+      "columnReference": "ShopName",
+      "reference": {
+        "resource": "https://example.org/Shop.csv",
+        "columnReference": "Name"
+      }
+    }]
+  }
 
 }
