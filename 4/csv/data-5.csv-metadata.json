@@ -1,0 +1,37 @@
+{
+  "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
+  "@type": "Table",
+  "@id": "https://example.org/ProductEmployee",
+  "url": "https://example.org/ProductEmployee.csv",
+  "tableSchema": {
+    "columns": [
+      {
+        "name": "ProductName",
+        "titles": "name",
+        "datatype": "string"
+      },
+      {
+        "name": "EmployeeID",
+        "titles": "EmployeeID",
+        "datatype": "integer",
+        "aboutUrl":"{+ID}",
+        "propertyUrl": "schema:identifier",
+        "valueUrl": "{+EmployeeID}"
+      }
+    ],
+    "primaryKey": ["EmployeeID", "ProductName"],
+    "foreignKeys": [{
+      "columnReference": "EmployeeID",
+      "reference": {
+        "resource": "https://example.org/Employee.csv",
+        "columnReference": "ID"
+      }
+    },{
+      "columnReference": "ProductName",
+      "reference": {
+        "resource": "https://example.org/Product.csv",
+        "columnReference": "Name"
+      }
+    }]
+  }
+}
