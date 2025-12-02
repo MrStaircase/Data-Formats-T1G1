@@ -6,7 +6,7 @@
     "tableSchema": {
         "columns": [{
           "name": "ID",
-          "titles": "id",
+          "titles": "ID",
           "datatype": "string",
           "aboutUrl":"{+ID}",
           "propertyUrl": "rdf:type",
