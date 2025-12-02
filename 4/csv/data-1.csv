@@ -1,4 +1,4 @@
-ID,Salary,PersonID,ShopName
+ID,Salary,PersonId,ShopName
 emp1,1000,1,shop1
 emp2,1100,2,shop2
 emp3,1200,3,shop3
