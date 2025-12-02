@@ -1,0 +1,31 @@
+{
+  "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
+  "@type": "Table",
+  "@id": "https://example.org/PhoneNumber",
+  "url": "https://example.org/PhoneNumber.csv",
+  "tableSchema": {
+    "columns": [
+      {
+        "name": "PersonID",
+        "titles": "PersonID",
+        "datatype": "string"
+      },
+      {
+        "name": "PhoneNumber",
+        "titles": "PhoneNumber",
+        "datatype": "string",
+        "aboutUrl":"{+ID}",
+        "propertyUrl": "foaf:phone",
+        "valueUrl": "{+PhoneNumber}"
+      }
+    ],
+    "primaryKey": ["PersonID", "PhoneNumber"],
+    "foreignKeys": [{
+      "columnReference": "PersonID",
+      "reference": {
+        "resource": "https://example.org/Person.csv",
+        "columnReference": "ID"
+      }
+    }]
+  }
+}
