@@ -23,7 +23,7 @@
       "titles": "PersonId",
       "datatype": "string",
       "aboutUrl":"{+ID}",
-      "propertyUrl": "ex:salary",
+      "propertyUrl": "ex:fullName",
       "valueUrl": "{+fullname}",
       "virtual": true
       }, {
