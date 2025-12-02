@@ -1,1 +1,2 @@
-.Shops.[] | { shop_name: .Name, products: [(.Products | if . == null then null else .[].name end)] - [null] }
+[.Shops[] | if .Products != null and .Products[].price > 20 then . else null end] - [null]
+| .[] | { shop_name: .Name, products: [(.Products[] | if .price > 20 then .name else null end)] - [null] }

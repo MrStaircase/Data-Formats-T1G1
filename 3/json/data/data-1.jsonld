@@ -16,7 +16,10 @@
 
         "Shops": "@graph",
 
-        "Name": "schema:legalName",
+        "Name": {
+          "@id": "schema:legalName",
+          "@language": "en"
+        },
         "Logo": "schema:logo",
         "Capacity": {
             "@id": "ex:capacity",
@@ -42,12 +45,10 @@
         },
         "fullname": {
             "@id": "ex:fullName",
-            "@type": "rdf:langString",
             "@language": "en"
         },
         "nickname": {
             "@id": "foaf:nick",
-            "@type": "rdf:langString",
             "@language": "en"
         },
         "numberOfVisits": {
@@ -56,7 +57,7 @@
         },
         "image_uri": {
             "@id": "schema:image",
-            "@type": "schema:URL"
+            "@type": "@id"
         },
         "creationDate":{
             "@id": "schema:uploadDate",
@@ -72,14 +73,14 @@
         },
         "name": {
             "@id": "schema:name",
-            "@type": "rdf:langString",
             "@language": "en"
         },
         "ProductRef":{
             "@reverse": "ex:hasManufactor"
         },
         "phoneNumbers":{
-            "@id": "foaf:phone"
+            "@id": "foaf:phone",
+            "@type": "@id"
         }
     },
     "Shops":[ 
@@ -171,7 +172,11 @@
                     "salary": 1200,
                     "fullname": "Crank",
                     "ProductRef": [{"@id": "prod:1"}],
+<<<<<<< HEAD
                     "phoneNumbers": [{"@id": "tel:+420123456789"}]
+=======
+                    "phoneNumbers": ["tel:+420123456789"]
+>>>>>>> 4f6dddf9ef3c1fa49d8d633cd447adfe3b8a1df5
                 }
             ],
             "Visitors": [
@@ -215,7 +220,11 @@
                     "salary": 1300,
                     "fullname": "Grace",
                     "ProductRef": [{"@id": "prod:2"}],
+<<<<<<< HEAD
                     "phoneNumbers": [{"@id": "tel:+420987654321"}, {"@id": "tel:+420112233445"}]
+=======
+                    "phoneNumbers": ["tel:+420987654321", "tel:+420112233445"]
+>>>>>>> 4f6dddf9ef3c1fa49d8d633cd447adfe3b8a1df5
                 }
             ],
             "Logo": {

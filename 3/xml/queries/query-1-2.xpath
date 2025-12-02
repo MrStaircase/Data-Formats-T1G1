@@ -1,5 +1,5 @@
-(: Q2 - Return all shops with their product count:)
+(: Q2 - Return all shops that produce at least one product that have price greater than 20, and the names of those products :)
 
-for $s in //Shop
+for $s in //Shop[Products/Product/Price > 20]
 return
-concat ($s/Name, " ", count($s//Product))
+concat ($s/Name, " ", $s/Products/Product/Name)

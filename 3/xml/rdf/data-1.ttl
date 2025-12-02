@@ -13,68 +13,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-# Property Definitions
-
-ex:capacity a rdf:Property;
-    rdfs:label "capacity"@en;
-    rdfs:description "The amount of customers that the business can handle."@en;
-    rdfs:domain schema:LocalBusiness;
-    rdfs:range xsd:integer.
-
-ex:salary a rdf:Property;
-    rdfs:label "salary"@en;
-    rdfs:description "The amount of CZK that the employee gets every month."@en;
-    rdfs:domain ex:Employee;
-    rdfs:range xsd:integer.
-
-ex:numberOfVisits a rdf:Property;
-    rdfs:label "number of visits"@en;
-    rdfs:description "The number of times that a customer has visited any of the shops"@en;
-    rdfs:domain ex:Customer;
-    rdfs:range xsd:integer.
-
-ex:fullName a rdf:Property;
-    rdfs:label "full name"@en;
-    rdfs:description "The full name of the person"@en;
-    rdfs:domain foaf:Person;
-    rdfs:range rdf:langString.
-
-ex:preparationTime a rdf:Property;
-    rdfs:label "preparation time"@en;
-    rdfs:description "The amount of time, in minutes, it takes to make this product"@en;
-    rdfs:domain schema:Product;
-    rdfs:range xsd:integer.
-
-ex:price a rdf:Property;
-    rdfs:label "price"@en;
-    rdfs:description "The price, in CZK, of the product"@en;
-    rdfs:domain schema:Product;
-    rdfs:range xsd:integer.
-
-ex:hasManufactor a rdf:Property;
-    rdfs:label "has manufactor"@en;
-    rdfs:description "This product can be made by an employee"@en;
-    rdfs:domain schema:Product;
-    rdfs:range ex:Employee.
-
-ex:serves a rdf:Property;
-    rdfs:label "serves"@en;
-    rdfs:description "This business serves a customer"@en;
-    rdfs:domain schema:LocalBusiness;
-    rdfs:range ex:Customer.
-
-# Class Definitions
-
-ex:Employee a rdfs:Class;
-    rdfs:label "Employee"@en;
-    rdfs:description "An employee"@en;
-    rdfs:subClassOf foaf:Person.
-
-ex:Customer a rdfs:Class;
-    rdfs:label "Customer"@en;
-    rdfs:description "A customer"@en;
-    rdfs:subClassOf foaf:Person.
-
 # Actual Data
 
 # Data - Logos
@@ -82,11 +20,6 @@ ex:Customer a rdfs:Class;
 logo:2 a schema:ImageObject;
     schema:image image:2;
     schema:uploadDate "2025-04-03"^^xsd:date.
-
-
-logo:3 a schema:ImageObject;
-    schema:image image:3;
-    schema:uploadDate "2025-06-05"^^xsd:date.
 
 
 logo:3 a schema:ImageObject;
@@ -155,8 +88,7 @@ emp:4 a ex:Employee;
     schema:identifier "4"^^xsd:string;
     ex:salary "1300"^^xsd:integer;
     ex:fullName "Grace"@en;
-    foaf:phone <tel:+420987654321>,
-        <tel:+420112233445>.
+    foaf:phone <tel:+420987654321>,<tel:+420112233445>.
 
 
 # Data - Products
@@ -184,11 +116,13 @@ prod:3 a schema:Product;
 
     # Relation - shop -> customer
 
-shop:2 ex:serves cus:2,
-                 cus:3.
+shop:2 ex:serves 
+        cus:2,
+        cus:3.
 
 
-shop:3 ex:serves cus:3.
+shop:3 ex:serves 
+        cus:3.
 
 
     # Relation - shop -> employee
@@ -207,11 +141,13 @@ shop:4 schema:employee emp:4.
 
     # Relation - shop -> product
 
-shop:2 schema:owns prod:1,
-                   prod:2.
+shop:2 schema:owns 
+        prod:1,
+        prod:2.
 
 
-shop:3 schema:owns prod:3.
+shop:3 schema:owns 
+        prod:3.
 
 
     # Relation - shop -> logo
@@ -227,12 +163,14 @@ shop:4 schema:logo logo:3.
 
     # Relation - product -> employee
 
-prod:1 ex:hasManufactor emp:2,
-                        emp:3.
+prod:1 ex:hasManufactor 
+        emp:2,
+        emp:3.
 
 
-prod:3 ex:hasManufactor emp:2.
+prod:2 ex:hasManufactor 
+        emp:4.
 
 
-prod:2 ex:hasManufactor emp:4.
-
+prod:3 ex:hasManufactor 
+        emp:2.
