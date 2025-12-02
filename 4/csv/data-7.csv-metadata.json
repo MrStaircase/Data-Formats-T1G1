@@ -1,0 +1,37 @@
+{
+  "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
+  "@type": "Table",
+  "@id": "https://example.org/PhoneNumber",
+  "url": "https://example.org/PhoneNumber.csv",
+  "tableSchema": {
+    "columns": [
+      {
+        "name": "ShopName",
+        "titles": "ShopName",
+        "datatype": "string"
+      },
+      {
+        "name": "VisitorID",
+        "titles": "VisitorID",
+        "datatype": "string"
+      }
+    ],
+    "primaryKey": ["ShopName", "VisitorID"],
+    "foreignKeys": [
+      {
+        "columnReference": "ShopName",
+        "reference": {
+          "resource": "https://example.org/Shop.csv",
+          "columnReference": "Name"
+        }
+      },
+      {
+        "columnReference": "VisitorID",
+        "reference": {
+          "resource": "https://example.org/Visitor.csv",
+          "columnReference": "ID"
+        }
+      }
+    ]
+  }
+}
