@@ -1,1 +1,8 @@
-asd asd asd
+We all created data-1.csv along with the metadata.json
+
+Valentine created data-[789].csv along with the metadata.json
+Dyma created data-[356].csv along with the metadata.json
+Khanh created data-[24].csv along with the metadata.json
+
+Jack merged all the separate metadata.json files (note: all seperated metadata file were deleted as there are not necessary)
+Jack created added aboutUrl, propertyUrl and ValueUrl to create the rdf.

@@ -5,30 +5,42 @@
   "url": "https://example.org/data-6.csv",
   "tableSchema": {
     "columns": [{
+      "@type": "Column",
       "name": "Product",
       "titles": "ID",
+      "dc:description": "Product URI",
+      "required": true,
       "datatype": "string",
       "aboutUrl":"{+ID}",
       "propertyUrl": "rdf:type",
       "valueUrl": "schema:Product"
       }, {
+      "@type": "Column",
       "name": "Preparation time",
       "titles": "Preparation time",
+      "dc:description": "Amount of time it takes to prepare the product",
+      "required": true,
       "datatype": "integer",
       "aboutUrl":"{+ID}",
       "propertyUrl": "preparationTime",
       "valueUrl": "{+preparationTime}"
       }, {
+      "@type": "Column",
       "name": "Price",
       "titles": "Price",
+      "dc:description": "Amount of money it takes to buy the product",
+      "required": true,
       "datatype": "integer",
       "aboutUrl":"{+price}",
       "propertyUrl": "ex:price",
       "valueUrl": "{+price}",
       "virtual": true
       }, {
+      "@type": "Column",
       "name": "Name",
       "titles": "name",
+      "dc:description": "The product's name",
+      "required": true,
       "datatype": "string",
       "aboutUrl":"{+name}",
       "propertyUrl": "schema:name",

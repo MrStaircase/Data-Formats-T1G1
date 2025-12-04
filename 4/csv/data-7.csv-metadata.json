@@ -1,18 +1,24 @@
 {
   "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
   "@type": "Table",
-  "@id": "https://example.org/PhoneNumber",
+  "@id": "https://example.org/ShopVisitor",
   "url": "https://example.org/data-7.csv",
   "tableSchema": {
     "columns": [
       {
+        "@type": "Column",
         "name": "ShopName",
         "titles": "ShopName",
+        "dc:description": "Shop URI",
+        "required": true,
         "datatype": "string"
       },
       {
+        "@type": "Column",
         "name": "VisitorID",
         "titles": "VisitorID",
+        "dc:description": "Visitor URI",
+        "required": true,
         "datatype": "string"
       }
     ],
