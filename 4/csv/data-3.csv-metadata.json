@@ -14,7 +14,17 @@
           "datatype": "string",
           "aboutUrl":"{+Creation_date}",
           "propertyUrl": "rdf:type",
-          "valueUrl": "schema:Logo"
+          "valueUrl": "schema:logo"},
+          {
+          "@type":"Column",
+          "name": "Image",
+          "titles": "Image",
+          "dc:description": "Image of the Logos",
+          "required": true,
+          "datatype": "URI",
+          "aboutUrl":"{+Image}",
+          "propertyUrl": "rdf:type",
+          "valueUrl": "schema:image"
         }],
         "primaryKey": "Image"
       }
