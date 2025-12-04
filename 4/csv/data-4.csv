@@ -1,5 +1,5 @@
-Name,Capacity,Logo
-shop:1,10,
-shop:2,20,image:2
-shop:3,30,image:3
-shop:4,42,image:3
+ID,Name,Capacity,LogoID
+1,shop1,10,
+2,shop2,20,2
+3,shop3,30,3
+4,shop4,42,3

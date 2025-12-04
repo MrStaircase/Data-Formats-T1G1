@@ -84,7 +84,55 @@
   },{
     "url": "data-3.csv"
   },{
-    "url": "data-4.csv"
+  	"@id": "https://example.org/data-4.csv-metadata.json",
+    "@type": "Table",
+    "url": "data-4.csv",
+    "tableSchema": {
+			"@type": "Schema",
+			"aboutUrl": "https://example.org/resource/shop/{ID}",
+			"columns": [{
+				"@type": "Column",
+				"name": "ID",
+				"titles": "ID",
+				"dc:description": "ID of business",
+				"datatype": "string",
+				"required": true,
+				"propertyUrl": "rdf:type",
+				"valueUrl": "https://schema.org/LocalBusiness"
+			}, {
+				"@type": "Column",
+				"name": "Name",
+				"titles": "Name",
+				"dc:description": "Name of the business",
+				"datatype": "string",
+				"required": true,
+				"propertyUrl": "https://schema.org/legalName"
+			}, {
+				"@type": "Column",
+				"name": "Capacity",
+				"titles": "Capacity",
+				"dc:description": "Capacity of the business",
+				"datatype": "integer",
+				"required": true,
+				"propertyUrl": "https://example.org/vocabulary/capacity"
+			}, {
+				"@type": "Column",
+				"name": "LogoID",
+				"titles": "LogoID",
+				"dc:description": "Logo image of the business",
+				"datatype": "string",
+				"propertyUrl": "https://schema.org/logo",
+				"valueUrl": "https://example.org/resource/logo/{LogoID}"
+			}],
+			"primaryKey": "Name",
+			"foreignKeys": [{
+				"columnReference": "LogoID",
+				"reference": {
+					"resource": "data-3.csv",
+					"columnReference": "Image"
+				}
+			}]
+		}
   },{
     "url": "data-5.csv"
   },{
