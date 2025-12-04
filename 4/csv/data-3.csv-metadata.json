@@ -1,0 +1,17 @@
+{
+  "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
+    "@type": "Table",
+    "@id": "https://example.org/Logo",
+    "url": "https://example.org/data-3.csv",
+    "tableSchema": {
+        "columns": [{
+          "name": "Creation date",
+          "titles": "Creation date",
+          "datatype": "string",
+          "aboutUrl":"{+Creation_date}",
+          "propertyUrl": "rdf:type",
+          "valueUrl": "schema:Logo"
+        }],
+        "primaryKey": "Image"
+      }
+}

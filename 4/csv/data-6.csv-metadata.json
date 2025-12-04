@@ -1,0 +1,47 @@
+{
+  "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
+  "@type": "Table",
+  "@id": "https://example.org/Product",
+  "url": "https://example.org/data-6.csv",
+  "tableSchema": {
+    "columns": [{
+      "name": "Product",
+      "titles": "ID",
+      "datatype": "string",
+      "aboutUrl":"{+ID}",
+      "propertyUrl": "rdf:type",
+      "valueUrl": "schema:Product"
+      }, {
+      "name": "Preparation time",
+      "titles": "Preparation time",
+      "datatype": "integer",
+      "aboutUrl":"{+ID}",
+      "propertyUrl": "preparationTime",
+      "valueUrl": "{+preparationTime}"
+      }, {
+      "name": "Price",
+      "titles": "Price",
+      "datatype": "integer",
+      "aboutUrl":"{+price}",
+      "propertyUrl": "ex:price",
+      "valueUrl": "{+price}",
+      "virtual": true
+      }, {
+      "name": "Name",
+      "titles": "name",
+      "datatype": "string",
+      "aboutUrl":"{+name}",
+      "propertyUrl": "schema:name",
+      "valueUrl": "{+name}"
+      }],
+    "primaryKey": "Name",
+    "foreignKeys": [{
+      "columnReference": "ShopName",
+      "reference": {
+        "resource": "https://example.org/Shop.csv",
+        "columnReference": "Name"
+      }
+    }]
+  }
+
+}

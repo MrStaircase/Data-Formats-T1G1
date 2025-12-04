@@ -1,8 +1,8 @@
 {
   "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
   "@type": "Table",
-  "@id": "data-1",
-  "url": "data-1.csv",
+  "@id": "https://example.org/Employee",
+  "url": "https://example.org/data-1.csv",
   "tableSchema": {
     "aboutUrl" : "{+ID}",
     "columns": [{
@@ -20,7 +20,14 @@
       "name": "PersonId",
       "titles": "PersonId",
       "datatype": "string",
+<<<<<<< HEAD
       "suppressOutput": true
+=======
+      "aboutUrl":"{+ID}",
+      "propertyUrl": "ex:fullName",
+      "valueUrl": "{+fullname}",
+      "virtual": true
+>>>>>>> 1f7b1eebbb5500bdbec9f5385e0247f4a716b36a
       }, {
       "name": "ShopName",
       "titles": "ShopName",

@@ -1,0 +1,44 @@
+{
+  "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
+    "@type": "Table",
+    "@id": "https://example.org/Shop",
+    "url": "https://example.org/data-4.csv",
+    "tableSchema": {
+        "columns": [{
+          "name": "Name",
+          "titles": "Name",
+          "datatype": "string",
+          "aboutUrl":"{+Name}",
+          "propertyUrl": "rdf:type",
+          "valueUrl": "schema:localBusiness"
+        }, {
+          "name": "Capacity",
+          "titles": "Capacity",
+          "datatype": "integer",
+          "aboutUrl":"{+Name}",
+          "propertyUrl": "ex:capacity",
+          "valueUrl": "{+Capacity}",
+          "virtual": true 
+
+        }, {
+          "name": "Logo",
+          "titles": "Logo",
+          "datatype": "string",
+          "aboutUrl":"{+Name}",
+          "propertyUrl": "schema:logo",
+          "valueUrl": "{+Logo}"
+
+          }],
+        "primaryKey": "Name",
+        "foreignKeys": [{
+          "columnReference": "Logo",
+          "reference": {
+            "resource": "https://example.org/Logo.csv",
+            "columnReference": "Image"
+          }
+      }
+          ]
+
+      }
+
+}
