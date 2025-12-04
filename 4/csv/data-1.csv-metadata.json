@@ -1,19 +1,11 @@
 {
   "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
   "@type": "Table",
-<<<<<<< HEAD
-  "@id": "https://example.org/data-1.csv-metadata.json",
-  "url": "data-1.csv",
-  "tableSchema": {
-      "aboutUrl" : "{+ID}",
-      "columns": [{
-=======
   "@id": "https://example.org/Employee",
   "url": "https://example.org/data-1.csv",
   "tableSchema": {
     "aboutUrl" : "{+ID}",
     "columns": [{
->>>>>>> 840017c630cb5cafb3735cca9ae19be6b21b454f
       "name": "ID",
       "titles": "ID",
       "datatype": "string",
@@ -28,10 +20,7 @@
       "name": "PersonId",
       "titles": "PersonId",
       "datatype": "string",
-<<<<<<< HEAD
-=======
       "suppressOutput": true,
->>>>>>> 840017c630cb5cafb3735cca9ae19be6b21b454f
       "aboutUrl":"{+ID}",
       "propertyUrl": "ex:fullName",
       "valueUrl": "{+fullname}",
@@ -41,18 +30,6 @@
       "titles": "ShopName",
       "datatype": "string",
       "suppressOutput": true
-<<<<<<< HEAD
-      }],
-      "primaryKey": "ID",
-      "foreignKeys": [{
-      "columnReference": "PersonId",
-      "reference": {
-          "resource": "data-8.csv",
-          "columnReference": "ID"
-      }
-      }]
-  }
-=======
     }],
     "primaryKey": "ID",
     "foreignKeys": [{
@@ -70,5 +47,4 @@
     }]
   }
 
->>>>>>> 840017c630cb5cafb3735cca9ae19be6b21b454f
 }
