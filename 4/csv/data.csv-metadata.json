@@ -107,8 +107,8 @@
 				"propertyUrl": "https://schema.org/image"
 			},{
 				"@type":"Column",
-				"name": "Creation date",
-				"titles": "Creation date",
+				"name": "CreationDate",
+				"titles": "CreationDate",
 				"dc:description": "Creation date of the logo",
 				"required": true,
 				"datatype": "date",
@@ -174,7 +174,7 @@
 			"columns": [{
 				"@type": "Column",
 				"name": "ProductID",
-				"titles": "name",
+				"titles": "ProductID",
 				"dc:description": "Product name",
 				"required": true,
 				"datatype": "string",
@@ -224,7 +224,7 @@
 			}, {
 				"@type": "Column",
 				"name": "Name",
-				"titles": "name",
+				"titles": "Name",
 				"dc:description": "The product's name",
 				"required": true,
 				"datatype": "string",
@@ -232,8 +232,8 @@
 				"propertyUrl": "https://schema.org/name"
 			}, {
 				"@type": "Column",
-				"name": "Preparation time",
-				"titles": "Preparation time",
+				"name": "PreparationTime",
+				"titles": "PreparationTime",
 				"dc:description": "Amount of time it takes to prepare the product",
 				"required": true,
 				"datatype": "integer",
