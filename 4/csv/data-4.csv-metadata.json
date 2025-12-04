@@ -1,39 +1,57 @@
 {
-  "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
+    "@id": "https://example.org/data-4.csv-metadata.json",
+    "@context": [
+        "http://www.w3.org/ns/csvw",
+        {
+          "@language": "en"
+        }
+    ],
     "@type": "Table",
-    "@id": "https://example.org/Shop",
-    "url": "https://example.org/data-4.csv",
+    "url": "data-4.csv",
     "tableSchema": {
-        "columns": [{
-          "name": "Name",
-          "titles": "Name",
-          "datatype": "string",
-          "aboutUrl":"{+Name}",
-          "propertyUrl": "rdf:type",
-          "valueUrl": "schema:localBusiness"
+        "@type": "Schema",
+        "columns": [
+          {
+            "@type": "Column",
+            "name": "Name",
+            "titles": "Name",
+            "datatype": "string",
+            "required": true,
+            "dc:description": "Name of the business",
+            "aboutUrl":"{+Name}",
+            "propertyUrl": "rdf:type",
+            "valueUrl": "schema:localBusiness"
+            
         }, {
-          "name": "Capacity",
-          "titles": "Capacity",
-          "datatype": "integer",
-          "aboutUrl":"{+Name}",
-          "propertyUrl": "ex:capacity",
-          "valueUrl": "{+Capacity}",
-          "virtual": true 
+
+            "@type": "Column",
+            "name": "Capacity",
+            "titles": "Capacity",
+            "datatype": "integer",
+            "required": true,
+            "dc:description": "Capacity of the business",
+            "aboutUrl":"{+Name}",
+            "propertyUrl": "ex:capacity",
+            "valueUrl": "{+Capacity}",
+            "virtual": true 
 
         }, {
-          "name": "Logo",
-          "titles": "Logo",
-          "datatype": "string",
-          "aboutUrl":"{+Name}",
-          "propertyUrl": "schema:logo",
-          "valueUrl": "{+Logo}"
+
+            "@type": "Column",
+            "name": "Logo",
+            "titles": "Logo",
+            "datatype": "string",
+            "dc:description": "Logo image of the business",
+            "aboutUrl":"{+Name}",
+            "propertyUrl": "schema:logo",
+            "valueUrl": "{+Logo}"
 
           }],
         "primaryKey": "Name",
         "foreignKeys": [{
           "columnReference": "Logo",
           "reference": {
-            "resource": "https://example.org/Logo.csv",
+            "resource": "https://example.org/data-3.csv",
             "columnReference": "Image"
           }
       }
