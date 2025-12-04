@@ -6,13 +6,19 @@
   "tableSchema": {
     "columns": [
       {
+        "@type": "Column",
         "name": "ProductName",
         "titles": "name",
+        "dc:description": "Product name",
+        "required": true,
         "datatype": "string"
       },
       {
+        "@type": "Column",
         "name": "EmployeeID",
         "titles": "EmployeeID",
+        "dc:description": "Employee URI",
+        "required": true,
         "datatype": "integer",
         "aboutUrl":"{+ID}",
         "propertyUrl": "schema:identifier",
