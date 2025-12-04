@@ -4,6 +4,7 @@
     "@id": "https://example.org/tableGroup",
     "tables": [
         {
+            "@id": "https://example.org/data-1.csv-metadata.json",
             "url": "https://example.org/data-1.csv"
         },
         {
