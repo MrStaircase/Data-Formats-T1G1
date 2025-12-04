@@ -4,36 +4,29 @@
   "@id": "data-1",
   "url": "data-1.csv",
   "tableSchema": {
+    "aboutUrl" : "{+ID}",
     "columns": [{
       "name": "ID",
       "titles": "ID",
       "datatype": "string",
-      "aboutUrl":"{+ID}",
       "propertyUrl": "rdf:type",
-      "valueUrl": "ex:Employee"
+      "valueUrl": "https://example.org/vocabulary/Employee"
       }, {
       "name": "Salary",
       "titles": "Salary",
       "datatype": "integer",
-      "aboutUrl":"{+ID}",
-      "propertyUrl": "ex:salary",
-      "valueUrl": "{+Salary}"
+      "propertyUrl": "https://example.org/vocabulary/salary"
       }, {
       "name": "PersonId",
       "titles": "PersonId",
       "datatype": "string",
-      "aboutUrl":"{+ID}",
-      "propertyUrl": "ex:salary",
-      "valueUrl": "{+fullname}",
-      "virtual": true
+      "suppressOutput": true
       }, {
       "name": "ShopName",
       "titles": "ShopName",
       "datatype": "string",
-      "aboutUrl":"{+name}",
-      "propertyUrl": "schema:employee",
-      "valueUrl": "{+ID}"
-      }],
+      "suppressOutput": true
+    }],
     "primaryKey": "ID",
     "foreignKeys": [{
       "columnReference": "PersonId",
