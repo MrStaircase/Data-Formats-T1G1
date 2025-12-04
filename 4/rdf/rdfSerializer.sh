@@ -10,5 +10,6 @@ cus:https://example.org/resource/customer/,\
 foaf:https://xmlns.com/foaf/0.1/,\
 shop:https://example.org/resource/shop/,\
 logo:https://example.org/resource/logo/,\
-prod:https://example.org/resource/product/ \
+prod:https://example.org/resource/product/,\
+image:https://example.org/resource/image/ \
 ../csv/data.csv-metadata.json > data.ttl

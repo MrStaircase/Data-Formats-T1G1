@@ -109,7 +109,8 @@
 				"dc:description": "Image of the logo",
 				"required": true,
 				"datatype": "anyURI",
-				"propertyUrl": "https://schema.org/image"
+				"propertyUrl": "https://schema.org/image",
+				"valueUrl": "{Image}"
 			},{
 				"@type":"Column",
 				"name": "CreationDate",
@@ -356,7 +357,8 @@
 				"titles": "PhoneNumber",
 				"dc:description": "FIX HERE",
 				"datatype": "anyURI",
-				"propertyUrl": "https://xmlns.com/foaf/0.1/phone"
+				"propertyUrl": "https://xmlns.com/foaf/0.1/phone",
+				"valueUrl": "{PhoneNumber}"
 			}],
 			"primaryKey": ["ID", "PhoneNumber"],
 			"foreignKeys": [{

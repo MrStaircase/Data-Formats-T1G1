@@ -2,6 +2,7 @@
 @prefix emp: <https://example.org/resource/employee/> .
 @prefix ex: <https://example.org/vocabulary/> .
 @prefix foaf: <https://xmlns.com/foaf/0.1/> .
+@prefix image: <https://example.org/resource/image/> .
 @prefix logo: <https://example.org/resource/logo/> .
 @prefix prod: <https://example.org/resource/product/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -15,7 +16,7 @@ cus:1 a ex:Customer;
   foaf:nick "Al"@en .
 
 logo:1 a schemas:ImageObject;
-  schemas:image "https://example.org/resource/image/1"^^xsd:anyURI;
+  schemas:image image:1;
   schemas:uploadeDate "2025-02-01"^^xsd:date .
 
 shop:1 a schemas:LocalBusiness;
@@ -57,7 +58,7 @@ emp:1 a ex:Employee;
   ex:salary 1000 .
 
 logo:2 a schemas:ImageObject;
-  schemas:image "https://example.org/resource/image/2"^^xsd:anyURI;
+  schemas:image image:2;
   schemas:uploadeDate "2025-04-03"^^xsd:date .
 
 prod:1 a schemas:Product;
@@ -87,16 +88,16 @@ cus:3 a ex:Customer;
 emp:3 a ex:Employee;
   ex:fullname "Crank"@en;
   ex:salary 1200;
-  foaf:phone "tel:+420123456789"^^xsd:anyURI .
+  foaf:phone <tel:+420123456789> .
 
 emp:4 a ex:Employee;
   ex:fullname "Grace"@en;
   ex:salary 1300;
-  foaf:phone "tel:+420987654321"^^xsd:anyURI,
-    "tel:+420112233445"^^xsd:anyURI .
+  foaf:phone <tel:+420987654321>,
+    <tel:+420112233445> .
 
 logo:3 a schemas:ImageObject;
-  schemas:image "https://example.org/resource/image/3"^^xsd:anyURI;
+  schemas:image image:3;
   schemas:uploadeDate "2025-06-05"^^xsd:date .
 
 emp:2 a ex:Employee;
