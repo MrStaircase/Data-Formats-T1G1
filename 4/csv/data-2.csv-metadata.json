@@ -1,50 +1,59 @@
 {
-  "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
+    "@id": "https://example.org/data-2.csv-metadata.json",
+    "@context": [
+            "http://www.w3.org/ns/csvw", 
+            {
+              "@language": "en"
+            }
+     ],
     "@type": "Table",
-    "@id": "https://example.org/Visitor",
-    "url": "https://example.org/data-2.csv",
+    "url": "data-2.csv",
     "tableSchema": {
-        "columns": [{
-          "name": "ID",
-          "titles": "ID",
-          "datatype": "string",
-          "aboutUrl":"{+ID}",
-          "propertyUrl": "rdf:type",
-          "valueUrl": "ex:Customer"
+        "@type": "Schema",
+        "columns": [
+          {
+              "@type": "Column",
+              "name": "ID",
+              "titles": "ID",
+              "datatype": "string",
+              "required": true,
+              "aboutUrl":"{+ID}",
+              "propertyUrl": "rdf:type",
+              "valueUrl": "ex:Customer"
         }, {
-          "name": "Nickname",
-          "titles": "Nickname",
-          "datatype": "string",
-          "aboutUrl":"{+ID}",
-          "propertyUrl": "foaf:nick",
-          "valueUrl": "{+Nickname}"
+              
+              "@type": "Column",
+              "name": "Nickname",
+              "titles": "Nickname",
+              "datatype": "string",
+              "required": true,
+              "aboutUrl":"{+ID}",
+              "propertyUrl": "foaf:nick",
+              "valueUrl": "{+Nickname}"
         }, {
-          "name": "NumberOfVisits",
-          "titles": "NumberOfVisits",
-          "datatype": "integer",
-          "aboutUrl":"{+ID}",
-          "propertyUrl": "ex:numberOfVisits",
-          "valueUrl": "{+NumberOfVisits}",
-          "virtual": true 
+
+              "@type": "Column",
+              "name": "NumberOfVisits",
+              "titles": "NumberOfVisits",
+              "datatype": "integer",
+              "required": true,
+              "aboutUrl":"{+ID}",
+              "propertyUrl": "ex:numberOfVisits",
+              "valueUrl": "{+NumberOfVisits}",
+              "virtual": true 
  
-        }, {
-          "name": "PersonId",
-          "titles": "PersonId",
-          "datatype": "string",
-          "aboutUrl":"{+ID}",
-          "propertyUrl": "ex:fullName",
-          "valueUrl": "{+fullname}",
-          "virtual": true 
-        }],
+        }
+      ],
+
         "primaryKey": "PersonId",
         "foreignKeys": [{
-          "columnReference": "PersonId",
-          "reference": {
-            "resource": "https://example.org/Person.csv",
-            "columnReference": "ID"
+            "columnReference": "PersonId",
+            "reference": {
+                "resource": "https://example.org/Person.csv",
+                "columnReference": "ID"
           }
       }
-          ]
+      ]
 
       }
 
