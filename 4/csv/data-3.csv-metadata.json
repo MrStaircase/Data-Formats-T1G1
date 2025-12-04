@@ -1,12 +1,15 @@
 {
-  "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
+  "@id": "https://example.org/data-3.csv-metadata.json",
+  "@context": ["http://www.w3.org/ns/csv", {"@language": "en"}],
     "@type": "Table",
-    "@id": "https://example.org/Logo",
-    "url": "https://example.org/data-3.csv",
+    "url": "data-3.csv",
     "tableSchema": {
+      "@type":"Schema",
         "columns": [{
+          "@type":"Column",
           "name": "Creation date",
           "titles": "Creation date",
+          "required": true,
           "datatype": "string",
           "aboutUrl":"{+Creation_date}",
           "propertyUrl": "rdf:type",
