@@ -1,4 +1,4 @@
 ID,Name,PreparationTime,Price,ShopID
-1,Coffee,100,10,2
-2,Sandwich,120,20,2
-3,Ice Cream,140,30,3
+product/1,Coffee,100,10,shop/2
+product/2,Sandwich,120,20,shop/2
+product/3,Ice Cream,140,30,shop/3

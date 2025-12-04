@@ -1,5 +1,5 @@
-ID,Salary,PersonId,ShopName
-1,1000,1,1
-2,1100,2,2
-3,1200,3,3
-4,1300,4,4
+ID,Salary,ShopID
+employee/1,1000,shop/1
+employee/2,1100,shop/2
+employee/3,1200,shop/3
+employee/4,1300,shop/4

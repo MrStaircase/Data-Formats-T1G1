@@ -1,5 +1,5 @@
 ID,Name,Capacity,LogoID
-1,shop1,10,
-2,shop2,20,2
-3,shop3,30,3
-4,shop4,42,3
+shop/1,shop1,10,
+shop/2,shop2,20,logo/2
+shop/3,shop3,30,logo/3
+shop/4,shop4,42,logo/3

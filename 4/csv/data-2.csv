@@ -1,4 +1,4 @@
 ID,Nickname,NumberOfVisits
-1,Al,2
-2,Bob,3
-3,Cha,4
+customer/1,Al,2
+customer/2,Bob,3
+customer/3,Cha,4

@@ -7,51 +7,54 @@
     "@id": "https://example.org/data-1.csv-metadata.json",
     "url": "data-1.csv",
     "tableSchema": {
-      "aboutUrl" : "https://example.org/resource/employee/{ID}",
+			"@type": "Schema",
+      "aboutUrl" : "https://example.org/resource/{ID}",
       "columns": [{
+				"@type": "Column",
         "name": "ID",
         "titles": "ID",
+				"dc:description": "FIX HERE",
         "datatype": "string",
         "propertyUrl": "rdf:type",
         "valueUrl": "https://example.org/vocabulary/Employee"
       }, {
+				"@type": "Column",
         "name": "Salary",
         "titles": "Salary",
+				"dc:description": "FIX HERE",
         "datatype": "integer",
         "propertyUrl": "https://example.org/vocabulary/salary"
       }, {
-        "name": "PersonId",
-        "titles": "PersonId",
+				"@type": "Column",
+        "name": "ShopID",
+        "titles": "ShopID",
+				"dc:description": "FIX HERE",
         "datatype": "string",
-        "suppressOutput": true
-      }, {
-        "name": "ShopName",
-        "titles": "ShopName",
-        "datatype": "string",
-				"aboutUrl": "https://example.org/resource/shop/{ShopName}",
+				"aboutUrl": "https://example.org/resource/{ShopID}",
 				"propertyUrl": "https://schema.org/employee",
-				"valueUrl": "https://example.org/resource/employee/{ID}"
+				"valueUrl": "https://example.org/resource/{ID}"
       }],
       "primaryKey": "ID",
       "foreignKeys": [{
-        "columnReference": "PersonId",
+        "columnReference": "ID",
         "reference": {
           "resource": "data-8.csv",
           "columnReference": "ID"
         }
       }]
     }
-  },{
+  }, {
     "@type": "Table",
     "@id": "https://example.org/data-2.csv-metadata.json",
     "url": "data-2.csv",
     "tableSchema": {
 			"@type": "Schema",
-			"aboutUrl" : "https://example.org/resource/customer/{ID}",
+			"aboutUrl" : "https://example.org/resource/{ID}",
 			"columns": [{
 				"@type": "Column",
 				"name": "ID",
 				"titles": "ID",
+				"dc:description": "FIX HERE",
 				"datatype": "string",
 				"required": true,
 				"propertyUrl": "rdf:type",
@@ -60,6 +63,7 @@
 				"@type": "Column",
 				"name": "Nickname",
 				"titles": "Nickname",
+				"dc:description": "FIX HERE",
 				"datatype": "string",
 				"lang": "en",
 				"required": true,
@@ -68,6 +72,7 @@
 				"@type": "Column",
 				"name": "NumberOfVisits",
 				"titles": "NumberOfVisits",
+				"dc:description": "FIX HERE",
 				"datatype": "integer",
 				"required": true,
 				"propertyUrl": "https://example.org/vocabulary/numberOfVisits"
@@ -81,13 +86,13 @@
 				}
       }]
 		}
-  },{
-		"@id": "https://example.org/data-3.csv-metadata.json",
+  }, {
     "@type": "Table",
+		"@id": "https://example.org/data-3.csv-metadata.json",
     "url": "data-3.csv",
     "tableSchema": {
       "@type": "Schema",
-			"aboutUrl": "https://example.org/resource/logo/{ID}",
+			"aboutUrl": "https://example.org/resource/{ID}",
 			"columns": [{
 				"@type":"Column",
 				"name": "ID",
@@ -114,15 +119,15 @@
 				"datatype": "date",
 				"propertyUrl": "https://schema.org/uploadeDate"
 			}],
-			"primaryKey": "Image"
+			"primaryKey": "ID"
 		}
-  },{
-  	"@id": "https://example.org/data-4.csv-metadata.json",
+  }, {
     "@type": "Table",
+  	"@id": "https://example.org/data-4.csv-metadata.json",
     "url": "data-4.csv",
     "tableSchema": {
 			"@type": "Schema",
-			"aboutUrl": "https://example.org/resource/shop/{ID}",
+			"aboutUrl": "https://example.org/resource/{ID}",
 			"columns": [{
 				"@type": "Column",
 				"name": "ID",
@@ -155,22 +160,24 @@
 				"dc:description": "Logo image of the business",
 				"datatype": "string",
 				"propertyUrl": "https://schema.org/logo",
-				"valueUrl": "https://example.org/resource/logo/{LogoID}"
+				"valueUrl": "https://example.org/resource/{LogoID}"
 			}],
 			"primaryKey": "Name",
 			"foreignKeys": [{
 				"columnReference": "LogoID",
 				"reference": {
 					"resource": "data-3.csv",
-					"columnReference": "Image"
+					"columnReference": "ID"
 				}
 			}]
 		}
-  },{
+  }, {
     "@type": "Table",
 		"@id": "https://example.org/data-5.csv-metadata.json",
 		"url": "data-5.csv",
 		"tableSchema": {
+			"@type": "Schema",
+			"aboutUrl": "https://example.org/resource/{ProductID}",
 			"columns": [{
 				"@type": "Column",
 				"name": "ProductID",
@@ -178,16 +185,15 @@
 				"dc:description": "Product name",
 				"required": true,
 				"datatype": "string",
-				"aboutUrl": "https://example.org/resource/product/{ProductID}",
 				"propertyUrl": "https://example.org/vocabulary/hasManufactor",
-				"valueUrl": "https://example.org/resource/employee/{EmployeeID}"
+				"valueUrl": "https://example.org/resource/{EmployeeID}"
 			},{
 				"@type": "Column",
 				"name": "EmployeeID",
 				"titles": "EmployeeID",
 				"dc:description": "Employee URI",
 				"required": true,
-				"datatype": "integer",
+				"datatype": "string",
 				"suppressOutput": true
 			}],
 			"primaryKey": ["EmployeeID", "ProductID"],
@@ -201,22 +207,22 @@
 				"columnReference": "ProductID",
 				"reference": {
 					"resource": "data-6.csv",
-					"columnReference": "Name"
+					"columnReference": "ID"
 				}
 			}]
 		}
-  },{
+  }, {
     "@type": "Table",
 		"@id": "https://example.org/data-6.csv-metadata.json",
 		"url": "data-6.csv",
 		"tableSchema": {
 			"@type": "Schema",
-			"aboutUrl": "https://example.org/resource/product/{ID}",
+			"aboutUrl": "https://example.org/resource/{ID}",
 			"columns": [{
 				"@type": "Column",
 				"name": "ID",
 				"titles": "ID",
-				"dc:description": "Product URI",
+				"dc:description": "Product ID",
 				"required": true,
 				"datatype": "string",
 				"propertyUrl": "rdf:type",
@@ -253,39 +259,40 @@
 				"dc:description": "FIX HERE",
 				"required": true,
 				"datatype": "string",
-				"aboutUrl": "https://example.org/resource/shop/{ShopID}",
+				"aboutUrl": "https://example.org/resource/{ShopID}",
 				"propertyUrl": "https://schema.org/owns",
-				"valueUrl": "https://example.org/resource/product/{ID}"
+				"valueUrl": "https://example.org/resource/{ID}"
 			}],
 			"primaryKey": "Name",
 			"foreignKeys": [{
 				"columnReference": "ShopID",
 				"reference": {
 					"resource": "data-4.csv",
-					"columnReference": "Name"
+					"columnReference": "ID"
 				}
 			}]
 		}
-  },{
+  }, {
 		"@type": "Table",
 		"@id": "https://example.org/ShopVisitor",
 		"url": "data-7.csv",
 		"tableSchema": {
+			"@type": "Schema",
+			"aboutUrl": "https://example.org/resource/{ShopID}",
 			"columns": [{
 				"@type": "Column",
 				"name": "ShopID",
 				"titles": "ShopID",
-				"dc:description": "Shop URI",
+				"dc:description": "Shop ID",
 				"required": true,
 				"datatype": "string",
-				"aboutUrl": "https://example.org/resource/shop/{ShopID}",
 				"propertyUrl": "https://example.org/vocabulary/serves",
-				"valueUrl":"https://example.org/resource/customer/{CustomerID}"
+				"valueUrl":"https://example.org/resource/{CustomerID}"
 			}, {
 				"@type": "Column",
 				"name": "CustomerID",
 				"titles": "CustomerID",
-				"dc:description": "Customer URI",
+				"dc:description": "Customer ID",
 				"required": true,
 				"datatype": "string",
 				"suppressOutput": true
@@ -295,7 +302,7 @@
 				"columnReference": "ShopID",
 				"reference": {
 					"resource": "data-4.csv",
-					"columnReference": "Name"
+					"columnReference": "ID"
 				}
 			}, {
 				"columnReference": "CustomerID",
@@ -305,46 +312,55 @@
 				}
 			}]
 		}
-  },{
+  }, {
     "@id": "https://example.org/data-8.csv-metadata.json",
     "url": "data-8.csv",
     "tableSchema": {
+			"@type": "Schema",
       "aboutUrl": "https://example.org/resource/{ID}",
       "columns": [{
+				"@type": "Column",
         "name": "ID",
         "titles": "ID",
+				"dc:description": "FIX HERE",
         "datatype": "string",
         "suppressOutput": true
-      },
-      {
+      }, {
+				"@type": "Column",
         "name": "Fullname",
         "titles": "Fullname",
+				"dc:description": "FIX HERE",
         "datatype": "string",
       	"lang": "en",
         "propertyUrl": "https://example.org/vocabulary/fullname"
       }],
       "primaryKey": "ID"
     }
-  },{
+  }, {
 		"@type": "Table",
 		"@id": "https://example.org/data-9.csv-metadata.json",
 		"url": "data-9.csv",
 		"tableSchema": {
-			"aboutUrl": "https://example.org/resource/{PersonID}",
+			"@type": "Schema",
+			"aboutUrl": "https://example.org/resource/{ID}",
 			"columns": [{
-				"name": "PersonID",
-				"titles": "PersonID",
+				"@type": "Column",
+				"name": "ID",
+				"titles": "ID",
+				"dc:description": "FIX HERE",
 				"datatype": "string",
 				"suppressOutput": true
 			},{
+				"@type": "Column",
 				"name": "PhoneNumber",
 				"titles": "PhoneNumber",
+				"dc:description": "FIX HERE",
 				"datatype": "anyURI",
 				"propertyUrl": "https://xmlns.com/foaf/0.1/phone"
 			}],
-			"primaryKey": ["PersonID", "PhoneNumber"],
+			"primaryKey": ["ID", "PhoneNumber"],
 			"foreignKeys": [{
-				"columnReference": "PersonID",
+				"columnReference": "ID",
 				"reference": {
 					"resource": "data-8.csv",
 					"columnReference": "ID"

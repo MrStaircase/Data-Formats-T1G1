@@ -1,4 +1,4 @@
 ID,Image,CreationDate
-1,https://example.org/resource/image/1,2025-02-01
-2,https://example.org/resource/image/2,2025-04-03
-3,https://example.org/resource/image/3,2025-06-05
+logo/1,https://example.org/resource/image/1,2025-02-01
+logo/2,https://example.org/resource/image/2,2025-04-03
+logo/3,https://example.org/resource/image/3,2025-06-05
