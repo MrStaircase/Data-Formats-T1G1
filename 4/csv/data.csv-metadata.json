@@ -87,7 +87,7 @@
     "url": "data-3.csv",
     "tableSchema": {
       "@type": "Schema",
-			"aboutUrl": "https://example.org/resource/Logo/{ID}",
+			"aboutUrl": "https://example.org/resource/logo/{ID}",
 			"columns": [{
 				"@type":"Column",
 				"name": "ID",
@@ -167,7 +167,44 @@
 			}]
 		}
   },{
-    "url": "data-5.csv"
+    "@type": "Table",
+		"@id": "https://example.org/data-5.csv-metadata.json",
+		"url": "data-5.csv",
+		"tableSchema": {
+			"columns": [{
+				"@type": "Column",
+				"name": "ProductID",
+				"titles": "name",
+				"dc:description": "Product name",
+				"required": true,
+				"datatype": "string",
+				"aboutUrl": "https://example.org/resource/product/{ProductID}",
+				"propertyUrl": "https://example.org/vocabulary/hasManufactor",
+				"valueUrl": "https://example.org/resource/employee/{EmployeeID}"
+			},{
+				"@type": "Column",
+				"name": "EmployeeID",
+				"titles": "EmployeeID",
+				"dc:description": "Employee URI",
+				"required": true,
+				"datatype": "integer",
+				"suppressOutput": true
+			}],
+			"primaryKey": ["EmployeeID", "ProductID"],
+			"foreignKeys": [{
+				"columnReference": "EmployeeID",
+				"reference": {
+					"resource": "data-1.csv",
+					"columnReference": "ID"
+				}
+			},{
+				"columnReference": "ProductID",
+				"reference": {
+					"resource": "data-6.csv",
+					"columnReference": "Name"
+				}
+			}]
+		}
   },{
     "url": "data-6.csv"
   },{
@@ -176,23 +213,24 @@
 		"url": "data-7.csv",
 		"tableSchema": {
 			"columns": [{
-					"@type": "Column",
-					"name": "ShopID",
-					"titles": "ShopID",
-					"dc:description": "Shop URI",
-					"required": true,
-					"datatype": "string",
-					"aboutUrl": "https://example.org/resource/shop/{ShopID}",
-					"propertyUrl": "https://example.org/vocabulary/serves",
-					"valueUrl":"https://example.org/resource/customer/{CustomerID}"
-				}, {
-					"@type": "Column",
-					"name": "CustomerID",
-					"titles": "CustomerID",
-					"dc:description": "Customer URI",
-					"required": true,
-					"datatype": "string"
-				}],
+				"@type": "Column",
+				"name": "ShopID",
+				"titles": "ShopID",
+				"dc:description": "Shop URI",
+				"required": true,
+				"datatype": "string",
+				"aboutUrl": "https://example.org/resource/shop/{ShopID}",
+				"propertyUrl": "https://example.org/vocabulary/serves",
+				"valueUrl":"https://example.org/resource/customer/{CustomerID}"
+			}, {
+				"@type": "Column",
+				"name": "CustomerID",
+				"titles": "CustomerID",
+				"dc:description": "Customer URI",
+				"required": true,
+				"datatype": "string",
+				"suppressOutput": true
+			}],
 			"primaryKey": ["ShopID", "CustomerID"],
 			"foreignKeys": [{
 				"columnReference": "ShopID",
