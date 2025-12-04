@@ -28,7 +28,9 @@
         "name": "ShopName",
         "titles": "ShopName",
         "datatype": "string",
-        "suppressOutput": true
+				"aboutUrl": "https://example.org/resource/shop/{ShopName}",
+				"propertyUrl": "https://schema.org/employee",
+				"valueUrl": "https://example.org/resource/employee/{ID}"
       }],
       "primaryKey": "ID",
       "foreignKeys": [{
@@ -61,7 +63,7 @@
 				"datatype": "string",
 				"lang": "en",
 				"required": true,
-				"propertyUrl": "http://xmlns.com/foaf/0.1/nick"
+				"propertyUrl": "https://xmlns.com/foaf/0.1/nick"
 			}, {
 				"@type": "Column",
 				"name": "NumberOfVisits",
