@@ -17,7 +17,6 @@
               "titles": "ID",
               "datatype": "string",
               "required": true,
-              "dc:description": "Unique identifier for each customer",
               "aboutUrl":"{+ID}",
               "propertyUrl": "rdf:type",
               "valueUrl": "ex:Customer"
@@ -28,7 +27,6 @@
               "titles": "Nickname",
               "datatype": "string",
               "required": true,
-              "dc:description": "Nickname of the customer",
               "aboutUrl":"{+ID}",
               "propertyUrl": "foaf:nick",
               "valueUrl": "{+Nickname}"
@@ -39,7 +37,6 @@
               "titles": "NumberOfVisits",
               "datatype": "integer",
               "required": true,
-              "dc:description": "Number of visits made by the customer",
               "aboutUrl":"{+ID}",
               "propertyUrl": "ex:numberOfVisits",
               "valueUrl": "{+NumberOfVisits}",
@@ -52,13 +49,12 @@
         "foreignKeys": [{
             "columnReference": "PersonId",
             "reference": {
-                "resource": "https://example.org/data-8.csv",
+                "resource": "https://example.org/Person.csv",
                 "columnReference": "ID"
           }
       }
       ]
 
-       }
+      }
 
 }
-

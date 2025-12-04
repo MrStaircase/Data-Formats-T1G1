@@ -1,115 +1,101 @@
 {
-    "@context": "http://www.w3.org/ns/csvw",
-    "@type": "TableGroup",
-    "@id": "https://example.org/tableGroup",
-    "tables": [
-        {
-            "@type": "Table",
-            "@id": "https://example.org/data-1.csv-metadata.json",
-            "url": "data-1.csv",
-            "tableSchema": {
-                "aboutUrl" : "https://example.org/resource/employee/{ID}",
-                "columns": [{
-                "name": "ID",
-                "titles": "ID",
-                "datatype": "string",
-                "propertyUrl": "rdf:type",
-                "valueUrl": "https://example.org/vocabulary/Employee"
-                }, {
-                "name": "Salary",
-                "titles": "Salary",
-                "datatype": "integer",
-                "propertyUrl": "https://example.org/vocabulary/salary"
-                }, {
-                "name": "PersonId",
-                "titles": "PersonId",
-                "datatype": "string",
-                "suppressOutput": true
-                }, {
-                "name": "ShopName",
-                "titles": "ShopName",
-                "datatype": "string",
-                "suppressOutput": true
-                }],
-                "primaryKey": "ID",
-                "foreignKeys": [{
-                "columnReference": "PersonId",
-                "reference": {
-                    "resource": "data-8.csv",
-                    "columnReference": "ID"
-                }
-                }]
-            }
-        },
-        {
-            "url": "data-2.csv"
-        },
-        {
-            "url": "data-3.csv"
-        },
-        {
-            "url": "data-4.csv"
-        },
-        {
-            "url": "data-5.csv"
-        },
-        {
-            "url": "data-6.csv"
-        },
-        {
-            "url": "data-7.csv"
-        },
-        {
-            "@id": "https://example.org/data-8.csv-metadata.json",
-            "url": "data-8.csv",
-            "tableSchema": {
-                "aboutUrl": "https://example.org/resource/{ID}",
-                "columns": [
-                {
-                    "name": "ID",
-                    "titles": "ID",
-                    "datatype": "string",
-                    "suppressOutput": true
-                },
-                {
-                    "name": "Fullname",
-                    "titles": "Fullname",
-                    "datatype": "string",
-                    "lang": "en",
-                    "propertyUrl": "https://example.org/vocabulary/fullname"
-                }],
-                "primaryKey": "ID"
-            }
-        },
-        {
-            "@type": "Table",
-            "@id": "https://example.org/data-9.csv-metadata.json",
-            "url": "data-9.csv",
-            "tableSchema": {
-                "aboutUrl": "https://example.org/resource/{PersonID}",
-                "columns": [
-                {
-                    "name": "PersonID",
-                    "titles": "PersonID",
-                    "datatype": "string",
-                    "suppressOutput": true
-                },
-                {
-                    "name": "PhoneNumber",
-                    "titles": "PhoneNumber",
-                    "datatype": "anyURI",
-                    "propertyUrl": "https://xmlns.com/foaf/0.1/phone"
-                }
-                ],
-                "primaryKey": ["PersonID", "PhoneNumber"],
-                "foreignKeys": [{
-                "columnReference": "PersonID",
-                "reference": {
-                    "resource": "data-8.csv",
-                    "columnReference": "ID"
-                }
-                }]
-            }
+  "@context": "http://www.w3.org/ns/csvw",
+  "@type": "TableGroup",
+  "@id": "https://example.org/tableGroup",
+  "tables": [{
+    "@type": "Table",
+    "@id": "https://example.org/data-1.csv-metadata.json",
+    "url": "data-1.csv",
+    "tableSchema": {
+      "aboutUrl" : "https://example.org/resource/employee/{ID}",
+      "columns": [{
+        "name": "ID",
+        "titles": "ID",
+        "datatype": "string",
+        "propertyUrl": "rdf:type",
+        "valueUrl": "https://example.org/vocabulary/Employee"
+      }, {
+        "name": "Salary",
+        "titles": "Salary",
+        "datatype": "integer",
+        "propertyUrl": "https://example.org/vocabulary/salary"
+      }, {
+        "name": "PersonId",
+        "titles": "PersonId",
+        "datatype": "string",
+        "suppressOutput": true
+      }, {
+        "name": "ShopName",
+        "titles": "ShopName",
+        "datatype": "string",
+        "suppressOutput": true
+      }],
+      "primaryKey": "ID",
+      "foreignKeys": [{
+        "columnReference": "PersonId",
+        "reference": {
+          "resource": "data-8.csv",
+          "columnReference": "ID"
         }
-    ]
+      }]
+    }
+  },{
+    "url": "data-2.csv"
+  },{
+    "url": "data-3.csv"
+  },{
+    "url": "data-4.csv"
+  },{
+    "url": "data-5.csv"
+  },{
+    "url": "data-6.csv"
+  },{
+    "url": "data-7.csv"
+  },{
+    "@id": "https://example.org/data-8.csv-metadata.json",
+    "url": "data-8.csv",
+    "tableSchema": {
+      "aboutUrl": "https://example.org/resource/{ID}",
+      "columns": [{
+        "name": "ID",
+        "titles": "ID",
+        "datatype": "string",
+        "suppressOutput": true
+      },
+      {
+        "name": "Fullname",
+        "titles": "Fullname",
+        "datatype": "string",
+      	"lang": "en",
+        "propertyUrl": "https://example.org/vocabulary/fullname"
+      }],
+      "primaryKey": "ID"
+    }
+  },{
+		"@type": "Table",
+		"@id": "https://example.org/data-9.csv-metadata.json",
+		"url": "data-9.csv",
+		"tableSchema": {
+			"aboutUrl": "https://example.org/resource/{PersonID}",
+			"columns": [{
+				"name": "PersonID",
+				"titles": "PersonID",
+				"datatype": "string",
+				"suppressOutput": true
+			},{
+				"name": "PhoneNumber",
+				"titles": "PhoneNumber",
+				"datatype": "anyURI",
+				"propertyUrl": "https://xmlns.com/foaf/0.1/phone"
+			}],
+			"primaryKey": ["PersonID", "PhoneNumber"],
+			"foreignKeys": [{
+				"columnReference": "PersonID",
+				"reference": {
+					"resource": "data-8.csv",
+					"columnReference": "ID"
+				}
+			}]
+		}
+  }]
 }
