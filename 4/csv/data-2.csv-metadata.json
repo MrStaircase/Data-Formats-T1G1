@@ -49,7 +49,7 @@
         "foreignKeys": [{
             "columnReference": "PersonId",
             "reference": {
-                "resource": "https://example.org/Person.csv",
+                "resource": "https://example.org/data-8.csv",
                 "columnReference": "ID"
           }
       }
