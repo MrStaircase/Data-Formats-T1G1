@@ -29,13 +29,13 @@
     "foreignKeys": [{
       "columnReference": "EmployeeID",
       "reference": {
-        "resource": "https://example.org/Employee.csv",
+        "resource": "https://example.org/data-1.csv",
         "columnReference": "ID"
       }
     },{
       "columnReference": "ProductName",
       "reference": {
-        "resource": "https://example.org/Product.csv",
+        "resource": "https://example.org/data-6.csv",
         "columnReference": "Name"
       }
     }]

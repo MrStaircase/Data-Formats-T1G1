@@ -50,7 +50,7 @@
     "foreignKeys": [{
       "columnReference": "ShopName",
       "reference": {
-        "resource": "https://example.org/Shop.csv",
+        "resource": "https://example.org/data-4.csv",
         "columnReference": "Name"
       }
     }]
