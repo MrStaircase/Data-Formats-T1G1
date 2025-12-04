@@ -1,3 +1,4 @@
-ShopName,VisitorID
-shop2,6
-shop3,7
+ShopID,VisitorID
+2,2
+2,3
+3,3

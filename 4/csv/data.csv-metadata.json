@@ -171,7 +171,43 @@
   },{
     "url": "data-6.csv"
   },{
-    "url": "data-7.csv"
+		"@type": "Table",
+		"@id": "https://example.org/ShopVisitor",
+		"url": "data-7.csv",
+		"tableSchema": {
+			"columns": [{
+					"@type": "Column",
+					"name": "ShopID",
+					"titles": "ShopID",
+					"dc:description": "Shop URI",
+					"required": true,
+					"datatype": "string",
+					"aboutUrl": "https://example.org/resource/shop/{ShopID}",
+					"propertyUrl": "https://example.org/vocabulary/serves",
+					"valueUrl":"https://example.org/resource/customer/{CustomerID}"
+				}, {
+					"@type": "Column",
+					"name": "CustomerID",
+					"titles": "CustomerID",
+					"dc:description": "Customer URI",
+					"required": true,
+					"datatype": "string"
+				}],
+			"primaryKey": ["ShopID", "CustomerID"],
+			"foreignKeys": [{
+				"columnReference": "ShopID",
+				"reference": {
+					"resource": "data-4.csv",
+					"columnReference": "Name"
+				}
+			}, {
+				"columnReference": "CustomerID",
+				"reference": {
+					"resource": "data-2.csv",
+					"columnReference": "ID"
+				}
+			}]
+		}
   },{
     "@id": "https://example.org/data-8.csv-metadata.json",
     "url": "data-8.csv",
