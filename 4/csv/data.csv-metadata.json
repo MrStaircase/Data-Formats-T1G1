@@ -40,7 +40,45 @@
       }]
     }
   },{
-    "url": "data-2.csv"
+    "@type": "Table",
+    "@id": "https://example.org/data-2.csv-metadata.json",
+    "url": "data-2.csv",
+    "tableSchema": {
+			"@type": "Schema",
+			"aboutUrl" : "https://example.org/resource/customer/{ID}",
+			"columns": [{
+				"@type": "Column",
+				"name": "ID",
+				"titles": "ID",
+				"datatype": "string",
+				"required": true,
+				"propertyUrl": "rdf:type",
+				"valueUrl": "https://example.org/vocabulary/Customer"
+			}, {
+				"@type": "Column",
+				"name": "Nickname",
+				"titles": "Nickname",
+				"datatype": "string",
+				"lang": "en",
+				"required": true,
+				"propertyUrl": "http://xmlns.com/foaf/0.1/nick"
+			}, {
+				"@type": "Column",
+				"name": "NumberOfVisits",
+				"titles": "NumberOfVisits",
+				"datatype": "integer",
+				"required": true,
+				"propertyUrl": "https://example.org/vocabulary/numberOfVisits"
+			}],
+			"primaryKey": "ID",
+			"foreignKeys": [{
+				"columnReference": "ID",
+				"reference": {
+					"resource": "data-8.csv",
+					"columnReference": "ID"
+				}
+      }]
+		}
   },{
     "url": "data-3.csv"
   },{
