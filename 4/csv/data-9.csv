@@ -1,8 +1,4 @@
 PersonID,PhoneNumber
-1,
-2,
-3,<tel:+420123456789>
-4,<tel:+420987654321>-<tel:+420112233445>
-5,
-6,
-7,
+employee/3,tel:+420123456789
+employee/4,tel:+420987654321
+employee/4,tel:+420112233445

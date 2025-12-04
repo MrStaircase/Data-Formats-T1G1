@@ -1,8 +1,8 @@
 ID,Fullname
-1,Alice
-2,Bob
-3,Charlie
-4,Dave
-5,Eve
-6,Crank
-7,Grace
+customer/1,Alice
+customer/2,Bob
+customer/3,Charlie
+employee/1,Dave
+employee/2,Eve
+employee/3,Crank
+employee/4,Grace
