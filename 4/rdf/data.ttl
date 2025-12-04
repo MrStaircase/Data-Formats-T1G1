@@ -1,0 +1,104 @@
+@prefix cus: <https://example.org/resource/customer/> .
+@prefix emp: <https://example.org/resource/employee/> .
+@prefix ex: <https://example.org/vocabulary/> .
+@prefix foaf: <https://xmlns.com/foaf/0.1/> .
+@prefix logo: <https://example.org/resource/logo/> .
+@prefix prod: <https://example.org/resource/product/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schemas: <https://schema.org/> .
+@prefix shop: <https://example.org/resource/shop/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cus:1 a ex:Customer;
+  ex:fullname "Alice"@en;
+  ex:numberOfVisits 2;
+  foaf:nick "Al"@en .
+
+logo:1 a schemas:ImageObject;
+  schemas:image "https://example.org/resource/image/1"^^xsd:anyURI;
+  schemas:uploadeDate "2025-02-01"^^xsd:date .
+
+shop:1 a schemas:LocalBusiness;
+  ex:capacity 10;
+  schemas:employee emp:1;
+  schemas:legalName "shop1" .
+
+shop:2 a schemas:LocalBusiness;
+  ex:capacity 20;
+  ex:serves cus:2,
+    cus:3;
+  schemas:employee emp:2;
+  schemas:legalName "shop2";
+  schemas:logo logo:2;
+  schemas:owns prod:1,
+    prod:2 .
+
+shop:3 a schemas:LocalBusiness;
+  ex:capacity 30;
+  ex:serves cus:3;
+  schemas:employee emp:3;
+  schemas:legalName "shop3";
+  schemas:logo logo:3;
+  schemas:owns prod:3 .
+
+shop:4 a schemas:LocalBusiness;
+  ex:capacity 42;
+  schemas:employee emp:4;
+  schemas:legalName "shop4";
+  schemas:logo logo:3 .
+
+cus:2 a ex:Customer;
+  ex:fullname "Bob"@en;
+  ex:numberOfVisits 3;
+  foaf:nick "Bob"@en .
+
+emp:1 a ex:Employee;
+  ex:fullname "Dave"@en;
+  ex:salary 1000 .
+
+logo:2 a schemas:ImageObject;
+  schemas:image "https://example.org/resource/image/2"^^xsd:anyURI;
+  schemas:uploadeDate "2025-04-03"^^xsd:date .
+
+prod:1 a schemas:Product;
+  ex:hasManufactor emp:2,
+    emp:3;
+  ex:preparationTime 100;
+  ex:price 10;
+  schemas:name "Coffee"@en .
+
+prod:2 a schemas:Product;
+  ex:hasManufactor emp:4;
+  ex:preparationTime 120;
+  ex:price 20;
+  schemas:name "Sandwich"@en .
+
+prod:3 a schemas:Product;
+  ex:hasManufactor emp:2;
+  ex:preparationTime 140;
+  ex:price 30;
+  schemas:name "Ice Cream"@en .
+
+cus:3 a ex:Customer;
+  ex:fullname "Charlie"@en;
+  ex:numberOfVisits 4;
+  foaf:nick "Cha"@en .
+
+emp:3 a ex:Employee;
+  ex:fullname "Crank"@en;
+  ex:salary 1200;
+  foaf:phone "tel:+420123456789"^^xsd:anyURI .
+
+emp:4 a ex:Employee;
+  ex:fullname "Grace"@en;
+  ex:salary 1300;
+  foaf:phone "tel:+420987654321"^^xsd:anyURI,
+    "tel:+420112233445"^^xsd:anyURI .
+
+logo:3 a schemas:ImageObject;
+  schemas:image "https://example.org/resource/image/3"^^xsd:anyURI;
+  schemas:uploadeDate "2025-06-05"^^xsd:date .
+
+emp:2 a ex:Employee;
+  ex:fullname "Eve"@en;
+  ex:salary 1100 .
