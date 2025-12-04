@@ -15,6 +15,7 @@
         "titles": "ID",
 				"dc:description": "FIX HERE",
         "datatype": "string",
+				"required": true,
         "propertyUrl": "rdf:type",
         "valueUrl": "https://example.org/vocabulary/Employee"
       }, {
@@ -23,6 +24,7 @@
         "titles": "Salary",
 				"dc:description": "FIX HERE",
         "datatype": "integer",
+				"required": true,
         "propertyUrl": "https://example.org/vocabulary/salary"
       }, {
 				"@type": "Column",
@@ -30,6 +32,7 @@
         "titles": "ShopID",
 				"dc:description": "FIX HERE",
         "datatype": "string",
+				"required": true,
 				"aboutUrl": "https://example.org/resource/{ShopID}",
 				"propertyUrl": "https://schema.org/employee",
 				"valueUrl": "https://example.org/resource/{ID}"
@@ -332,6 +335,7 @@
         "titles": "Fullname",
 				"dc:description": "FIX HERE",
         "datatype": "string",
+				"required": true,
       	"lang": "en",
         "propertyUrl": "https://example.org/vocabulary/fullname"
       }],
@@ -357,6 +361,7 @@
 				"titles": "PhoneNumber",
 				"dc:description": "FIX HERE",
 				"datatype": "anyURI",
+				"required": true,
 				"propertyUrl": "https://xmlns.com/foaf/0.1/phone",
 				"valueUrl": "{PhoneNumber}"
 			}],
