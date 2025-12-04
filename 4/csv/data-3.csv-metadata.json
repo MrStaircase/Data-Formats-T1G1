@@ -9,6 +9,7 @@
           "@type":"Column",
           "name": "Creation date",
           "titles": "Creation date",
+          "dc:description": "Creation date of the Logos",
           "required": true,
           "datatype": "string",
           "aboutUrl":"{+Creation_date}",
