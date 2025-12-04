@@ -17,6 +17,7 @@
             "titles": "Name",
             "datatype": "string",
             "required": true,
+            "dc:description": "Name of the business",
             "aboutUrl":"{+Name}",
             "propertyUrl": "rdf:type",
             "valueUrl": "schema:localBusiness"
@@ -28,6 +29,7 @@
             "titles": "Capacity",
             "datatype": "integer",
             "required": true,
+            "dc:description": "Capacity of the business",
             "aboutUrl":"{+Name}",
             "propertyUrl": "ex:capacity",
             "valueUrl": "{+Capacity}",
@@ -39,6 +41,7 @@
             "name": "Logo",
             "titles": "Logo",
             "datatype": "string",
+            "dc:description": "Logo image of the business",
             "aboutUrl":"{+Name}",
             "propertyUrl": "schema:logo",
             "valueUrl": "{+Logo}"
