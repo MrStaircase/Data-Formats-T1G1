@@ -1,8 +1,8 @@
 ID,Fullname
-cus1,Alice
-cus2,Bob
-cus3,Charlie
-emp1,Dave
-emp2,Eve
-emp3,Crank
-emp4,Grace
+customer/1,Alice
+customer/2,Bob
+customer/3,Charlie
+employee/1,Dave
+employee/2,Eve
+employee/3,Crank
+employee/4,Grace
