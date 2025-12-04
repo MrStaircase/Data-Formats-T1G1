@@ -206,7 +206,66 @@
 			}]
 		}
   },{
-    "url": "data-6.csv"
+    "@type": "Table",
+		"@id": "https://example.org/data-6.csv-metadata.json",
+		"url": "data-6.csv",
+		"tableSchema": {
+			"@type": "Schema",
+			"aboutUrl": "https://example.org/resource/product/{ID}",
+			"columns": [{
+				"@type": "Column",
+				"name": "ID",
+				"titles": "ID",
+				"dc:description": "Product URI",
+				"required": true,
+				"datatype": "string",
+				"propertyUrl": "rdf:type",
+				"valueUrl": "https://schema.org/Product"
+			}, {
+				"@type": "Column",
+				"name": "Name",
+				"titles": "name",
+				"dc:description": "The product's name",
+				"required": true,
+				"datatype": "string",
+				"lang": "en",
+				"propertyUrl": "https://schema.org/name"
+			}, {
+				"@type": "Column",
+				"name": "Preparation time",
+				"titles": "Preparation time",
+				"dc:description": "Amount of time it takes to prepare the product",
+				"required": true,
+				"datatype": "integer",
+				"propertyUrl": "https://example.org/vocabulary/preparationTime"
+			}, {
+				"@type": "Column",
+				"name": "Price",
+				"titles": "Price",
+				"dc:description": "Amount of money it takes to buy the product",
+				"required": true,
+				"datatype": "integer",
+				"propertyUrl": "https://example.org/vocabulary/price"
+			}, {
+				"@type": "Column",
+				"name": "ShopID",
+				"titles": "ShopID",
+				"dc:description": "FIX HERE",
+				"required": true,
+				"datatype": "string",
+				"aboutUrl": "https://example.org/resource/shop/{ShopID}",
+				"propertyUrl": "https://schema.org/owns",
+				"valueUrl": "https://example.org/resource/product/{ID}"
+			}],
+			"primaryKey": "Name",
+			"foreignKeys": [{
+				"columnReference": "ShopID",
+				"reference": {
+					"resource": "data-4.csv",
+					"columnReference": "Name"
+				}
+			}]
+		}
   },{
 		"@type": "Table",
 		"@id": "https://example.org/ShopVisitor",

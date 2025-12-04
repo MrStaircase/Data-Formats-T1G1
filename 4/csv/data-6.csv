@@ -1,4 +1,4 @@
-Name,Preparation time,Price,ShopName
-Coffee,100,10,shop2
-Sandwich,120,20,shop2
-Ice Cream,140,30,shop3
+ID,Name,Preparation time,Price,ShopID
+1,Coffee,100,10,2
+2,Sandwich,120,20,2
+3,Ice Cream,140,30,3
