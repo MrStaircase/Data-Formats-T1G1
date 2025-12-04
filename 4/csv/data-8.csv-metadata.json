@@ -1,28 +1,23 @@
 {
   "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
-  "@type": "Table",
-  "@id": "https://example.org/Person",
-  "url": "https://example.org/data-8.csv",
+  "@id": "https://example.org/data-8.csv-metadata.json",
+  "url": "data-8.csv",
   "tableSchema": {
-    "columns": [
+      "aboutUrl": "{+ID}",
+      "columns": [
       {
-        "name": "ID",
-        "titles": "ID",
-        "datatype": "string",
-        "aboutUrl":"{+ID}",
-        "propertyUrl": "foaf:phone",
-        "valueUrl": "{+PhoneNumber}",
-        "virtual": true
+          "name": "ID",
+          "titles": "ID",
+          "datatype": "string",
+          "suppressOutput": true
       },
       {
-        "name": "Fullname",
-        "titles": "Fullname",
-        "datatype": "string",
-        "aboutUrl":"{+ID}",
-        "propertyUrl": "ex:fullName",
-        "valueUrl": "{+Fullname}"
-      }
-    ],
-    "primaryKey": "ID"
+          "name": "Fullname",
+          "titles": "Fullname",
+          "datatype": "string",
+          "lang": "en",
+          "propertyUrl": "https://example.org/vocabulary/fullname"
+      }],
+      "primaryKey": "ID"
   }
 }

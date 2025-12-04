@@ -1,11 +1,11 @@
 {
   "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
   "@type": "Table",
-  "@id": "https://example.org/Employee",
-  "url": "https://example.org/data-1.csv",
+  "@id": "https://example.org/data-1.csv-metadata.json",
+  "url": "data-1.csv",
   "tableSchema": {
-    "aboutUrl" : "{+ID}",
-    "columns": [{
+      "aboutUrl" : "{+ID}",
+      "columns": [{
       "name": "ID",
       "titles": "ID",
       "datatype": "string",
@@ -20,34 +20,20 @@
       "name": "PersonId",
       "titles": "PersonId",
       "datatype": "string",
-<<<<<<< HEAD
       "suppressOutput": true
-=======
-      "aboutUrl":"{+ID}",
-      "propertyUrl": "ex:fullName",
-      "valueUrl": "{+fullname}",
-      "virtual": true
->>>>>>> 1f7b1eebbb5500bdbec9f5385e0247f4a716b36a
       }, {
       "name": "ShopName",
       "titles": "ShopName",
       "datatype": "string",
       "suppressOutput": true
-    }],
-    "primaryKey": "ID",
-    "foreignKeys": [{
+      }],
+      "primaryKey": "ID",
+      "foreignKeys": [{
       "columnReference": "PersonId",
       "reference": {
-        "resource": "https://example.org/Person.csv",
-        "columnReference": "ID"
+          "resource": "data-8.csv",
+          "columnReference": "ID"
       }
-    }, {
-      "columnReference": "ShopName",
-      "reference": {
-        "resource": "https://example.org/Shop.csv",
-        "columnReference": "Name"
-      }
-    }]
+      }]
   }
-
 }
