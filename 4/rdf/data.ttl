@@ -17,7 +17,7 @@ cus:1 a ex:Customer;
 
 logo:1 a schemas:ImageObject;
   schemas:image image:1;
-  schemas:uploadeDate "2025-02-01"^^xsd:date .
+  schemas:uploadDate "2025-02-01"^^xsd:date .
 
 shop:1 a schemas:LocalBusiness;
   ex:capacity 10;
@@ -59,7 +59,7 @@ emp:1 a ex:Employee;
 
 logo:2 a schemas:ImageObject;
   schemas:image image:2;
-  schemas:uploadeDate "2025-04-03"^^xsd:date .
+  schemas:uploadDate "2025-04-03"^^xsd:date .
 
 prod:1 a schemas:Product;
   ex:hasManufactor emp:2,
@@ -98,7 +98,7 @@ emp:4 a ex:Employee;
 
 logo:3 a schemas:ImageObject;
   schemas:image image:3;
-  schemas:uploadeDate "2025-06-05"^^xsd:date .
+  schemas:uploadDate "2025-06-05"^^xsd:date .
 
 emp:2 a ex:Employee;
   ex:fullname "Eve"@en;
