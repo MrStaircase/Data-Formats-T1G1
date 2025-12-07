@@ -22,7 +22,7 @@
 				"@type": "Column",
         "name": "Indentifier",
         "titles": "Indentifier",
-				"dc:description": "The employee's salary",
+				"dc:description": "The employee's work identifier",
         "datatype": "string",
 				"required": true,
         "propertyUrl": "https://schema.org/indentifier"
