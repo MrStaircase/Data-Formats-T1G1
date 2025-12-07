@@ -276,7 +276,7 @@
 				"propertyUrl": "https://schema.org/owns",
 				"valueUrl": "https://example.org/resource/{ID}"
 			}],
-			"primaryKey": "Name",
+			"primaryKey": "ID",
 			"foreignKeys": [{
 				"columnReference": "ShopID",
 				"reference": {
