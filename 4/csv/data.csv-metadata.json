@@ -175,7 +175,7 @@
 				"propertyUrl": "https://schema.org/logo",
 				"valueUrl": "https://example.org/resource/{LogoID}"
 			}],
-			"primaryKey": "Name",
+			"primaryKey": "ID",
 			"foreignKeys": [{
 				"columnReference": "LogoID",
 				"reference": {
