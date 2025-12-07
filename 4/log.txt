@@ -1,9 +1,12 @@
-We all created data-1.csv along with the metadata.json
+We all created data-1.csv along with the metadata.json.
 
-Valentine created data-[789].csv along with the metadata.json
-Dyma created data-[356].csv along with the metadata.json
-Khanh created data-[24].csv along with the metadata.json
+Valentyn created data-[789].csv along with the metadata.json.
+Dyma created data-[356].csv along with the metadata.json.
+Khanh created data-[24].csv along with the metadata.json.
 
-Jack merged all the separate metadata.json files into a single data.csv-metadata.json (note: all seperated metadata file were deleted as there are not necessary)
+Jack merged all the separate metadata.json files into a single data.csv-metadata.json (note: all separated metadata file were deleted as there are not necessary).
+
 Jack created added aboutUrl, propertyUrl and ValueUrl to create the rdf.
+Jack fixed some errors after Valentyn's review of rdf.
+
 Khanh reviewed and fix some minor errors in data.csv-metadata.json.
