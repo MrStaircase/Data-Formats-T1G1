@@ -22,14 +22,14 @@ logo:1 a schemas:ImageObject;
 shop:1 a schemas:LocalBusiness;
   ex:capacity 10;
   schemas:employee emp:1;
-  schemas:legalName "shop1" .
+  schemas:legalName "shop1"@en .
 
 shop:2 a schemas:LocalBusiness;
   ex:capacity 20;
   ex:serves cus:2,
     cus:3;
   schemas:employee emp:2;
-  schemas:legalName "shop2";
+  schemas:legalName "shop2"@en;
   schemas:logo logo:2;
   schemas:owns prod:1,
     prod:2 .
@@ -38,14 +38,14 @@ shop:3 a schemas:LocalBusiness;
   ex:capacity 30;
   ex:serves cus:3;
   schemas:employee emp:3;
-  schemas:legalName "shop3";
+  schemas:legalName "shop3"@en;
   schemas:logo logo:3;
   schemas:owns prod:3 .
 
 shop:4 a schemas:LocalBusiness;
   ex:capacity 42;
   schemas:employee emp:4;
-  schemas:legalName "shop4";
+  schemas:legalName "shop4"@en;
   schemas:logo logo:3 .
 
 cus:2 a ex:Customer;
@@ -55,7 +55,8 @@ cus:2 a ex:Customer;
 
 emp:1 a ex:Employee;
   ex:fullname "Dave"@en;
-  ex:salary 1000 .
+  ex:salary 1000;
+  schemas:indentifier "1" .
 
 logo:2 a schemas:ImageObject;
   schemas:image image:2;
@@ -88,11 +89,13 @@ cus:3 a ex:Customer;
 emp:3 a ex:Employee;
   ex:fullname "Crank"@en;
   ex:salary 1200;
+  schemas:indentifier "3";
   foaf:phone <tel:+420123456789> .
 
 emp:4 a ex:Employee;
   ex:fullname "Grace"@en;
   ex:salary 1300;
+  schemas:indentifier "4";
   foaf:phone <tel:+420987654321>,
     <tel:+420112233445> .
 
@@ -102,4 +105,5 @@ logo:3 a schemas:ImageObject;
 
 emp:2 a ex:Employee;
   ex:fullname "Eve"@en;
-  ex:salary 1100 .
+  ex:salary 1100;
+  schemas:indentifier "2" .

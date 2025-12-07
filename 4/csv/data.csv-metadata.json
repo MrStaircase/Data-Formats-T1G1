@@ -20,6 +20,14 @@
         "valueUrl": "https://example.org/vocabulary/Employee"
       }, {
 				"@type": "Column",
+        "name": "Indentifier",
+        "titles": "Indentifier",
+				"dc:description": "The employee's salary",
+        "datatype": "string",
+				"required": true,
+        "propertyUrl": "https://schema.org/indentifier"
+      }, {
+				"@type": "Column",
         "name": "Salary",
         "titles": "Salary",
 				"dc:description": "The employee's salary",
@@ -147,6 +155,7 @@
 				"titles": "Name",
 				"dc:description": "Name of the business",
 				"datatype": "string",
+				"lang": "en",
 				"required": true,
 				"propertyUrl": "https://schema.org/legalName"
 			}, {
