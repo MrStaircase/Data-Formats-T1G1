@@ -78,7 +78,7 @@
 				"datatype": "string",
 				"lang": "en",
 				"required": true,
-				"propertyUrl": "https://xmlns.com/foaf/0.1/nick"
+				"propertyUrl": "http://xmlns.com/foaf/0.1/nick"
 			}, {
 				"@type": "Column",
 				"name": "NumberOfVisits",
