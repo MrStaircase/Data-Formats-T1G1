@@ -6,3 +6,4 @@ Khanh created data-[24].csv along with the metadata.json
 
 Jack merged all the separate metadata.json files into a single data.csv-metadata.json (note: all seperated metadata file were deleted as there are not necessary)
 Jack created added aboutUrl, propertyUrl and ValueUrl to create the rdf.
+Khanh reviewed and fix some minor errors in data.csv-metadata.json.
