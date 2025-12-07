@@ -371,7 +371,7 @@
 				"dc:description": "The phone number",
 				"datatype": "anyURI",
 				"required": true,
-				"propertyUrl": "https://xmlns.com/foaf/0.1/phone",
+				"propertyUrl": "http://xmlns.com/foaf/0.1/phone",
 				"valueUrl": "{PhoneNumber}"
 			}],
 			"primaryKey": ["ID", "PhoneNumber"],
