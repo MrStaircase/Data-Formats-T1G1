@@ -20,12 +20,12 @@
         "valueUrl": "https://example.org/vocabulary/Employee"
       }, {
 				"@type": "Column",
-        "name": "Indentifier",
-        "titles": "Indentifier",
+        "name": "Identifier",
+        "titles": "Identifier",
 				"dc:description": "The employee's work identifier",
         "datatype": "string",
 				"required": true,
-        "propertyUrl": "https://schema.org/indentifier"
+        "propertyUrl": "https://schema.org/identifier"
       }, {
 				"@type": "Column",
         "name": "Salary",
