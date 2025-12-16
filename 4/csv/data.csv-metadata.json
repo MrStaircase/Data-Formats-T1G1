@@ -121,7 +121,7 @@
 				"required": true,
 				"datatype": "anyURI",
 				"propertyUrl": "https://schema.org/image",
-				"valueUrl": "{Image}"
+				"valueURl": "{+Image}"
 			},{
 				"@type":"Column",
 				"name": "CreationDate",
@@ -372,7 +372,7 @@
 				"datatype": "anyURI",
 				"required": true,
 				"propertyUrl": "http://xmlns.com/foaf/0.1/phone",
-				"valueUrl": "{PhoneNumber}"
+				"valueURl": "{+PhoneNumber}"
 			}],
 			"primaryKey": ["ID", "PhoneNumber"],
 			"foreignKeys": [{
