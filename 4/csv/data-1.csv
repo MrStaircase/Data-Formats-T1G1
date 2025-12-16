@@ -1,4 +1,4 @@
-ID,Indentifier,Salary,ShopID
+ID,Identifier,Salary,ShopID
 employee/1,1,1000,shop/1
 employee/2,2,1100,shop/2
 employee/3,3,1200,shop/3
