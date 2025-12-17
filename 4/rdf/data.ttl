@@ -1,7 +1,7 @@
 @prefix cus: <https://example.org/resource/customer/> .
 @prefix emp: <https://example.org/resource/employee/> .
 @prefix ex: <https://example.org/vocabulary/> .
-@prefix foaf: <https://xmlns.com/foaf/0.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix image: <https://example.org/resource/image/> .
 @prefix logo: <https://example.org/resource/logo/> .
 @prefix prod: <https://example.org/resource/product/> .
@@ -11,9 +11,9 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 cus:1 a ex:Customer;
+  foaf:nick "Al"@en;
   ex:fullname "Alice"@en;
-  ex:numberOfVisits 2;
-  foaf:nick "Al"@en .
+  ex:numberOfVisits 2 .
 
 logo:1 a schemas:ImageObject;
   schemas:image image:1;
@@ -49,14 +49,14 @@ shop:4 a schemas:LocalBusiness;
   schemas:logo logo:3 .
 
 cus:2 a ex:Customer;
+  foaf:nick "Bob"@en;
   ex:fullname "Bob"@en;
-  ex:numberOfVisits 3;
-  foaf:nick "Bob"@en .
+  ex:numberOfVisits 3 .
 
 emp:1 a ex:Employee;
   ex:fullname "Dave"@en;
   ex:salary 1000;
-  schemas:indentifier "1" .
+  schemas:identifier "1" .
 
 logo:2 a schemas:ImageObject;
   schemas:image image:2;
@@ -82,22 +82,22 @@ prod:3 a schemas:Product;
   schemas:name "Ice Cream"@en .
 
 cus:3 a ex:Customer;
+  foaf:nick "Cha"@en;
   ex:fullname "Charlie"@en;
-  ex:numberOfVisits 4;
-  foaf:nick "Cha"@en .
+  ex:numberOfVisits 4 .
 
 emp:3 a ex:Employee;
+  foaf:phone <tel:+420123456789>;
   ex:fullname "Crank"@en;
   ex:salary 1200;
-  schemas:indentifier "3";
-  foaf:phone <tel:+420123456789> .
+  schemas:identifier "3" .
 
 emp:4 a ex:Employee;
+  foaf:phone <tel:+420987654321>,
+    <tel:+420112233445>;
   ex:fullname "Grace"@en;
   ex:salary 1300;
-  schemas:indentifier "4";
-  foaf:phone <tel:+420987654321>,
-    <tel:+420112233445> .
+  schemas:identifier "4" .
 
 logo:3 a schemas:ImageObject;
   schemas:image image:3;
@@ -106,4 +106,4 @@ logo:3 a schemas:ImageObject;
 emp:2 a ex:Employee;
   ex:fullname "Eve"@en;
   ex:salary 1100;
-  schemas:indentifier "2" .
+  schemas:identifier "2" .
